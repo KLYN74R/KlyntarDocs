@@ -6,4 +6,4 @@ description: >-
 
 # KLYNTAR Docs
 
-Just Test
+Just test
