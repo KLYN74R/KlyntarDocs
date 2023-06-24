@@ -9,3 +9,27 @@
 ## Smart Contracts
 
 * [Intro](smart-contracts/intro.md)
+* [KLY-EVM](smart-contracts/kly-evm.md)
+* [KLY-WVM](smart-contracts/kly-wvm.md)
+
+## deep dive into KLY
+
+* [Testnets](deep-dive-into-kly/testnets/README.md)
+  * [Public testnets](deep-dive-into-kly/testnets/public-testnets.md)
+  * [Run your private testnet with single validator](deep-dive-into-kly/testnets/run-your-private-testnet-with-single-validator.md)
+  * [Run your private testnet with 4 nodes](deep-dive-into-kly/testnets/run-your-private-testnet-with-4-nodes.md)
+* [Customizations](deep-dive-into-kly/customizations/README.md)
+  * [Create own mutation](deep-dive-into-kly/customizations/create-own-mutation.md)
+  * [Create own plugin](deep-dive-into-kly/customizations/create-own-plugin.md)
+* [Run your node over TOR](deep-dive-into-kly/run-your-node-over-tor.md)
+* [Run simple KLY node](deep-dive-into-kly/run-simple-kly-node.md)
+* [Plugins usage](deep-dive-into-kly/plugins-usage/README.md)
+  * [Setting up Savitar](deep-dive-into-kly/plugins-usage/setting-up-savitar.md)
+* [Run KLY validator](deep-dive-into-kly/run-kly-validator/README.md)
+  * [KLY staking](deep-dive-into-kly/run-kly-validator/kly-staking.md)
+  * [KLY unstaking](deep-dive-into-kly/run-kly-validator/kly-unstaking.md)
+  * [Multistaking](deep-dive-into-kly/run-kly-validator/multistaking.md)
+
+## Bots
+
+* [Page 1](bots/page-1.md)
