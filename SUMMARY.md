@@ -32,4 +32,9 @@
 
 ## Bots
 
-* [Page 1](bots/page-1.md)
+* [Intro](bots/intro.md)
+
+## Other resources
+
+* [Mastering Klyntar](https://mastering.klyntar.org)
+* [KLY Services](https://services.klyntar.org)
