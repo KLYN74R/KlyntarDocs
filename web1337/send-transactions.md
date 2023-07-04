@@ -78,14 +78,14 @@ let receipt = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedTx.si
 
 
 
-## Create and send  transaction
+## Create and send  thresholdsig transaction
 
 
 
 
 
-## Create and send default transaction
+## Create and send transaction from post-quantum account
 
 
 
-## Create and send default transaction
+##
