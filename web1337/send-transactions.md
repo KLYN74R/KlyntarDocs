@@ -2,7 +2,7 @@
 
 ## Create and send default transaction
 
-
+Here we propose the example of simple transaction from default account(ed25519) to any other account
 
 #### Create
 
@@ -40,9 +40,35 @@ console.log(signedTx)
 ```
 {% endcode %}
 
+#### Result(see the structure)
+
+```json5
+{
+  v: 0,
+  creator: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
+  type: 'TX',
+  nonce: 0,
+  fee: 5,
+  payload: {
+    type: 'D',
+    to: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
+    amount: 10
+  },
+  sig: 'trZF0uHyFSMlPRkHgKsjCw5UwjacmBsNH3Zq9SLWnnEMRn5bccPhVPvMKiPhgQkPyMIBuzW76GcoDXaYB0usAg=='
+}
+```
+
 #### Send
 
+```javascript
+let txStatus = await web1337.sendTransaction(signedTx)
 
+console.log(txStatus)
+
+//After that - you can check the tx receipt
+
+let receipt = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedTx.sig))
+```
 
 
 
