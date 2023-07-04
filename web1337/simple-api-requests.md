@@ -33,7 +33,19 @@ let web1337 = new Web1337({
 Only three first components are required for proper work
 {% endhint %}
 
-##
+
+
+
+
+***
+
+
+
+
+
+{% hint style="info" %}
+Note - the data here is a mock data, but the structure of responses is right
+{% endhint %}
 
 ## Get the current checkpoint
 
@@ -46,10 +58,6 @@ await web1337.getCurrentCheckpoint())
 {% endcode %}
 
 #### Response
-
-{% hint style="info" %}
-Note - the data here is a mock data, but the structure is right
-{% endhint %}
 
 ```json5
 {
@@ -95,40 +103,146 @@ Note - the data here is a mock data, but the structure is right
 
 #### Request
 
+```javascript
+await web1337.getAggregatedFinalizationProofForBlock('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:0')
+```
+
+* **blockID** - id of block in form _<mark style="color:red;">**BlsPubKey:Index**</mark>_
+
 #### Response
+
+```json5
+{
+  blockID: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:0',
+  blockHash: 'd6682d62f263fe16943f0c2cd36f78b3e7dda73f2dda3514b59908d75d01d769bd6be09a6ecb10e09bfc938a2a11854d6c27bd99ddacd9e684dad8bc9f0e552a',
+  aggregatedPub: '6yeebqG6qBxiSx126Sg6FHqrkBW94Smmqp1ifEUK1TLQEumstVTrZFx4UTBJdvhKwb',
+  aggregatedSignature: 'lMqaRrjtp5LwFwwDJbTWYiMfi4BwQ8YM7niYeRVLNaB9S/mBFiyeprQekRs8/DjSBVYDGd6pXSFlPj4WgoS26dO3/R7p/9yJn0Gr4S48yBOpJ/3mG1lQH5zbrwHr4cjc',
+  afkVoters: [
+    '6YHBZxZfBPk8oDPARGT4ZM9ZUPksMUngyCBYw8Ec6ufWkR6jpnjQ9HAJRLcon76sE7'
+  ]
+}
+```
+
+#### To verify that AFP is ok
+
+TODO
+
+##
 
 ## Get block by BlockID
 
 #### Request
 
+```javascript
+await web1337.getBlockByBlockID('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:0')
+```
+
+* **blockID** - id of block in form _<mark style="color:red;">**BlsPubKey:Index**</mark>_
+
 #### Response
+
+```json5
+{
+  creator: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
+  time: 1688428206254,
+  checkpoint: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#-1',
+  transactions: [],
+  extraData: { rest: { hello: 'world' } },
+  index: 0,
+  prevHash: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+  sig: 'gh9litqCOrQ89VVNMlnDu1zDa/Hy6ILBr7R5PzSkKtdH+FIlS3bcWq42l1X9bgwLCqt/mn0WFJQaQ6Gb6R5D9kKNxkQD6BqE+8LZogr04jPvQ7PCB00DLe9qg9xut/J0'
+}
+```
+
+##
 
 ## Get block by GRID
 
 #### Request
 
+```javascript
+await web1337.getBlockByGRID(0)
+```
+
+* **GRID(General ID)** - just index of block in case we imagine that KLY is linear with indexes _**0, 1 , 2...N**_&#x20;
+
 #### Response
+
+```json5
+{
+  creator: '75XPnpDxrAtyjcwXaATfDhkYTGBoHuonDU1tfqFc6JcNPf5sgtcsvBRXaXZGuJ8USG',
+  time: 1688428218999,
+  checkpoint: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#-1',
+  transactions: [],
+  extraData: { rest: { hello: 'world' } },
+  index: 0,
+  prevHash: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+  sig: 'iayyJRq3vGled0pbF2RPsThPrlrGsJcGWYwzRKYbJr9hv92I3iEGPgUnI/siQbBQBd9mgo8aXZ+EUlhOvxyuBx4hv5VegLdma/YOYY3TYGUZRrzG/gXCUSIlcxByY8lw'
+}
+```
+
+##
 
 ## Get block by SID
 
 #### Request
 
+```javascript
+await web1337.getBlockBySID('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',0)
+```
+
+* **subchainID** - identificator of subchain (Base58 encoded BLS pubkey of prime pool)
+* **index** - index of block in this subchain
+
 #### Response
 
-## Get aggregated finalization proof
+```json5
+{
+  creator: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
+  time: 1688428206254,
+  checkpoint: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#-1',
+  transactions: [],
+  extraData: { rest: { hello: 'world' } },
+  index: 0,
+  prevHash: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
+  sig: 'gh9litqCOrQ89VVNMlnDu1zDa/Hy6ILBr7R5PzSkKtdH+FIlS3bcWq42l1X9bgwLCqt/mn0WFJQaQ6Gb6R5D9kKNxkQD6BqE+8LZogr04jPvQ7PCB00DLe9qg9xut/J0'
+}
+```
 
-#### Request
 
-#### Response
 
 ## Get information about infrastructure
 
 #### Request
 
+```javascript
+await web1337.getGeneralInfoAboutKLYInfrastructure()
+```
+
 #### Response
+
+This data has no defined structure because node owner sets this data in configs. Here you can add the info about supported APIs, other nodes in your infrastructure, override the logic of some routes,etc. For example, some public pool can add their Telegram / mail to response to communicate with users
+
+```json5
+{ mail: 'hello@somecoolstakingpool.com', telegram: '@some_cool_staking_pool' }
+```
 
 ## Get current state of node
 
 #### Request
 
+```javascript
+await web1337.getSyncState()
+```
+
 #### Response
+
+```json5
+{
+  subchain: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
+  currentAuthority: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
+  index: 9,
+  hash: '333970c621724bf923e64513d81c19efdf0346b4844309a6473696b976cb920c2e8e9d229a83b1481b1162c59c9f6f093aef2316d11bb69648e340ad478561bd',
+  grid: 30
+}
+```
