@@ -5,6 +5,9 @@
 ## Web1337
 
 * [Web1337 intro](web1337/web1337-intro.md)
+* [🟢 Simple API requests](web1337/simple-api-requests.md)
+* [🟠 Send transactions](web1337/send-transactions.md)
+* [Page 1](web1337/page-1.md)
 
 ## Smart Contracts
 
