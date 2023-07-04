@@ -6,7 +6,7 @@
 
 #### Create
 
-{% code fullWidth="true" %}
+{% code fullWidth="false" %}
 ```javascript
 import Web1337 from '@klyntar/web1337'
 

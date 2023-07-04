@@ -1,14 +1,15 @@
+---
+description: Simple, one-line APIs. No rocket science
+---
+
 # 🟢 Simple API requests
 
-## Get the current checkpoint
+## Create the Web1337 instance
 
 
 
+Here you just need to import the library to your project workspace and create the instance using this snippet:
 
-
-#### Request
-
-{% code fullWidth="false" %}
 ```javascript
 import Web1337 from '@klyntar/web1337'
 
@@ -17,17 +18,38 @@ let web1337 = new Web1337({
 
     symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     workflowVersion:0,
-    nodeURL: 'http://localhost:7332'
-
+    nodeURL:'http://localhost:7332'
+    proxyURL:'http://localhost:8888' // for example 'http(s)://login:password@127.0.0.1:8080' or 'socks5h://Vlad:Cher@127.0.0.1:9150'
+    
 });
+```
 
-console.log(`Current checkpoint is => `,await web1337.getCurrentCheckpoint())
+* **symbioteID** - 256-bit identificator of appropriate symbiote(something like chain id in EVM)
+* **workflowVersion** - major version number of workflow of your symbiote to make sure you know the furthe logic in this version
+* **nodeURL** - the endpoint of node to interact with network. It might be your own node, Node-as-a-Service provider, etc.
+* **proxyURL** - the URL of proxy that will be used to interact with node. It might be HTTP(s) or SOCKS proxy(to allow connections over TOR/I2P or other SOCKS)
+
+{% hint style="info" %}
+Only three first components are required for proper work
+{% endhint %}
+
+##
+
+## Get the current checkpoint
+
+#### Request
+
+{% code fullWidth="false" %}
+```javascript
+await web1337.getCurrentCheckpoint())
 ```
 {% endcode %}
 
 #### Response
 
-> Note - the data here is a mock data, but the structure is right&#x20;
+{% hint style="info" %}
+Note - the data here is a mock data, but the structure is right
+{% endhint %}
 
 ```json5
 {
@@ -71,23 +93,42 @@ console.log(`Current checkpoint is => `,await web1337.getCurrentCheckpoint())
 
 ## Get aggregated finalization proof
 
+#### Request
+
+#### Response
+
 ## Get block by BlockID
 
+#### Request
 
+#### Response
 
 ## Get block by GRID
 
+#### Request
 
+#### Response
 
 ## Get block by SID
 
+#### Request
 
+#### Response
 
 ## Get aggregated finalization proof
 
+#### Request
+
+#### Response
+
 ## Get information about infrastructure
 
+#### Request
 
+#### Response
 
 ## Get current state of node
 
+#### Request
+
+#### Response
