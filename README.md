@@ -6,4 +6,7 @@ description: >-
 
 # KLYNTAR Docs
 
-Just test
+## Intro
+
+<figure><img src=".gitbook/assets/CorePreview.png" alt=""><figcaption></figcaption></figure>
+
