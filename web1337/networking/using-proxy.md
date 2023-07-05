@@ -84,3 +84,16 @@ let web1337 = new Web1337({
 
 });
 ```
+
+
+
+## I2P
+
+Coming soon
+
+
+
+## Other proxies
+
+* SSH
+* Proxy services
