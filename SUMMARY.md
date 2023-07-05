@@ -8,6 +8,9 @@
 * [🟢 Simple API requests](web1337/simple-api-requests.md)
 * [🟠 Send transactions](web1337/send-transactions.md)
 * [🔴 Advance cryptography usage](web1337/advance-cryptography-usage.md)
+* [🌐 Networking](web1337/networking/README.md)
+  * [🙈 Using proxy](web1337/networking/using-proxy.md)
+  * [⚡ Interact with node via websockets](web1337/networking/interact-with-node-via-websockets.md)
 
 ## Smart Contracts
 

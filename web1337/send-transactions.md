@@ -130,21 +130,76 @@ A transfer transaction to a multisig address is literally 1 step more complicate
 
 ### Ed25519 => TBLS(thresholdsig address) transaction
 
-In this transaction you send something to TBLS root public key which controled by group of \`N\` members&#x20;
+In this transaction you send something to TBLS root public key which controled by group of <mark style="color:red;">**`N`**</mark> members
 
 ```javascript
+const myKeyPair = {
 
+    mnemonic: 'south badge state hedgehog carpet aerobic float million enforce opinion hungry race',
+    bip44Path: "m/44'/7331'/0'/0'",
+    pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
+    prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
+      
+}
+
+
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
 
 const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
 
+const from = myKeyPair.pub
+
+const myPrivateKey = myKeyPair.prv
+
+const nonce = 0
+
+const fee = 1
+
+const amountInKLY = 13.37
 
 
+let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY)
 
+console.log(signedTx)
 ```
 
 ### Ed25519 => PostQuantum(Dilithium/BLISS) transaction
 
 In this transaction you send your assets to the BLAKE3 hash of public key of some post-quantum signatures schemes like DIlithium or BLISS (we support 2 algorithms)
+
+```javascript
+const myKeyPair = {
+
+    mnemonic: 'south badge state hedgehog carpet aerobic float million enforce opinion hungry race',
+    bip44Path: "m/44'/7331'/0'/0'",
+    pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
+    prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
+      
+}
+
+
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+
+// It might be Dilithium or BLISS, but doesn't matter for you
+const recipientPQC = 'f5091405e28455880fc4191cbda9f1e57f72399e732222d4639294b66d3a5076'
+
+const from = myKeyPair.pub
+
+const myPrivateKey = myKeyPair.prv
+
+const nonce = 0
+
+const fee = 1
+
+const amountInKLY = 13.37
+
+
+let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY)
+
+console.log(signedTx)
+```
+
+##
 
 ## Create and send multisig transaction
 
