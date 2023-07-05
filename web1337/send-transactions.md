@@ -1,3 +1,7 @@
+---
+description: Let's show you how to start with different types of KLY transactions
+---
+
 # 🟠 Send transactions
 
 ## Create Web1337 instance
@@ -23,6 +27,10 @@ let web1337 = new Web1337({
 Here we propose the example of simple transaction from default account(ed25519) to any other account
 {% endhint %}
 
+Also, read more about our default ed25519 accounts in MasteringKlyntar
+
+{% embed url="https://mastering.klyntar.org/beginning/cryptography/key-pairs" %}
+
 ### Ed25519 => Ed25519 transaction
 
 Example of simplest transaction - from default account to default account
@@ -30,7 +38,8 @@ Example of simplest transaction - from default account to default account
 {% code fullWidth="false" %}
 ```javascript
 // Get your own keys using:
-// await crypto.kly.generateDefaultEd25519Keypair()
+// Method 0(via Web1337) - await crypto.kly.generateDefaultEd25519Keypair()
+// Method 1(via Apollo CLI) - apollo keygen
 
 const myKeyPair = {
 
@@ -115,15 +124,43 @@ where:
 
 ### Ed25519 => BLS(multisig address) transaction
 
+A transfer transaction to a multisig address is literally 1 step more complicated. So, when you are going to send something to a multisig address, depending on whether the recipient's account already exists on the network, you need to specify an additional `rev_t` field that indicates the `reverse threshold`
+
+
+
 ### Ed25519 => TBLS(thresholdsig address) transaction
+
+In this transaction you send something to TBLS root public key which controled by group of \`N\` members&#x20;
+
+```javascript
+
+
+const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
+
+
+
+
+```
 
 ### Ed25519 => PostQuantum(Dilithium/BLISS) transaction
 
-##
+In this transaction you send your assets to the BLAKE3 hash of public key of some post-quantum signatures schemes like DIlithium or BLISS (we support 2 algorithms)
 
 ## Create and send multisig transaction
 
 
+
+Hello
+
+{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#bls12-381" %}
+
+Hello
+
+{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#demonstration" %}
+
+Hello
+
+###
 
 ### BLS => Ed25519 transaction
 
@@ -136,6 +173,16 @@ where:
 
 
 ## Create and send  thresholdsig transaction
+
+Hello
+
+{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#threshold-signatures-tbls" %}
+
+Hello
+
+{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#threshold-signatures" %}
+
+Hello
 
 ### TBLS => Ed25519 transaction
 
@@ -152,6 +199,12 @@ where:
 {% hint style="info" %}
 PQC - Post-quantum Cryptography
 {% endhint %}
+
+Hello
+
+{% embed url="https://mastering.klyntar.org/beginning/cryptography/post-quantum-cryptography" %}
+
+Hello
 
 ### PQC => Ed25519 transaction
 
