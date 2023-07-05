@@ -221,11 +221,47 @@ await web1337.getGeneralInfoAboutKLYInfrastructure()
 
 #### Response
 
-This data has no defined structure because node owner sets this data in configs. Here you can add the info about supported APIs, other nodes in your infrastructure, override the logic of some routes,etc. For example, some public pool can add their Telegram / mail to response to communicate with users
+This data has no defined structure because node owner sets this data in configs. Here you can add the info about supported APIs, other nodes in your infrastructure, override the logic of some routes,etc. For example, some public pool can add their Telegram / mail to response to communicate with users:
 
 ```json5
 { mail: 'hello@somecoolstakingpool.com', telegram: '@some_cool_staking_pool' }
 ```
+
+Also, since KLY supports routes disabling(see in configs), you can stop native route implementation, override it and inform node users about this.
+
+Saying, you've found interesting plugin with advance filtering system before adding transactions to mempool and want to use this logic of txs acception instead of native one. For tis you should disable native route:
+
+<pre class="language-javascript"><code class="lang-javascript"><strong>CONFIG.SYMBIOTE.TRIGGERS.MAIN.ACCEPT_TXS:false
+</strong></code></pre>
+
+{% hint style="info" %}
+See workflow.json to find this option
+{% endhint %}
+
+Then, enable the plugin:
+
+```json
+"PLUGINS":["some_cool_plugin_to_improve_txs_filters/index.js"]
+```
+
+And finally, inform the API users about this redirection:
+
+<pre class="language-json5"><code class="lang-json5"><strong>CONFIG.SYMBIOTE.INFO:{
+</strong><strong>
+</strong><strong>    "override":{
+</strong><strong>    
+</strong><strong>        "/transaction":"Guys, use this endpoint to send txs to me => https://some.another.endpoint.io:9999"
+</strong><strong>    
+</strong><strong>    }
+</strong><strong>
+</strong><strong>}
+</strong></code></pre>
+
+{% hint style="info" %}
+We'll show you how to work with plugins in the section [Plugins usage](../deep-dive-into-kly/plugins-usage/)
+{% endhint %}
+
+
 
 ## Get current state of node
 
