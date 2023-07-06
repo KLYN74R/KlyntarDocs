@@ -18,6 +18,10 @@
 * [KLY-EVM](smart-contracts/kly-evm.md)
 * [KLY-WVM](smart-contracts/kly-wvm.md)
 
+## 🗺 RWX contracts
+
+* [Page 1](rwx-contracts/page-1.md)
+
 ## deep dive into KLY
 
 * [Testnets](deep-dive-into-kly/testnets/README.md)
