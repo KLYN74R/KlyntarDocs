@@ -4,6 +4,19 @@ description: Let's show you how to start with different types of KLY transaction
 
 # 🟠 Send transactions
 
+## Intro
+
+KLY has 4 types of accounts:
+
+* Ed25519 - default
+* BLS - for multisig
+* TBLS - threshold signatures
+* PostQuantum - Dilithium / BLISS
+
+{% hint style="info" %}
+Due to the peculiarities of each of them, we decided to show how to conduct transactions from any type to any other (4x4, total - 16 examples)
+{% endhint %}
+
 ## Create Web1337 instance
 
 It's initial step - as previously
@@ -20,6 +33,12 @@ let web1337 = new Web1337({
 
 });
 ```
+
+
+
+***
+
+
 
 ## Create and send default transaction
 
@@ -124,7 +143,7 @@ where:
 
 ### Ed25519 => BLS(multisig address) transaction
 
-A transfer transaction to a multisig address is literally 1 step more complicated. So, when you are going to send something to a multisig address, depending on whether the recipient's account already exists on the network, you need to specify an additional `rev_t` field that indicates the `reverse threshold`
+A transfer transaction to a multisig address is literally 1 step more complicated. So, when you are going to send something to a multisig address, depending on whether the recipient's account already exists on the network, you need to specify an additional `rev_t` field that indicates the `reverse threshold`.&#x20;
 
 
 
@@ -263,10 +282,20 @@ Hello
 
 ### PQC => Ed25519 transaction
 
+
+
 ### PQC => BLS(multisig address) transaction
 
 ### PQC => TBLS(thresholdsig address) transaction
 
 ### PQC => PostQuantum(Dilithium/BLISS) transaction
 
-##
+
+
+
+
+***
+
+## Links
+
+{% embed url="https://klyntar.medium.com/cryptoland-part-1-types-of-addresses-on-klyntar-post-quantum-multisig-tbls-ed25519-981277963ced" %}
