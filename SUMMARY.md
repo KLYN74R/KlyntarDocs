@@ -9,6 +9,9 @@
 * [🟠 Send transactions](web1337/send-transactions.md)
 * [🔴 Advance cryptography usage](web1337/advance-cryptography-usage/README.md)
   * [🎲 VRF](web1337/advance-cryptography-usage/vrf.md)
+  * [⚛ Post-quantum cryptography](web1337/advance-cryptography-usage/post-quantum-cryptography.md)
+  * [👀 zkSNARK](web1337/advance-cryptography-usage/zksnark.md)
+* [Page 2](web1337/page-2.md)
 * [🌐 Networking](web1337/networking/README.md)
   * [🙈 Using proxy](web1337/networking/using-proxy.md)
   * [⚡ Interact with node via websockets](web1337/networking/interact-with-node-via-websockets.md)
@@ -16,8 +19,9 @@
 ## Smart Contracts
 
 * [Intro](smart-contracts/intro.md)
-* [KLY-EVM](smart-contracts/kly-evm.md)
-* [KLY-WVM](smart-contracts/kly-wvm.md)
+* [👩💻 KLY-EVM](smart-contracts/kly-evm.md)
+* [👨💻 KLY-WVM](smart-contracts/kly-wvm.md)
+* [✨ UVM - Universal Virtual Machine](smart-contracts/uvm-universal-virtual-machine.md)
 
 ## 🗺 RWX contracts
 
