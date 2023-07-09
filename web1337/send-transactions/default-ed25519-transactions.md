@@ -10,7 +10,7 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 
 {% embed url="https://mastering.klyntar.org/beginning/cryptography/key-pairs" %}
 
-### Ed25519 => Ed25519 transaction
+## Ed25519 => Ed25519 transaction
 
 Example of simplest transaction - from default account to default account
 
@@ -99,7 +99,7 @@ where:
 
 ###
 
-### Ed25519 => BLS(multisig address) transaction
+## Ed25519 => BLS(multisig address) transaction
 
 A transfer transaction to a multisig address is literally 1 step more complicated. So, when you are going to send something to a multisig address, depending on whether the recipient's account already exists on the network, you need to specify an additional `rev_t` field that indicates the `reverse threshold`.&#x20;
 
@@ -134,7 +134,7 @@ and when checking the signature we need to know whether the threshold has been r
 
 Going back to the 4 friends example, if we have a threshold of 3/4, then it makes more sense to aggregate 3 signatures and 3 public keys into 1 and separately present 1 public key of the one who disagrees than to provide 3 separate keys and signatures from 4.
 
-Let's look at a specific example:
+#### Let's look at a specific example
 
 
 
@@ -144,7 +144,7 @@ Let's look at a specific example:
 
 
 
-### Ed25519 => TBLS(thresholdsig address) transaction
+## Ed25519 => TBLS(thresholdsig address) transaction
 
 In this transaction you send something to TBLS root public key which controled by group of <mark style="color:red;">**`N`**</mark> members
 
@@ -183,7 +183,7 @@ console.log(signedTx)
 
 
 
-### Ed25519 => PostQuantum(Dilithium/BLISS) transaction
+## Ed25519 => PostQuantum(Dilithium/BLISS) transaction
 
 In this transaction you send your assets to the BLAKE3 hash of public key of some post-quantum signatures schemes like DIlithium or BLISS (we support 2 algorithms)
 
