@@ -10,7 +10,9 @@ PQC - Post-quantum Cryptography
 Detailed information
 {% endembed %}
 
+## Intro
 
+<figure><img src="../../.gitbook/assets/Blake3FromPQC.png" alt=""><figcaption></figcaption></figure>
 
 ### PQC => Ed25519 transaction
 

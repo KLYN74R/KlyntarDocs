@@ -196,11 +196,121 @@ Output:
 RootPubKey => 68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1
 ```
 
-Now you can accept payments for this address.&#x20;
+Now you can accept payments for this address.
+
+### From sender point of view
+
+When you need to send something to multisig account you need to set the reverse threshold if account still not exists or use \`rev\_t\` property of already existed account
+
+So, if account `68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1` still not in state - use this template:
+
+```javascript
+const myKeyPair = {
+
+    mnemonic: 'south badge state hedgehog carpet aerobic float million enforce opinion hungry race',
+    bip44Path: "m/44'/7331'/0'/0'",
+    pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
+    prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
+      
+}
+
+
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+
+const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1'
+
+const from = myKeyPair.pub
+
+const myPrivateKey = myKeyPair.prv
+
+const nonce = 0
+
+const fee = 1
+
+const amountInKLY = 13.37
+
+// In our example with 4 friends, since we want 3/4 agreements
+// to use account, the reverse threshold will be 4-3=1
+// Use the formula rev_t = N-T where N - number of sides, T-threshold
+const reverseThreshold = 1
+
+let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipient,fee,amountInKLY,reverseThreshold)
+
+console.log(signedTx)
+```
+
+Result:
+
+```json5
+{
+  v: 0,
+  creator: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
+  type: 'TX',
+  nonce: 0,
+  fee: 1,
+  payload: {
+    type: 'D',
+    to: '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1',
+    amount: 13.37,
+    rev_t: 1
+  },
+  sig: 'VxL7dEsA+TZRVkj2jn3LBH7D8wuyyseDYkPptEicRHXJ9vIDSfjxYBiz1GCIESIXSWZKlcOx5Ld2hK1FaWsLDw=='
+}
+```
+
+After this transaction, new account will be added to state:
+
+```json
+"68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1":{
+    "type":"account",
+    "balance":13.37,
+    "uno":0,
+    "nonce":0,
+    "rev_t":1,
+    "subchain":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
+}
+```
+
+As you see, new multisig account is created and binded to subchain where sender sends KLY. Also, the `rev_t` is set to 1 what means that the number of dissenting sides can be 1.
+
+
+
+In case account was already in state - get the `rev_t` from information about account:
+
+```javascript
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+
+const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1'
+
+let accountInfo  = await web1337.getFromState(subchain,recipient)
+
+console.log('Account:\n\n',accountInfo)
+```
+
+```
+Account
+
+"68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1":{
+    "type":"account",
+    "balance":123456,
+    "uno":0,
+    "nonce":0,
+    "rev_t":1,
+    "subchain":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
+}
+```
+
+And then, use the value of `rev_t` to build the transaction as above
+
+##
 
 ## Ed25519 => TBLS(thresholdsig address) transaction
 
 In this transaction you send something to TBLS root public key which controled by group of <mark style="color:red;">**`N`**</mark> members
+
+{% hint style="info" %}
+We'll talk more about TBLS in the next parts. Just now you need to know the 96-byte root public key
+{% endhint %}
 
 ```javascript
 const myKeyPair = {
@@ -240,6 +350,10 @@ console.log(signedTx)
 ## Ed25519 => PostQuantum(Dilithium/BLISS) transaction
 
 In this transaction you send your assets to the BLAKE3 hash of public key of some post-quantum signatures schemes like DIlithium or BLISS (we support 2 algorithms)
+
+{% hint style="info" %}
+We'll talk about PQC accounts later. Just now, as a sender you just need to know only the  address of recipient - it's 256-bit hash of public key
+{% endhint %}
 
 ```javascript
 const myKeyPair = {
