@@ -15,6 +15,7 @@
   * [🎲 VRF](web1337/advance-cryptography-usage/vrf.md)
   * [⚛ Post-quantum cryptography](web1337/advance-cryptography-usage/post-quantum-cryptography.md)
   * [👀 zkSNARK](web1337/advance-cryptography-usage/zksnark.md)
+  * [🤫 Secure Secret Sharing](web1337/advance-cryptography-usage/secure-secret-sharing.md)
 * [🌐 Networking](web1337/networking/README.md)
   * [🙈 Using proxy](web1337/networking/using-proxy.md)
   * [⚡ Interact with node via websockets](web1337/networking/interact-with-node-via-websockets.md)
