@@ -4,6 +4,12 @@ description: Simple, one-line APIs. No rocket science
 
 # 🟢 Simple API requests
 
+## Useful links
+
+We also have a Postman organization account where we publish API for KLY. Use it if you need
+
+{% embed url="https://documenter.getpostman.com/view/25402389/2s93Y2S2FJ#097a6b76-d477-48c0-90b2-edb5743ebbf7" %}
+
 ## Create the Web1337 instance
 
 
