@@ -89,7 +89,7 @@ let web1337 = new Web1337({
 
 ## I2P
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 I2P can be used both as HTTP and SOCKS proxy
 
