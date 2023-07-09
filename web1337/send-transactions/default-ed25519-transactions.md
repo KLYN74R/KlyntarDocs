@@ -134,15 +134,69 @@ and when checking the signature we need to know whether the threshold has been r
 
 Going back to the 4 friends example, if we have a threshold of 3/4, then it makes more sense to aggregate 3 signatures and 3 public keys into 1 and separately present 1 public key of the one who disagrees than to provide 3 separate keys and signatures from 4.
 
-#### Let's look at a specific example
+### Let's look at a specific example
+
+You and 3 your friends generate multisig pairs(public + private key) locally. Let's do it with Web1337:
+
+```javascript
+import {bls} from '@klyntar/web1337'
+
+let privateKey1 = await bls.generatePrivateKey()
+let publicKey1 = bls.derivePubKey(privateKey1)
+
+let privateKey2 = await bls.generatePrivateKey()
+let publicKey2 = bls.derivePubKey(privateKey2)
+
+let privateKey3 = await bls.generatePrivateKey()
+let publicKey3 = bls.derivePubKey(privateKey3)
+
+let privateKey4 = await bls.generatePrivateKey()
+let publicKey4 = bls.derivePubKey(privateKey4)
 
 
+console.log(`Pair 1 => ${privateKey1} : ${publicKey1}`)
+console.log(`Pair 2 => ${privateKey2} : ${publicKey2}`)
+console.log(`Pair 3 => ${privateKey3} : ${publicKey3}`)
+console.log(`Pair 4 => ${privateKey4} : ${publicKey4}`)
+```
+
+Output:
+
+```code-runner-output
+Pair 1 => 6bcdb86cd8f9d24e9fe934905431de5c224499af8788bf12cae8597f0af4cb23 : 6Pz5B3xLQKDxtnESqk3tWnsd4kwkVYLNsvgKJy31HssK3eGSy7Tvratk5pZNFW5z8S
+Pair 2 => e5ca94e2c60cbb3ca9d5f9c233a99f01e3250ef62bd48fbc09caf25ae70040b5 : 5uj1Sgrvo9mwF6v8Z3Kxe4arQcu53Q2z9QBYsRPWCdo972jBeL8hD3Kmo4So3dSLt5
+Pair 3 => ead8698b5ef285e6019e22e54dfe2c592c020946e803df8c6e79f98baf849d48 : 6ZmLf52hp5FgCxuaNJ6Jmi2M7FSJTr115WRMuV1yCvEihepnEKJBhgopDMpUKLpe2F
+Pair 4 => 414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a : 61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPPbhpMDn
+```
+
+Now, you need to aggregate your 4 public keys to get the root public key and receive payments for collective usage.
+
+```javascript
+let publicKey1 = '6Pz5B3xLQKDxtnESqk3tWnsd4kwkVYLNsvgKJy31HssK3eGSy7Tvratk5pZNFW5z8S'
+let privateKey1 = '6bcdb86cd8f9d24e9fe934905431de5c224499af8788bf12cae8597f0af4cb23'
+
+let publicKey2 = '5uj1Sgrvo9mwF6v8Z3Kxe4arQcu53Q2z9QBYsRPWCdo972jBeL8hD3Kmo4So3dSLt5'
+let privateKey2 = 'e5ca94e2c60cbb3ca9d5f9c233a99f01e3250ef62bd48fbc09caf25ae70040b5'
+
+let publicKey3 = '6ZmLf52hp5FgCxuaNJ6Jmi2M7FSJTr115WRMuV1yCvEihepnEKJBhgopDMpUKLpe2F'
+let privateKey3 = 'ead8698b5ef285e6019e22e54dfe2c592c020946e803df8c6e79f98baf849d48'
+
+let publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPPbhpMDn'
+let privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a'
 
 
+let rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4])
 
+console.log('RootPubKey =>',rootPubKey)
+```
 
+Output:
 
+```code-runner-output
+RootPubKey => 68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1
+```
 
+Now you can accept payments for this address.&#x20;
 
 ## Ed25519 => TBLS(thresholdsig address) transaction
 
