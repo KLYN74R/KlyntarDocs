@@ -1,44 +1,4 @@
----
-description: Let's show you how to start with different types of KLY transactions
----
-
-# 🟠 Send transactions
-
-## Intro
-
-KLY has 4 types of accounts:
-
-* Ed25519 - default
-* BLS - for multisig
-* TBLS - threshold signatures
-* PostQuantum - Dilithium / BLISS
-
-{% hint style="info" %}
-Due to the peculiarities of each of them, we decided to show how to conduct transactions from any type to any other (4x4, total - 16 examples)
-{% endhint %}
-
-## Create Web1337 instance
-
-It's initial step - as previously
-
-```javascript
-import Web1337 from '@klyntar/web1337'
-
-
-let web1337 = new Web1337({
-
-    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-    workflowVersion:0,
-    nodeURL: 'http://localhost:7332'
-
-});
-```
-
-
-
-***
-
-
+# 🔐 Default Ed25519 transactions
 
 ## Create and send default transaction
 
@@ -54,7 +14,6 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 
 Example of simplest transaction - from default account to default account
 
-{% code fullWidth="false" %}
 ```javascript
 // Get your own keys using:
 // Method 0(via Web1337) - await crypto.kly.generateDefaultEd25519Keypair()
@@ -89,7 +48,6 @@ let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey
 
 console.log(signedTx)
 ```
-{% endcode %}
 
 #### Result(see the structure)
 
@@ -123,7 +81,7 @@ let receipt = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedTx.si
 console.log(receipt)
 ```
 
-Result
+#### **Result**
 
 ```json5
 {
@@ -139,11 +97,50 @@ where:
 * **id** - index of this tx in block
 * **isOk** - was this tx successfully processed or not
 
-
+###
 
 ### Ed25519 => BLS(multisig address) transaction
 
 A transfer transaction to a multisig address is literally 1 step more complicated. So, when you are going to send something to a multisig address, depending on whether the recipient's account already exists on the network, you need to specify an additional `rev_t` field that indicates the `reverse threshold`.&#x20;
+
+#### What is reverse threshold?
+
+Imagine that you and your 3 friends are going to manage some resources together, whether it be native KLY coins or some tokens. For this, it is obviously worth using a multisig address.
+
+Let's assume that you agree that the decision is considered accepted if the voting threshold of 3/4 is reached (3 out of 4 friends agree to spend coins or call some kind of smart contract). So, if the threshold is 3/4, then the reverse threshold in this case will be 1 (because 4-3 = 1).
+
+Here are some examples for other cases:
+
+* Reverse threshold = 3 for a situation where you need 7/10 agreements
+* Reverse threshold = 2 for a situation where you need 3/5 agreements
+
+And so on
+
+The `reverse threshold` was introduced in response to the ability of BLS signatures and public keys to aggregation. Since the situation is often such that
+
+$$
+T > T-N
+$$
+
+where:
+
+* N is the number of sides of the multi-signature
+* T is the threshold
+
+and when checking the signature we need to know whether the threshold has been reached, then we need to do this:
+
+* Present the consenting parties as an aggregated public key and an aggregated BLS signature
+* In a separate array, present the public BLS keys of those who do not agree with the decision (or could not vote for some reason)
+
+Going back to the 4 friends example, if we have a threshold of 3/4, then it makes more sense to aggregate 3 signatures and 3 public keys into 1 and separately present 1 public key of the one who disagrees than to provide 3 separate keys and signatures from 4.
+
+Let's look at a specific example:
+
+
+
+
+
+
 
 
 
@@ -182,6 +179,10 @@ let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey
 console.log(signedTx)
 ```
 
+
+
+
+
 ### Ed25519 => PostQuantum(Dilithium/BLISS) transaction
 
 In this transaction you send your assets to the BLAKE3 hash of public key of some post-quantum signatures schemes like DIlithium or BLISS (we support 2 algorithms)
@@ -218,84 +219,5 @@ let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey
 console.log(signedTx)
 ```
 
-##
-
-## Create and send multisig transaction
 
 
-
-Hello
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#bls12-381" %}
-
-Hello
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#demonstration" %}
-
-Hello
-
-###
-
-### BLS => Ed25519 transaction
-
-### BLS => BLS(multisig address) transaction
-
-### BLS => TBLS(thresholdsig address) transaction
-
-### BLS => PostQuantum(Dilithium/BLISS) transaction
-
-
-
-## Create and send  thresholdsig transaction
-
-Hello
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#threshold-signatures-tbls" %}
-
-Hello
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#threshold-signatures" %}
-
-Hello
-
-### TBLS => Ed25519 transaction
-
-### TBLS => BLS(multisig address) transaction
-
-### TBLS => TBLS(thresholdsig address) transaction
-
-### TBLS => PostQuantum(Dilithium/BLISS) transaction
-
-
-
-## Create and send transaction from post-quantum account
-
-{% hint style="info" %}
-PQC - Post-quantum Cryptography
-{% endhint %}
-
-Hello
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/post-quantum-cryptography" %}
-
-Hello
-
-### PQC => Ed25519 transaction
-
-
-
-### PQC => BLS(multisig address) transaction
-
-### PQC => TBLS(thresholdsig address) transaction
-
-### PQC => PostQuantum(Dilithium/BLISS) transaction
-
-
-
-
-
-***
-
-## Links
-
-{% embed url="https://klyntar.medium.com/cryptoland-part-1-types-of-addresses-on-klyntar-post-quantum-multisig-tbls-ed25519-981277963ced" %}

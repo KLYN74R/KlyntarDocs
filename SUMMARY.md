@@ -6,7 +6,11 @@
 
 * [Web1337 intro](web1337/web1337-intro.md)
 * [🟢 Simple API requests](web1337/simple-api-requests.md)
-* [🟠 Send transactions](web1337/send-transactions.md)
+* [🟠 Send transactions](web1337/send-transactions/README.md)
+  * [🔐 Default Ed25519 transactions](web1337/send-transactions/default-ed25519-transactions.md)
+  * [🤝 BLS multisig transactions](web1337/send-transactions/bls-multisig-transactions.md)
+  * [🛡 TBLS thresholdsig transactions](web1337/send-transactions/tbls-thresholdsig-transactions.md)
+  * [⚛ Post-quantum transactions](web1337/send-transactions/post-quantum-transactions.md)
 * [🔴 Advance cryptography usage](web1337/advance-cryptography-usage/README.md)
   * [🎲 VRF](web1337/advance-cryptography-usage/vrf.md)
   * [⚛ Post-quantum cryptography](web1337/advance-cryptography-usage/post-quantum-cryptography.md)
@@ -18,7 +22,8 @@
 ## Smart Contracts
 
 * [Intro](smart-contracts/intro.md)
-* [👩💻 KLY-EVM](smart-contracts/kly-evm.md)
+* [👩💻 KLY-EVM](smart-contracts/kly-evm/README.md)
+  * [🧙♂ Magic address](smart-contracts/kly-evm/magic-address.md)
 * [👨💻 KLY-WVM](smart-contracts/kly-wvm.md)
 * [✨ UVM - Universal Virtual Machine](smart-contracts/uvm-universal-virtual-machine.md)
 
