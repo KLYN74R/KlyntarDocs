@@ -1,3 +1,7 @@
+---
+description: Solana compatible accounts
+---
+
 # 🔐 Default Ed25519 transactions
 
 ## Create and send default transaction
@@ -9,6 +13,110 @@ Here we propose the example of simple transaction from default account(ed25519) 
 Also, read more about our default ed25519 accounts in MasteringKlyntar
 
 {% embed url="https://mastering.klyntar.org/beginning/cryptography/key-pairs" %}
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+## Generate keypair
+
+```javascript
+import {crypto} from './index.js';
+
+let keypair = await crypto.kly.generateDefaultEd25519Keypair();
+
+console.log(keypair);
+```
+
+Output:
+
+```json5
+{
+  mnemonic: 'job october hold grape novel horror stay major pledge bonus energy fringe',
+  bip44Path: "m/44'/7331'/0'/0'",
+  pub: 'GbjtpGjt1G9pJe667cQcBswRMGq9XogmrGEGUj94enuc',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIMOJVCiaURXxlZrkXe+fa2r061eqdOQAxux1/gxDGRi9'
+}
+```
+
+## Tricks with BIP-44
+
+By default, you get the new mnemonic and key pair with `m/44'/7331'/0'/0'` path. But, to generate many accounts from a single seed do this:
+
+* Get the mnemonic from the first generation
+* Change the path to 1,2,3... to build the HD chain of accounts
+
+For example:
+
+Get the first keypair in future chain:
+
+```javascript
+import {crypto} from './index.js';
+
+const mnemonic = null
+const bip44Path = null
+const mnemoPassword = 'HelloKlyntar'
+
+let keypair = await crypto.kly.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword)
+
+console.log(keypair)
+```
+
+Output:
+
+```json5
+{
+  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
+  bip44Path: "m/44'/7331'/0'/0'",
+  pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
+}
+```
+
+For the first pair in future chain of accounts we don't set the mnemonic and BIP-44 path. Mnemonic will be randomly generated and path will be `m/44'/7331'/0'/0'`. The last parameter is the password that will be used to get the seed from your mnemonic.
+
+{% hint style="danger" %}
+**That's why - choose the password with the high entropy, ommiting typical passwords from well known wordlists to make brute force impossible. Also, **<mark style="color:red;">**DON'T SHARE YOUR MNEMONIC PHRASE - YOU WILL LOST CONTROL OF YOUR ACCOUNT**</mark>**.**
+{% endhint %}
+
+Now, to build the chain, use this snippet:
+
+```javascript
+import {crypto} from './index.js';
+
+
+const firstKeypairInChain = {
+    mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
+    bip44Path: "m/44'/7331'/0'/0'",
+    pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
+    prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
+}
+
+console.log('0 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,firstKeypairInChain.bip44Path,'HelloKlyntar'))
+console.log('1 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/1'",'HelloKlyntar'))
+console.log('2 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/2'",'HelloKlyntar'))
+```
+
+Output:
+
+```code-runner-output
+0 in chain =>  {
+  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
+  bip44Path: "m/44'/7331'/0'/0'",
+  pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
+}
+1 in chain =>  {
+  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
+  bip44Path: "m/44'/7331'/0'/1'",
+  pub: '6GSUoBos7P3ZZLeq5jjH4AJ8vvVMJQHqGVh1ZsH8FeGF',
+  prv: 'MC4CAQAwBQYDK2VwBCIEILp+iBVOXkbVy4J3Dbw8w22bJ+TNXHyRmvYIeQcBHl+f'
+}
+2 in chain =>  {
+  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
+  bip44Path: "m/44'/7331'/0'/2'",
+  pub: '8DZ92AyXjfyRYhWJB1rxHy38bYwtm1bW6xz3sFkLAkUU',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIJXTGksc61wuV1rB2YjCkgCsp0RPoN8pJ1slCmQL0igU'
+}
+```
 
 ## Ed25519 => Ed25519 transaction
 
