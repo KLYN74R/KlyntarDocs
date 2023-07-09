@@ -51,7 +51,7 @@ So these two snippets are ok:
 <mark style="color:red;">**Node in clearnet**</mark>
 
 ```javascript
-import Web1337 from '@klyntar/web1337'
+import Web1337 from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
@@ -68,7 +68,7 @@ let web1337 = new Web1337({
 <mark style="color:red;">**Node runned as a TOR hidden service**</mark>
 
 ```javascript
-import Web1337 from '@klyntar/web1337'
+import Web1337 from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
