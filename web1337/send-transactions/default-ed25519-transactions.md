@@ -51,11 +51,15 @@ Get the first keypair in future chain:
 ```javascript
 import {crypto} from './index.js';
 
-const mnemonic = null
-const bip44Path = null
-const mnemoPassword = 'HelloKlyntar'
 
-let keypair = await crypto.kly.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword)
+const mnemonic = null;
+
+const bip44Path = null;
+
+const mnemoPassword = 'HelloKlyntar';
+
+
+let keypair = await crypto.kly.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword);
 
 console.log(keypair)
 ```
@@ -88,11 +92,11 @@ const firstKeypairInChain = {
     bip44Path: "m/44'/7331'/0'/0'",
     pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
     prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
-}
+};
 
-console.log('0 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,firstKeypairInChain.bip44Path,'HelloKlyntar'))
-console.log('1 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/1'",'HelloKlyntar'))
-console.log('2 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/2'",'HelloKlyntar'))
+console.log('0 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,firstKeypairInChain.bip44Path,'HelloKlyntar'));
+console.log('1 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/1'",'HelloKlyntar'));
+console.log('2 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/2'",'HelloKlyntar'));
 ```
 
 Output:
@@ -134,27 +138,27 @@ const myKeyPair = {
     pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
     prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
       
-}
+};
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
-const recipient = 'nXSYHp74u88zKPiRi7t22nv4WCBHXUBpGrVw3V93f2s'
+const recipient = 'nXSYHp74u88zKPiRi7t22nv4WCBHXUBpGrVw3V93f2s';
 
-const from = myKeyPair.pub
+const from = myKeyPair.pub;
 
-const myPrivateKey = myKeyPair.prv
+const myPrivateKey = myKeyPair.prv;
 
-const nonce = 0
+const nonce = 0;
 
-const fee = 1
+const fee = 1;
 
-const amountInKLY = 13.37
+const amountInKLY = 13.37;
 
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipient,fee,amountInKLY)
+let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipient,fee,amountInKLY);
 
-console.log(signedTx)
+console.log(signedTx);
 ```
 
 #### Result(see the structure)
@@ -178,15 +182,15 @@ console.log(signedTx)
 #### Send
 
 ```javascript
-let txStatus = await web1337.sendTransaction(signedTx)
+let txStatus = await web1337.sendTransaction(signedTx);
 
-console.log(txStatus)
+console.log(txStatus);
 
 // After that - you can check the tx receipt
 // TxID - it's a BLAKE3 hash of transaction signature
-let receipt = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedTx.sig))
+let receipt = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedTx.sig));
 
-console.log(receipt)
+console.log(receipt);
 ```
 
 #### **Result**
@@ -249,23 +253,23 @@ You and 3 your friends generate multisig pairs(public + private key) locally. Le
 ```javascript
 import {bls} from '@klyntar/web1337'
 
-let privateKey1 = await bls.generatePrivateKey()
-let publicKey1 = bls.derivePubKey(privateKey1)
+let privateKey1 = await bls.generatePrivateKey();
+let publicKey1 = bls.derivePubKey(privateKey1);
 
-let privateKey2 = await bls.generatePrivateKey()
-let publicKey2 = bls.derivePubKey(privateKey2)
+let privateKey2 = await bls.generatePrivateKey();
+let publicKey2 = bls.derivePubKey(privateKey2);
 
-let privateKey3 = await bls.generatePrivateKey()
-let publicKey3 = bls.derivePubKey(privateKey3)
+let privateKey3 = await bls.generatePrivateKey();
+let publicKey3 = bls.derivePubKey(privateKey3);
 
-let privateKey4 = await bls.generatePrivateKey()
-let publicKey4 = bls.derivePubKey(privateKey4)
+let privateKey4 = await bls.generatePrivateKey();
+let publicKey4 = bls.derivePubKey(privateKey4);
 
 
-console.log(`Pair 1 => ${privateKey1} : ${publicKey1}`)
-console.log(`Pair 2 => ${privateKey2} : ${publicKey2}`)
-console.log(`Pair 3 => ${privateKey3} : ${publicKey3}`)
-console.log(`Pair 4 => ${privateKey4} : ${publicKey4}`)
+console.log(`Pair 1 => ${privateKey1} : ${publicKey1}`);
+console.log(`Pair 2 => ${privateKey2} : ${publicKey2}`);
+console.log(`Pair 3 => ${privateKey3} : ${publicKey3}`);
+console.log(`Pair 4 => ${privateKey4} : ${publicKey4}`);
 ```
 
 Output:
@@ -280,22 +284,22 @@ Pair 4 => 414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a : 61t
 Now, you need to aggregate your 4 public keys to get the root public key and receive payments for collective usage.
 
 ```javascript
-let publicKey1 = '6Pz5B3xLQKDxtnESqk3tWnsd4kwkVYLNsvgKJy31HssK3eGSy7Tvratk5pZNFW5z8S'
-let privateKey1 = '6bcdb86cd8f9d24e9fe934905431de5c224499af8788bf12cae8597f0af4cb23'
+let publicKey1 = '6Pz5B3xLQKDxtnESqk3tWnsd4kwkVYLNsvgKJy31HssK3eGSy7Tvratk5pZNFW5z8S';
+let privateKey1 = '6bcdb86cd8f9d24e9fe934905431de5c224499af8788bf12cae8597f0af4cb23';
 
-let publicKey2 = '5uj1Sgrvo9mwF6v8Z3Kxe4arQcu53Q2z9QBYsRPWCdo972jBeL8hD3Kmo4So3dSLt5'
-let privateKey2 = 'e5ca94e2c60cbb3ca9d5f9c233a99f01e3250ef62bd48fbc09caf25ae70040b5'
+let publicKey2 = '5uj1Sgrvo9mwF6v8Z3Kxe4arQcu53Q2z9QBYsRPWCdo972jBeL8hD3Kmo4So3dSLt5';
+let privateKey2 = 'e5ca94e2c60cbb3ca9d5f9c233a99f01e3250ef62bd48fbc09caf25ae70040b5';
 
-let publicKey3 = '6ZmLf52hp5FgCxuaNJ6Jmi2M7FSJTr115WRMuV1yCvEihepnEKJBhgopDMpUKLpe2F'
-let privateKey3 = 'ead8698b5ef285e6019e22e54dfe2c592c020946e803df8c6e79f98baf849d48'
+let publicKey3 = '6ZmLf52hp5FgCxuaNJ6Jmi2M7FSJTr115WRMuV1yCvEihepnEKJBhgopDMpUKLpe2F';
+let privateKey3 = 'ead8698b5ef285e6019e22e54dfe2c592c020946e803df8c6e79f98baf849d48';
 
-let publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPPbhpMDn'
-let privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a'
+let publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPPbhpMDn';
+let privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a';
 
 
-let rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4])
+let rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
 
-console.log('RootPubKey =>',rootPubKey)
+console.log('RootPubKey =>',rootPubKey);
 ```
 
 Output:
@@ -320,31 +324,31 @@ const myKeyPair = {
     pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
     prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
       
-}
+};
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
-const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1'
+const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1';
 
-const from = myKeyPair.pub
+const from = myKeyPair.pub;
 
-const myPrivateKey = myKeyPair.prv
+const myPrivateKey = myKeyPair.prv;
 
-const nonce = 0
+const nonce = 0;
 
-const fee = 1
+const fee = 1;
 
-const amountInKLY = 13.37
+const amountInKLY = 13.37;
 
 // In our example with 4 friends, since we want 3/4 agreements
 // to use account, the reverse threshold will be 4-3=1
 // Use the formula rev_t = N-T where N - number of sides, T-threshold
-const reverseThreshold = 1
+const reverseThreshold = 1;
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipient,fee,amountInKLY,reverseThreshold)
+let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipient,fee,amountInKLY,reverseThreshold);
 
-console.log(signedTx)
+console.log(signedTx);
 ```
 
 Result:
@@ -386,13 +390,13 @@ As you see, new multisig account is created and binded to subchain where sender 
 In case account was already in state - get the `rev_t` from information about account:
 
 ```javascript
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
-const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1'
+const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1';
 
-let accountInfo  = await web1337.getFromState(subchain,recipient)
+let accountInfo  = await web1337.getFromState(subchain,recipient);
 
-console.log('Account:\n\n',accountInfo)
+console.log('Account:\n\n',accountInfo);
 ```
 
 ```
@@ -428,27 +432,27 @@ const myKeyPair = {
     pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
     prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
       
-}
+};
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
-const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
+const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880';
 
-const from = myKeyPair.pub
+const from = myKeyPair.pub;
 
-const myPrivateKey = myKeyPair.prv
+const myPrivateKey = myKeyPair.prv;
 
-const nonce = 0
+const nonce = 0;
 
-const fee = 1
+const fee = 1;
 
-const amountInKLY = 13.37
+const amountInKLY = 13.37;
 
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY)
+let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
 
-console.log(signedTx)
+console.log(signedTx);
 ```
 
 
@@ -471,28 +475,28 @@ const myKeyPair = {
     pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
     prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
       
-}
+};
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta'
+const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // It might be Dilithium or BLISS, but doesn't matter for you
-const recipientPQC = 'f5091405e28455880fc4191cbda9f1e57f72399e732222d4639294b66d3a5076'
+const recipientPQC = 'f5091405e28455880fc4191cbda9f1e57f72399e732222d4639294b66d3a5076';
 
-const from = myKeyPair.pub
+const from = myKeyPair.pub;
 
-const myPrivateKey = myKeyPair.prv
+const myPrivateKey = myKeyPair.prv;
 
-const nonce = 0
+const nonce = 0;
 
-const fee = 1
+const fee = 1;
 
-const amountInKLY = 13.37
+const amountInKLY = 13.37;
 
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY)
+let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
 
-console.log(signedTx)
+console.log(signedTx);
 ```
 
 
