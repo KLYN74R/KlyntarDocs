@@ -1,10 +1,6 @@
 # ⚡ Interact with node via websockets
 
-## Create instance
-
-
-
-## Generate TLS certificates
+## Generate TLS certificate
 
 Prepare the `req.cnf` file
 
@@ -58,14 +54,50 @@ cert.key  cert.pem  req.cnf
 root@cb4d8e656db5:~/CERTS#
 ```
 
-
-
 ### Set on server side(it's node)
 
+Add the certificate and key to **KLY\_Plugins/certificates**
 
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+Now, change the **KLY\_Plugins/dev\_websocket\_api/configs.json**
+
+```json
+{
+        
+    "PORT":9999,
+    "HOST":"::",
+
+    "TLS_KEY":"KLY_Plugins/certificates/<NAME>.key",
+    "TLS_CERT":"KLY_Plugins/certificates/<NAME>.crt",
+
+    "mTLS":false,
+    "mTLS_CA":"",
+
+    "KEEP_ALIVE_INTERVAL":20000,
+    "KEEP_ALIVE":true,
+    "KEEP_ALIVE_GRACE_PERIOD":10000,
+    
+    "MAX_FRAME_SIZE":65536,
+    "MAX_MSG_SIZE":1049000000
+
+}
+```
+
+Finally, modify the node configs. Go to the directory of your symbiote where directories **CONFIGS**, **CHAINDATA**, **GENESIS** located.
+
+Modify the **CONFIGS/common.json** section with **PLUGINS** to enable API over WebSockets:
+
+```json
+"PLUGINS":["dev_savitar/server.js","dev_websocket_api/server.js"]
+```
 
 ### Set on client side(API user, web1337 side)
 
+On client side you just need to add the path to certificate to mark it as reliable
 
+
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 ## Usage
