@@ -19,7 +19,7 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 ## Generate keypair
 
 ```javascript
-import {crypto} from './index.js';
+import {crypto} from '@klyntar/web1337';
 
 let keypair = await crypto.kly.generateDefaultEd25519Keypair();
 
@@ -49,7 +49,7 @@ For example:
 Get the first keypair in future chain:
 
 ```javascript
-import {crypto} from './index.js';
+import {crypto} from '@klyntar/web1337';
 
 
 const mnemonic = null;
@@ -84,7 +84,7 @@ For the first pair in future chain of accounts we don't set the mnemonic and BIP
 Now, to build the chain, use this snippet:
 
 ```javascript
-import {crypto} from './index.js';
+import {crypto} from '@klyntar/web1337';
 
 
 const firstKeypairInChain = {
