@@ -30,7 +30,7 @@
 
 ## 🗺 RWX contracts
 
-* [Page 1](rwx-contracts/page-1.md)
+* [Intro to real-world-execution smart contract](rwx-contracts/intro-to-real-world-execution-smart-contract.md)
 
 ## deep dive into KLY
 
