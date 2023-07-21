@@ -28,6 +28,12 @@ Post-quantum cryptography is just coming into play. Unlike other cryptography pr
 
 ### Generate account
 
+{% hint style="info" %}
+Due to some issues with compiling addons for Node.js environment, the use of post-quantum signatures is only possible in Linux environment. Therefore, in order to generate transactions of this kind, you need to use the Web1337 library in a Linux environment or in a container. We'll fix it in the next versions
+{% endhint %}
+
+Clone the Web1337 repository
+
 ### PQC => Ed25519 transaction
 
 ### PQC => BLS(multisig address) transaction

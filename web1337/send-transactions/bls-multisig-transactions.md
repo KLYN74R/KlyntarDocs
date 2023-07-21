@@ -32,7 +32,7 @@ Read detailed information [here](default-ed25519-transactions.md#ed25519-greater
 ### BLS => Ed25519 transaction
 
 ```javascript
-import Web1337,{bls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
@@ -58,10 +58,10 @@ const publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPP
 const privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a';
 
 // General pubkey retrieved from 4 friends public keys
-const rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
+const rootPubKey = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
 
 // Root pubkey of 3 friends who want to use account
-const aggregatePubKeyOfThreeFriends = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
+const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
 
 // Array of pubkeys of friends who dissenting to sign
 const arrayOfAfkSigners = [publicKey4];
@@ -100,7 +100,7 @@ console.log(`[2] ${signature3}`);
 
 // Now, build the transaction, aggregate signatures and send to network
 
-let aggregatedSignatureOfActive = bls.aggregateSignatures([signature1,signature2,signature3]);
+let aggregatedSignatureOfActive = crypto.bls.aggregateSignatures([signature1,signature2,signature3]);
 
 let finalTx = await web1337.createMultisigTransaction(from,aggregatePubKeyOfThreeFriends,aggregatedSignatureOfActive,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
@@ -151,7 +151,7 @@ let result = await web1337.sendTransaction(finalTx)
 ### BLS => BLS(multisig address) transaction
 
 ```javascript
-import Web1337,{bls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
@@ -177,10 +177,10 @@ const publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPP
 const privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a';
 
 // General pubkey retrieved from 4 friends public keys
-const rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
+const rootPubKey = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
 
 // Root pubkey of 3 friends who want to use account
-const aggregatePubKeyOfThreeFriends = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
+const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
 
 // Array of pubkeys of friends who dissenting to sign
 const arrayOfAfkSigners = [publicKey4];
@@ -221,7 +221,7 @@ console.log(`[2] ${signature3}`);
 
 // Now, build the transaction, aggregate signatures and send to network
 
-let aggregatedSignatureOfActive = bls.aggregateSignatures([signature1,signature2,signature3]);
+let aggregatedSignatureOfActive = crypto.bls.aggregateSignatures([signature1,signature2,signature3]);
 
 let finalTx = await web1337.createMultisigTransaction(from,aggregatePubKeyOfThreeFriends,aggregatedSignatureOfActive,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY,rev_t);
 
@@ -269,7 +269,7 @@ Output:
 Here we omit the part of explanations because you just need to know the TBLS root public key of group to send transactions to.
 
 ```javascript
-import Web1337,{bls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
@@ -295,10 +295,10 @@ const publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPP
 const privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a';
 
 // General pubkey retrieved from 4 friends public keys
-const rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
+const rootPubKey = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
 
 // Root pubkey of 3 friends who want to use account
-const aggregatePubKeyOfThreeFriends = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
+const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
 
 // Array of pubkeys of friends who dissenting to sign
 const arrayOfAfkSigners = [publicKey4];
@@ -336,7 +336,7 @@ console.log(`[2] ${signature3}`);
 
 // Now, build the transaction, aggregate signatures and send to network
 
-let aggregatedSignatureOfActive = bls.aggregateSignatures([signature1,signature2,signature3]);
+let aggregatedSignatureOfActive = crypto.bls.aggregateSignatures([signature1,signature2,signature3]);
 
 let finalTx = await web1337.createMultisigTransaction(from,aggregatePubKeyOfThreeFriends,aggregatedSignatureOfActive,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
@@ -384,7 +384,7 @@ Output:
 Here we omit the part of explanations because you just need to know the hash of public key to send transactions to.
 
 ```javascript
-import Web1337,{bls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
@@ -410,10 +410,10 @@ const publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPP
 const privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a';
 
 // General pubkey retrieved from 4 friends public keys
-const rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
+const rootPubKey = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
 
 // Root pubkey of 3 friends who want to use account
-const aggregatePubKeyOfThreeFriends = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
+const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3]);
 
 // Array of pubkeys of friends who dissenting to sign
 const arrayOfAfkSigners = [publicKey4];
@@ -451,7 +451,7 @@ console.log(`[2] ${signature3}`);
 
 // Now, build the transaction, aggregate signatures and send to network
 
-let aggregatedSignatureOfActive = bls.aggregateSignatures([signature1,signature2,signature3]);
+let aggregatedSignatureOfActive = crypto.bls.aggregateSignatures([signature1,signature2,signature3]);
 
 let finalTx = await web1337.createMultisigTransaction(from,aggregatePubKeyOfThreeFriends,aggregatedSignatureOfActive,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 

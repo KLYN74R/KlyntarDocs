@@ -21,7 +21,7 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 ```javascript
 import {crypto} from '@klyntar/web1337';
 
-let keypair = await crypto.kly.generateDefaultEd25519Keypair();
+let keypair = await crypto.ed25519.generateDefaultEd25519Keypair();
 
 console.log(keypair);
 ```
@@ -59,7 +59,7 @@ const bip44Path = null;
 const mnemoPassword = 'HelloKlyntar';
 
 
-let keypair = await crypto.kly.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword);
+let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword);
 
 console.log(keypair)
 ```
@@ -94,9 +94,9 @@ const firstKeypairInChain = {
     prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
 };
 
-console.log('0 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,firstKeypairInChain.bip44Path,'HelloKlyntar'));
-console.log('1 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/1'",'HelloKlyntar'));
-console.log('2 in chain => ',await crypto.kly.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/2'",'HelloKlyntar'));
+console.log('0 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,firstKeypairInChain.bip44Path,'HelloKlyntar'));
+console.log('1 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/1'",'HelloKlyntar'));
+console.log('2 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/2'",'HelloKlyntar'));
 ```
 
 Output:
@@ -128,7 +128,7 @@ Example of simplest transaction - from default account to default account
 
 ```javascript
 // Get your own keys using:
-// Method 0(via Web1337) - await crypto.kly.generateDefaultEd25519Keypair()
+// Method 0(via Web1337) - await crypto.ed25519.generateDefaultEd25519Keypair()
 // Method 1(via Apollo CLI) - apollo keygen
 
 const myKeyPair = {

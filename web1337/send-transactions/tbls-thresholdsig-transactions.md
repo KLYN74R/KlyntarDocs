@@ -35,7 +35,7 @@ So, consider the signature of the first function generateTBLS() It has the follo
 Let's generate
 
 ```javascript
-import {tbls} from '@klyntar/web1337'
+import {crypto} from '@klyntar/web1337'
 
 
 
@@ -46,7 +46,7 @@ let myPubId = 1 // our ID
 let pubKeysArr = [1,2,3,4,5,6] // array of identifiers of all members
 
 
-let {verificationVector,secretShares,id} = tbls.generateTBLS(threshold,myPubId,pubKeysArr)
+let {verificationVector,secretShares,id} = crypto.tbls.generateTBLS(threshold,myPubId,pubKeysArr)
 
 
 console.log('Use with VV => ',verificationVector)
@@ -385,7 +385,7 @@ let VERIFICATION_VECTOR_OF_FRIEND_1 = [
 
 let ID_OF_FRIEND_4 = "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"
 
-let isShareOK = tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1) // true
+let isShareOK = crypto.tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1) // true
 
 console.log(isShareOK) //true
 ```
@@ -406,7 +406,7 @@ let VERIFICATION_VECTOR_OF_FRIEND_1 = [
 
 let ID_OF_FRIEND_4 = "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"
 
-let isShareOK = tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1) // true
+let isShareOK = crypto.tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1) // true
 
 console.log(isShareOK) //false
 
@@ -747,13 +747,13 @@ let message = 'WE BUY A TENT FOR 300$'
 
 //------------------------------------------ Here's partial signatures ------------------------------------------
 
-let sigShare1 = tbls.signTBLS(ID_1,sharedPayloadFor1,message) //{"sigShare":"fe789c95b112099b370d0dfdb7aae4fb80087aa2cea0334266de5792ee27d617","id":"4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a"}
+let sigShare1 = crypto.tbls.signTBLS(ID_1,sharedPayloadFor1,message) //{"sigShare":"fe789c95b112099b370d0dfdb7aae4fb80087aa2cea0334266de5792ee27d617","id":"4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a"}
 
-let sigShare2 = tbls.signTBLS(ID_2,sharedPayloadFor2,message) //{"sigShare":"3cafeb0275cea62faf29df46c3d7bb52e1a6d33ab89aa0ad53d5bf1f53a0e285","id":"dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906"}
+let sigShare2 = crypto.tbls.signTBLS(ID_2,sharedPayloadFor2,message) //{"sigShare":"3cafeb0275cea62faf29df46c3d7bb52e1a6d33ab89aa0ad53d5bf1f53a0e285","id":"dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906"}
 
-let sigShare3 = tbls.signTBLS(ID_3,sharedPayloadFor3,message) //{"sigShare":"14a7a88ad49586e8c5a4e2c87b91b82f005fc595e60bd39b3a8d1cc3d20c9815","id":"084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905"}
+let sigShare3 = crypto.tbls.signTBLS(ID_3,sharedPayloadFor3,message) //{"sigShare":"14a7a88ad49586e8c5a4e2c87b91b82f005fc595e60bd39b3a8d1cc3d20c9815","id":"084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905"}
 
-let sigShare4 = tbls.signTBLS(ID_4,sharedPayloadFor4,message) //{"sigShare":"6b46897a312f2e9e8f515f359f2adeb50c5c9fb5f6317c535a9a351c3e5f6e8a","id":"e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"}
+let sigShare4 = crypto.tbls.signTBLS(ID_4,sharedPayloadFor4,message) //{"sigShare":"6b46897a312f2e9e8f515f359f2adeb50c5c9fb5f6317c535a9a351c3e5f6e8a","id":"e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"}
 
 ```
 
@@ -784,7 +784,7 @@ let sigShareAndId4={sigShare:"6b46897a312f2e9e8f515f359f2adeb50c5c9fb5f6317c535a
 
 
 
-let masterSignature = tbls.buildSignature([sigShareAndId1,sigShareAndId2,sigShareAndId3,sigShareAndId4]) //46c1f011e7d7039bb77a638e60e7e1c3acbfb3124ec2b06b918f1fd5d4a0b39c
+let masterSignature = crypto.tbls.buildSignature([sigShareAndId1,sigShareAndId2,sigShareAndId3,sigShareAndId4]) //46c1f011e7d7039bb77a638e60e7e1c3acbfb3124ec2b06b918f1fd5d4a0b39c
 
 ```
 
@@ -807,7 +807,7 @@ let masterSig = '46c1f011e7d7039bb77a638e60e7e1c3acbfb3124ec2b06b918f1fd5d4a0b39
 
 let message = 'WE BUY A TENT FOR 300$'
 
-let isOk = module.verifyTBLS(masterPub,masterSig,message) //true
+let isOk = crypto.tbls.verifyTBLS(masterPub,masterSig,message) //true
 ```
 
 {% hint style="success" %}
@@ -819,7 +819,7 @@ Now, let's build the transactions
 ### TBLS => Ed25519 transaction
 
 ```javascript
-import Web1337,{tbls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
@@ -866,7 +866,7 @@ const tblsAccounts = {
 }
 
 
-const rootPubKey = tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
 
 
 // ID of subchain where you want to transfer KLY or call contract
@@ -948,7 +948,7 @@ The same for TBLs but remember about `rev_t` for new account
 {% endhint %}
 
 ```javascript
-import Web1337,{tbls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 let web1337 = new Web1337({
@@ -995,7 +995,7 @@ const tblsAccounts = {
 }
 
 
-const rootPubKey = tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
 
 
 // ID of subchain where you want to transfer KLY or call contract
@@ -1078,7 +1078,7 @@ Output:
 Here you just need to set the master pubkey of recipient. The structure as for => Ed25519 tx
 
 ```javascript
-import Web1337,{tbls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 
@@ -1127,7 +1127,7 @@ const tblsAccounts = {
 }
 
 
-const rootPubKey = tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
 
 
 // ID of subchain where you want to transfer KLY or call contract
@@ -1212,7 +1212,7 @@ The address of PQC account is BLAKE3 256-bit hash of public key&#x20;
 
 ```javascript
 
-import Web1337,{tbls} from '@klyntar/web1337';
+import Web1337,{crypto} from '@klyntar/web1337';
 
 
 
@@ -1261,7 +1261,7 @@ const tblsAccounts = {
 }
 
 
-const rootPubKey = tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
 
 
 // ID of subchain where you want to transfer KLY or call contract
