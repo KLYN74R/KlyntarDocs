@@ -39,7 +39,7 @@ let web1337 = new Web1337({
 
 });
 
-const dilithiumKeypair = web1337.crypto.pqc.dilithium.generateDilithiumKeypair();
+const dilithiumKeypair = crypto.pqc.dilithium.generateDilithiumKeypair();
 
 console.log(dilithiumKeypair);
 
