@@ -28,50 +28,22 @@ Post-quantum cryptography is just coming into play. Unlike other cryptography pr
 
 ### Generate account
 
-{% hint style="info" %}
-Due to some issues with compiling addons for Node.js environment, the use of post-quantum signatures is only possible in Linux environment. Therefore, in order to generate transactions of this kind, you need to use the Web1337 library in a Linux environment or in a container. We'll fix it in the next versions.\
-\
-We recommend you to use our **All-In-One** docker container with pre-installed needed tools like node-gyp and appropriate envs & langs (Node.js, Python, Go, etc.). Here is the link - [klyntar/all\_in\_one:v3.0.0](https://hub.docker.com/repository/docker/klyntar/all\_in\_one/general). Just clone and run. Then go into container and have fun!
-{% endhint %}
-
-When you're in container, clone the Web1337 repository, install dependecies and build the addons
-
-```sh
-git clone https://github.com/KLYN74R/Web1337.git
-
-cd Web1337
-
-pnpm install && pnpm run build
-```
-
-If the installation & build are ok, you should see this after build
-
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="success" %}
-If you use our container, then this is actually a 100% guarantee that everything will work.
-{% endhint %}
-
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
-
-Now, in this directory, you can create the JS file to use Web1337 with PQC
-
-```sh
-touch pqc_test.js
-```
-
-Then, in this file, use it to generate keypairs
-
 ```javascript
-import {crypto} from '../../index.js';
+import Web1337,{crypto} from '@klyntar/web1337';
 
+let web1337 = new Web1337({
 
-const dilithiumKeypair = crypto.pqc.dilithium.generateDilithiumKeypair();
+    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    workflowVersion:0,
+    nodeURL: 'http://localhost:7332'
+
+});
+
+const dilithiumKeypair = web1337.crypto.pqc.dilithium.generateDilithiumKeypair();
 
 console.log(dilithiumKeypair);
 
-
-const blissKeypair = crypto.pqc.bliss.generateBlissKeypair();
+const blissKeypair = web1337.crypto.pqc.bliss.generateBlissKeypair();
 
 console.log(blissKeypair);
 ```
@@ -105,7 +77,7 @@ Now, you can use these addresses on KLY network&#x20;
 ### PQC => Ed25519 transaction
 
 ```javascript
-import Web1337 from './index.js';
+import Web1337 from '@klyntar/web1337';
 
 
 
@@ -169,10 +141,6 @@ console.log(signedBlissTx);
 
 Output:
 
-{% hint style="info" %}
-To show you that you can do it in our pre-prepared container - we add the screen of console
-{% endhint %}
-
 _<mark style="color:red;">**Dilithium**</mark>_
 
 <figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
@@ -218,15 +186,15 @@ _<mark style="color:red;">**BLISS**</mark>_
 Then, this transaction can be send to mempool with default way:
 
 ```javascript
-await web1337.sendTransaction(signedDilithiumTx)
+await web1337.sendTransaction(signedDilithiumTx);
 
-await web1337.sendTransaction(signedBlissTx)
+await web1337.sendTransaction(signedBlissTx);
 
 
 // and get the receipt later. Reminder - id of tx and receipt is 256-bit BLAKE3 hash of transaction signature
 
-let receipt1 = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedDilithiumTx))
-let receipt2 = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedBlissTx))
+let receipt1 = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedDilithiumTx));
+let receipt2 = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedBlissTx));
 ```
 
 ###
@@ -236,7 +204,7 @@ let receipt2 = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedBlis
 No rocket science - just add the `rev_t` field to transaction building process
 
 ```javascript
-import Web1337 from './index.js';
+import Web1337 from '@klyntar/web1337';
 
 
 
@@ -345,7 +313,7 @@ Output:
 Nothing hard - just change the recipient to 96-bytes TBLS master public key
 
 ```javascript
-import Web1337 from './index.js';
+import Web1337 from '@klyntar/web1337';
 
 
 
@@ -414,7 +382,7 @@ console.log(signedBlissTx);
 Set the 256-bit PQC address of recipient
 
 ```javascript
-import Web1337 from './index.js';
+import Web1337 from '@klyntar/web1337';
 
 
 
