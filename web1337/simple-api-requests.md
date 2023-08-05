@@ -8,11 +8,11 @@ description: Simple, one-line APIs. No rocket science
 
 We also have a Postman organization account where we publish API for KLY. Use it if you need
 
+<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+
 {% embed url="https://documenter.getpostman.com/view/25402389/2s93Y2S2FJ#097a6b76-d477-48c0-90b2-edb5743ebbf7" %}
 
 ## Create the Web1337 instance
-
-
 
 Here you just need to import the library to your project workspace and create the instance using this snippet:
 
@@ -30,8 +30,8 @@ let web1337 = new Web1337({
 });
 ```
 
-* **symbioteID** - 256-bit identificator of appropriate symbiote(something like chain id in EVM)
-* **workflowVersion** - major version number of workflow of your symbiote to make sure you know the furthe logic in this version
+* **symbioteID** - 256-bit identifier of appropriate symbiote(something like chain id in EVM). On a technical level, this is the BLAKE3 manifest hash of the chain file which includes the genesis hash, the repository version hash and so on. For maximum security, it is recommended to include the manifest in several blockchains (hostchains) at once
+* **workflowVersion** - major version number of workflow of your symbiote to make sure you know the further logic in this version
 * **nodeURL** - the endpoint of node to interact with network. It might be your own node, Node-as-a-Service provider, etc.
 * **proxyURL** - the URL of proxy that will be used to interact with node. It might be HTTP(s) or SOCKS proxy(to allow connections over TOR/I2P or other SOCKS)
 
@@ -235,13 +235,13 @@ This data has no defined structure because node owner sets this data in configs.
 
 Also, since KLY supports routes disabling(see in configs), you can stop native route implementation, override it and inform node users about this.
 
-Saying, you've found interesting plugin with advance filtering system before adding transactions to mempool and want to use this logic of txs acception instead of native one. For tis you should disable native route:
+Saying, you've found interesting plugin with advance filtering system before adding transactions to mempool and want to use this logic of txs acception instead of native one. For this you should disable native route:
 
 <pre class="language-javascript"><code class="lang-javascript"><strong>CONFIG.SYMBIOTE.TRIGGERS.MAIN.ACCEPT_TXS:false
 </strong></code></pre>
 
 {% hint style="info" %}
-See workflow.json to find this option
+See **workflow.json** to find this option
 {% endhint %}
 
 Then, enable the plugin:

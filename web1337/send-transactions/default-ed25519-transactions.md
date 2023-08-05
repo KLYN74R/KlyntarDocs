@@ -63,7 +63,7 @@ const mnemoPassword = 'HelloKlyntar';
 
 let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword);
 
-console.log(keypair)
+console.log(keypair);
 ```
 
 Output:
