@@ -21,7 +21,7 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 ## Generate keypair
 
 ```javascript
-import {crypto} from '@klyntar/web1337';
+import {crypto} from 'web1337';
 
 let keypair = await crypto.ed25519.generateDefaultEd25519Keypair();
 
@@ -51,7 +51,7 @@ For example:
 Get the first keypair in future chain:
 
 ```javascript
-import {crypto} from '@klyntar/web1337';
+import {crypto} from 'web1337';
 
 
 const mnemonic = null;
@@ -86,7 +86,7 @@ For the first pair in future chain of accounts we don't set the mnemonic and BIP
 Now, to build the chain, use this snippet:
 
 ```javascript
-import {crypto} from '@klyntar/web1337';
+import {crypto} from 'web1337';
 
 
 const firstKeypairInChain = {
@@ -253,7 +253,7 @@ Going back to the 4 friends example, if we have a threshold of 3/4, then it make
 You and 3 your friends generate multisig pairs(public + private key) locally. Let's do it with Web1337:
 
 ```javascript
-import {bls} from '@klyntar/web1337'
+import {bls} from 'web1337'
 
 let privateKey1 = await bls.generatePrivateKey();
 let publicKey1 = bls.derivePubKey(privateKey1);

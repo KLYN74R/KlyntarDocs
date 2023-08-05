@@ -18,4 +18,4 @@ In conclusion, we can add that Web1337 is Web3++, since KLY offers more features
 
 ## Support
 
-Web1337 is currently available for JavaScript environments, but we will be adding Web1337 for Python, Rust, and other languages soon. Stay tuned!
+Web1337 is now available for JavaScript environments, but we will be adding Web1337 for Python, Rust, and other languages soon. Stay tuned!

@@ -17,7 +17,7 @@ We also have a Postman organization account where we publish API for KLY. Use it
 Here you just need to import the library to your project workspace and create the instance using this snippet:
 
 ```javascript
-import Web1337 from '@klyntar/web1337'
+import Web1337 from 'web1337'
 
 
 let web1337 = new Web1337({

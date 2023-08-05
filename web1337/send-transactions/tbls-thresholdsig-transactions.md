@@ -35,7 +35,7 @@ So, consider the signature of the first function generateTBLS() It has the follo
 Let's generate
 
 ```javascript
-import {crypto} from '@klyntar/web1337'
+import {crypto} from 'web1337'
 
 
 
@@ -819,7 +819,7 @@ Now, let's build the transactions
 ### TBLS => Ed25519 transaction
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 let web1337 = new Web1337({
@@ -948,7 +948,7 @@ The same for TBLs but remember about `rev_t` for new account
 {% endhint %}
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 let web1337 = new Web1337({
@@ -1078,7 +1078,7 @@ Output:
 Here you just need to set the master pubkey of recipient. The structure as for => Ed25519 tx
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 
@@ -1212,7 +1212,7 @@ The address of PQC account is BLAKE3 256-bit hash of public key&#x20;
 
 ```javascript
 
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 

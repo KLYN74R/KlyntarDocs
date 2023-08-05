@@ -32,7 +32,7 @@ Read detailed information [here](default-ed25519-transactions.md#ed25519-greater
 ### BLS => Ed25519 transaction
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 let web1337 = new Web1337({
@@ -151,7 +151,7 @@ let result = await web1337.sendTransaction(finalTx)
 ### BLS => BLS(multisig address) transaction
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 let web1337 = new Web1337({
@@ -269,7 +269,7 @@ Output:
 Here we omit the part of explanations because you just need to know the TBLS root public key of group to send transactions to.
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 let web1337 = new Web1337({
@@ -384,7 +384,7 @@ Output:
 Here we omit the part of explanations because you just need to know the hash of public key to send transactions to.
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 
 let web1337 = new Web1337({

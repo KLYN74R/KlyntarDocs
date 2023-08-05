@@ -24,7 +24,7 @@ Due to the peculiarities of each of them, we decided to show how to conduct tran
 It's initial step - as previously
 
 ```javascript
-import Web1337 from '@klyntar/web1337'
+import Web1337 from 'web1337'
 
 
 let web1337 = new Web1337({

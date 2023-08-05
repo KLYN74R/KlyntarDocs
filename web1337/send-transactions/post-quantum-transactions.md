@@ -29,7 +29,7 @@ Post-quantum cryptography is just coming into play. Unlike other cryptography pr
 ### Generate account
 
 ```javascript
-import Web1337,{crypto} from '@klyntar/web1337';
+import Web1337,{crypto} from 'web1337';
 
 let web1337 = new Web1337({
 
@@ -77,7 +77,7 @@ Now, you can use these addresses on KLY network&#x20;
 ### PQC => Ed25519 transaction
 
 ```javascript
-import Web1337 from '@klyntar/web1337';
+import Web1337 from 'web1337';
 
 
 
@@ -204,7 +204,7 @@ let receipt2 = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedBlis
 No rocket science - just add the `rev_t` field to transaction building process
 
 ```javascript
-import Web1337 from '@klyntar/web1337';
+import Web1337 from 'web1337';
 
 
 
@@ -313,7 +313,7 @@ Output:
 Nothing hard - just change the recipient to 96-bytes TBLS master public key
 
 ```javascript
-import Web1337 from '@klyntar/web1337';
+import Web1337 from 'web1337';
 
 
 
@@ -382,7 +382,7 @@ console.log(signedBlissTx);
 Set the 256-bit PQC address of recipient
 
 ```javascript
-import Web1337 from '@klyntar/web1337';
+import Web1337 from 'web1337';
 
 
 
