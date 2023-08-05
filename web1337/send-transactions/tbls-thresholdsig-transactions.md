@@ -35,23 +35,23 @@ So, consider the signature of the first function generateTBLS() It has the follo
 Let's generate
 
 ```javascript
-import {crypto} from 'web1337'
+import {crypto} from 'web1337';
 
 
 
-let threshold = 4 // 4/6
+let threshold = 4; // 4/6
 
-let myPubId = 1 // our ID
+let myPubId = 1; // our ID
 
-let pubKeysArr = [1,2,3,4,5,6] // array of identifiers of all members
-
-
-let {verificationVector,secretShares,id} = crypto.tbls.generateTBLS(threshold,myPubId,pubKeysArr)
+let pubKeysArr = [1,2,3,4,5,6]; // array of identifiers of all members
 
 
-console.log('Use with VV => ',verificationVector)
-console.log('Array of secret shares to share among friends => ',secretShares)
-console.log('Your id => ',id)
+let {verificationVector,secretShares,id} = crypto.tbls.generateTBLS(threshold,myPubId,pubKeysArr);
+
+
+console.log('Use with VV => ',verificationVector);
+console.log('Array of secret shares to share among friends => ',secretShares);
+console.log('Your id => ',id);
 
 ```
 
@@ -101,6 +101,7 @@ And so on
 
 At this stage, friends will receive 96-bytes hex encoded address in the KLY network to which they can send funds for shared use. For this purpose, they exchange verification vectors. When you receive 5 verification vectors from 5 other friends, then add your sixth one and call the `deriveGroupPubTBLS()` function. But before we break it down, let's create some imaginary dataset with the data of the other 5 friends. So, let it look like this:
 
+{% code fullWidth="false" %}
 ```javascript
 /*
 
@@ -216,6 +217,7 @@ Array of shares
 ID=e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11
 
 ```
+{% endcode %}
 
 We call the public key generation function of our group. In this case, we equate the concept of **public key/network address**. In any case, the address can be obtained from the public key. So, we have:
 
@@ -227,7 +229,7 @@ let vv1 =
     "0003e06c68ba56e45db0ee64a06a6935554e0b7f4849da26223cf831cdfd341bf9fe628590eb436197145206eb8f2eb0baef673eff23f63eaa6fe74e59da7c05",
     "53ad69e15e782a60fe63ee07d9e768dff002dfc54fa6fd6e4ea4531fc00d2700472fb244c9fa740ec354e417e8bd241c875caf29c4abad251a042d7becca4d15",
     "21b090515bf15d9ec6c4f4dd4df5f49a64f21e9b9c268b91b09bd77adcf2d517303fe3cf3bdd710ab783ae413476f7ccd050c1be02524a42484243b47767b71f"
-]
+];
 
 let vv2 = 
 [
@@ -236,7 +238,7 @@ let vv2 =
     "775449cde76ce6333c53317e6b6a1eb47ee87af2bc56548bb38fea5da266dd0704ae043c288f9fb792b870128738ad7360454724325b5260bb45e332a3d51221",
     "dd5a9d1f3236dd7e091dcb4272fb3cec624c22a0e59de283ce345603850e180e263806875158263b2bd46f0b7af4d78596e43008948431b07d174b6c8d6da388",
     "8176bdd4610dd21cdb6bfb9b526a9e3ee2804c57ac9b9094235a4c1947c2f20aa1282cc8dd5e2ec09183c677920106024aab0bd9a2ecaa5539ff9e1c4025d1a3"
-]
+];
 
 let vv3 = 
 [
@@ -244,7 +246,7 @@ let vv3 =
     "62b9b08eadbbb20ef840923c89ac53b73aa31fa3e493097f49496693a795131b46dba854f76bfaf369beb77a7a80e2fe66525b16341a88022e1dc635bd7dc385",
     "2577181e0384bc99ceb066acf69323e236160796df37f6e688d3274e4e026a03997460021b39da01a8a1465566e08f6a455333742fb6646f11beeab2a8dd2420",
     "b2a2ace162f22b200c7aa807083bae80e69214dcdaa9708c66f81d1e8d4a0c18c3b459214292bd683c9b80809ea3e7e95288656caf0b34ec260b820a79b08520"
-]
+];
 
 
 let vv4 = 
@@ -253,7 +255,7 @@ let vv4 =
     "6edfa6a70925257e952f161d941092bf30cd70d1f27a6cba53affbe9de7a450dfc02b5c500fbeb9ca2443df0a941269ad65c8bede560f033ae802d6499281a9e",
     "492a5db1fdf4f133e4d8e92c0637ae13a8da6f19bc93da4ed6b0736d8bc602063a229846a43e18b8ba39de1cdba274a11fcda3cf482e3ca908cdf3c3f7ffdb04",
     "8396e4d78a12580388c919b8a201036d48a1470c9684eb653ea89f458927730bc32e8f91763dfce581ff60125664cd6e1a20ed684677a6d8dccbb6b23c3a0182"
-]
+];
 
 let vv5 = 
 [
@@ -263,7 +265,7 @@ let vv5 =
     "d88949fae2178d3e601abd22f47f64dfd9f8a532d6abd57b3957f0197480cc1b6effc65b04b475279c8de4c585ad8ba518cf35df406fdca8e5f51d5a6918360b",
     "019c9a96b62afb4210616244cdc42936b503814762132658a20c283b9dfe3d005c1c7415903ed953c71539961e911602c8a272d41d5d08184a5f269ee08a941e"
     
-]
+];
 
 let vv6 = 
 [
@@ -271,11 +273,11 @@ let vv6 =
     "117b180362500cdbd655d3bb0f97b22b57521302938ce5a34e4bcf3c2988ad10688116b0bedd6215aae314bfb240158834b87bd828c01454916d5066d1241691",
     "2c811310b69511e286bd898a6d0f5a306594357e4faee25e69b76cc21b74e5118d96a26e59263dbfe7819be40d7f404d57dca16c9c17ba3c0f95cd531c133593",
     "93d15991f4f0269886cc3e1b99bf2b79bba44ecdc00891bc4b8e6195e1b14e1557ddf84001ef06d5cc0a3f19502f320bfc6f7e11ed75eb21731f68629897461b"
-]
+];
 
-let rootPubKey = tbls.deriveGroupPubTBLS([vv1,vv2,vv3,vv4,vv5,vv6])
+let rootPubKey = tbls.deriveGroupPubTBLS([vv1,vv2,vv3,vv4,vv5,vv6]);
 
-console.log(rootPubKey) //8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004bffb1458faa045f2c9a640acb466c5c35e2c9af757ac7fad74e3865b8527452619236822f9797
+console.log(rootPubKey); //8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004bffb1458faa045f2c9a640acb466c5c35e2c9af757ac7fad74e3865b8527452619236822f9797
 ```
 
 ### Step 4 - verify the shares
@@ -372,7 +374,7 @@ VERIFICATION_VECTOR_OF_FRIEND_1 = [
 Ok, let's verify
 
 ```javascript
-let SHARE_FROM_FRIEND_1 = "0f0389cb5fdc97c14d3c494ada022bafb78988efb891258b9c487b9475febd0a"
+let SHARE_FROM_FRIEND_1 = "0f0389cb5fdc97c14d3c494ada022bafb78988efb891258b9c487b9475febd0a";
 
 let VERIFICATION_VECTOR_OF_FRIEND_1 = [
     
@@ -381,19 +383,19 @@ let VERIFICATION_VECTOR_OF_FRIEND_1 = [
     "53ad69e15e782a60fe63ee07d9e768dff002dfc54fa6fd6e4ea4531fc00d2700472fb244c9fa740ec354e417e8bd241c875caf29c4abad251a042d7becca4d15",
     "21b090515bf15d9ec6c4f4dd4df5f49a64f21e9b9c268b91b09bd77adcf2d517303fe3cf3bdd710ab783ae413476f7ccd050c1be02524a42484243b47767b71f"
     
-]
+];
 
-let ID_OF_FRIEND_4 = "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"
+let ID_OF_FRIEND_4 = "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11";
 
-let isShareOK = crypto.tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1) // true
+let isShareOK = crypto.tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1); // true
 
-console.log(isShareOK) //true
+console.log(isShareOK); //true
 ```
 
 Now imagine that we change a single byte of share(last `a` becomes `b`):
 
 ```javascript
-let SHARE_FROM_FRIEND_1 = "0f0389cb5fdc97c14d3c494ada022bafb78988efb891258b9c487b9475febd0b"
+let SHARE_FROM_FRIEND_1 = "0f0389cb5fdc97c14d3c494ada022bafb78988efb891258b9c487b9475febd0b";
 
 let VERIFICATION_VECTOR_OF_FRIEND_1 = [
     
@@ -402,13 +404,13 @@ let VERIFICATION_VECTOR_OF_FRIEND_1 = [
     "53ad69e15e782a60fe63ee07d9e768dff002dfc54fa6fd6e4ea4531fc00d2700472fb244c9fa740ec354e417e8bd241c875caf29c4abad251a042d7becca4d15",
     "21b090515bf15d9ec6c4f4dd4df5f49a64f21e9b9c268b91b09bd77adcf2d517303fe3cf3bdd710ab783ae413476f7ccd050c1be02524a42484243b47767b71f"
     
-]
+];
 
-let ID_OF_FRIEND_4 = "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"
+let ID_OF_FRIEND_4 = "e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11";
 
-let isShareOK = crypto.tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1) // true
+let isShareOK = crypto.tbls.verifyShareTBLS(ID_OF_FRIEND_4,SHARE_FROM_FRIEND_1,VERIFICATION_VECTOR_OF_FRIEND_1); // true
 
-console.log(isShareOK) //false
+console.log(isShareOK); //false
 
 ```
 
@@ -472,7 +474,7 @@ let vv1=[
     "53ad69e15e782a60fe63ee07d9e768dff002dfc54fa6fd6e4ea4531fc00d2700472fb244c9fa740ec354e417e8bd241c875caf29c4abad251a042d7becca4d15",
     "21b090515bf15d9ec6c4f4dd4df5f49a64f21e9b9c268b91b09bd77adcf2d517303fe3cf3bdd710ab783ae413476f7ccd050c1be02524a42484243b47767b71f",
 
-]
+];
 
 let sharesOf1=[
 
@@ -483,7 +485,7 @@ let sharesOf1=[
     "c8472e66991a8a1121a5f89f3ae5c1200455f77da838b965f8b9ef5af0701e07",
     "565a252bc870bdcf046fb76a25c45c56cab9d4a5624e794319dd13dbc7e9781f"
 
-]
+];
 
 let ID_1 = '4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a'
 
@@ -496,7 +498,7 @@ let vv2=[
     "775449cde76ce6333c53317e6b6a1eb47ee87af2bc56548bb38fea5da266dd0704ae043c288f9fb792b870128738ad7360454724325b5260bb45e332a3d51221",
     "dd5a9d1f3236dd7e091dcb4272fb3cec624c22a0e59de283ce345603850e180e263806875158263b2bd46f0b7af4d78596e43008948431b07d174b6c8d6da388",
     "8176bdd4610dd21cdb6bfb9b526a9e3ee2804c57ac9b9094235a4c1947c2f20aa1282cc8dd5e2ec09183c677920106024aab0bd9a2ecaa5539ff9e1c4025d1a3"
-]
+];
 
 let sharesOf2=[
 
@@ -507,10 +509,10 @@ let sharesOf2=[
     'd7f329f64448ddd56350a2a3a45d944679a2c4fc76ecb3770d760592b08c8b0a',
     '2ddedf940ea38c9809735793cec9ded6d0d6e573181611c0f3efa604b6b92e1c'
 
-]
+];
 
 
-let ID_2 = 'dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906'
+let ID_2 = 'dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906';
 
 
 //------------------------------- FRIEND 3 -------------------------------
@@ -521,7 +523,7 @@ let vv3=[
     "62b9b08eadbbb20ef840923c89ac53b73aa31fa3e493097f49496693a795131b46dba854f76bfaf369beb77a7a80e2fe66525b16341a88022e1dc635bd7dc385",
     "2577181e0384bc99ceb066acf69323e236160796df37f6e688d3274e4e026a03997460021b39da01a8a1465566e08f6a455333742fb6646f11beeab2a8dd2420",
     "b2a2ace162f22b200c7aa807083bae80e69214dcdaa9708c66f81d1e8d4a0c18c3b459214292bd683c9b80809ea3e7e95288656caf0b34ec260b820a79b08520"
-]
+];
 
 let sharesOf3=[
 
@@ -532,10 +534,10 @@ let sharesOf3=[
     'd9dc10623e261047a0ac924595c356f5d9b192ab28f29276bf5c21206c143902',
     '952e03949438a001aafb2b1e864635c25b229047fc85b3178dd1d049ecbdcd04'
 
-]
+];
 
 
-let ID_3 = '084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905'
+let ID_3 = '084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905';
 
 //------------------------------- FRIEND 4 -------------------------------
 
@@ -545,7 +547,7 @@ let vv4=[
     "6edfa6a70925257e952f161d941092bf30cd70d1f27a6cba53affbe9de7a450dfc02b5c500fbeb9ca2443df0a941269ad65c8bede560f033ae802d6499281a9e",
     "492a5db1fdf4f133e4d8e92c0637ae13a8da6f19bc93da4ed6b0736d8bc602063a229846a43e18b8ba39de1cdba274a11fcda3cf482e3ca908cdf3c3f7ffdb04",
     "8396e4d78a12580388c919b8a201036d48a1470c9684eb653ea89f458927730bc32e8f91763dfce581ff60125664cd6e1a20ed684677a6d8dccbb6b23c3a0182"
-]
+];
 
 let sharesOf4=[
 
@@ -556,9 +558,9 @@ let sharesOf4=[
     '3569f445bbc8274318a0a3e761c016610bcb8b2cb414b49a76979181f9a3480f',
     'b7a2bc301f42f0aa7acff13015b5c28ddd13d8b3fee5f3f81978463bba5efb16'
 
-]
+];
 
-let ID_4 = 'e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11'
+let ID_4 = 'e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11';
 
 
 //------------------------------- FRIEND 5 -------------------------------
@@ -570,7 +572,7 @@ let vv5=[
     "cad2ef53a9dfe02a92606a34f40868fd746209a4ede0c790e0d3ec5e4c90021019b65c7550174fc117aed8d0aa619b94ddd1c08b7a573b9810490e3bbc36ba01",
     "d88949fae2178d3e601abd22f47f64dfd9f8a532d6abd57b3957f0197480cc1b6effc65b04b475279c8de4c585ad8ba518cf35df406fdca8e5f51d5a6918360b",
     "019c9a96b62afb4210616244cdc42936b503814762132658a20c283b9dfe3d005c1c7415903ed953c71539961e911602c8a272d41d5d08184a5f269ee08a941e"
-]
+];
 
 
 let sharesOf5=[
@@ -582,9 +584,9 @@ let sharesOf5=[
     'f1271c0a82ef0173a8584b61b9991428ed5aa4e1052318827cd13bce3e076b1b',
     '455c84ebeb83ca3ef8c71d09bc310083848ca694244997dbbff4a74af3745a09'
 
-]
+];
 
-let ID_5='e77b9a9ae9e30b0dbdb6f510a264ef9de781501d7b6b92ae89eb059c5ab7431b'
+let ID_5='e77b9a9ae9e30b0dbdb6f510a264ef9de781501d7b6b92ae89eb059c5ab7431b';
 
 
 
@@ -597,7 +599,7 @@ let vv6=[
     "117b180362500cdbd655d3bb0f97b22b57521302938ce5a34e4bcf3c2988ad10688116b0bedd6215aae314bfb240158834b87bd828c01454916d5066d1241691",
     "2c811310b69511e286bd898a6d0f5a306594357e4faee25e69b76cc21b74e5118d96a26e59263dbfe7819be40d7f404d57dca16c9c17ba3c0f95cd531c133593",
     "93d15991f4f0269886cc3e1b99bf2b79bba44ecdc00891bc4b8e6195e1b14e1557ddf84001ef06d5cc0a3f19502f320bfc6f7e11ed75eb21731f68629897461b"
-]
+];
 
 let sharesOf6=[
 
@@ -608,9 +610,9 @@ let sharesOf6=[
     '2c84ae3f4fd9d4b8eb3c60e26b248086ff66892cda1a4fa5834cedfebee5cc0c',
     '00f055619d846105cb5de592f1b4f9b209fd8db6b29bf22fd6859dac91102322'
 
-]
+];
 
-let ID_6='67586e98fad27da0b9968bc039a1ef34c939b9b8e523a8bef89d478608c5ec16'
+let ID_6='67586e98fad27da0b9968bc039a1ef34c939b9b8e523a8bef89d478608c5ec16';
 
 
 
@@ -647,7 +649,7 @@ let sharedPayloadFor1 = [
         secretKeyShare:sharesOf6[0]
     }
 
-]
+];
 
 
 let sharedPayloadFor2 = [
@@ -677,7 +679,7 @@ let sharedPayloadFor2 = [
         secretKeyShare:sharesOf6[1]
     }
 
-]
+];
 
 
 let sharedPayloadFor3 = [
@@ -707,7 +709,7 @@ let sharedPayloadFor3 = [
         secretKeyShare:sharesOf6[2]
     }
 
-]
+];
 
 
 
@@ -738,7 +740,7 @@ let sharedPayloadFor4 = [
         secretKeyShare:sharesOf6[3]
     }
 
-]
+];
 
 
 // Let the message will be a solution to buy a tent for "Burning Man"
@@ -747,13 +749,13 @@ let message = 'WE BUY A TENT FOR 300$'
 
 //------------------------------------------ Here's partial signatures ------------------------------------------
 
-let sigShare1 = crypto.tbls.signTBLS(ID_1,sharedPayloadFor1,message) //{"sigShare":"fe789c95b112099b370d0dfdb7aae4fb80087aa2cea0334266de5792ee27d617","id":"4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a"}
+let sigShare1 = crypto.tbls.signTBLS(ID_1,sharedPayloadFor1,message); //{"sigShare":"fe789c95b112099b370d0dfdb7aae4fb80087aa2cea0334266de5792ee27d617","id":"4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a"}
 
-let sigShare2 = crypto.tbls.signTBLS(ID_2,sharedPayloadFor2,message) //{"sigShare":"3cafeb0275cea62faf29df46c3d7bb52e1a6d33ab89aa0ad53d5bf1f53a0e285","id":"dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906"}
+let sigShare2 = crypto.tbls.signTBLS(ID_2,sharedPayloadFor2,message); //{"sigShare":"3cafeb0275cea62faf29df46c3d7bb52e1a6d33ab89aa0ad53d5bf1f53a0e285","id":"dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906"}
 
-let sigShare3 = crypto.tbls.signTBLS(ID_3,sharedPayloadFor3,message) //{"sigShare":"14a7a88ad49586e8c5a4e2c87b91b82f005fc595e60bd39b3a8d1cc3d20c9815","id":"084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905"}
+let sigShare3 = crypto.tbls.signTBLS(ID_3,sharedPayloadFor3,message); //{"sigShare":"14a7a88ad49586e8c5a4e2c87b91b82f005fc595e60bd39b3a8d1cc3d20c9815","id":"084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905"}
 
-let sigShare4 = crypto.tbls.signTBLS(ID_4,sharedPayloadFor4,message) //{"sigShare":"6b46897a312f2e9e8f515f359f2adeb50c5c9fb5f6317c535a9a351c3e5f6e8a","id":"e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"}
+let sigShare4 = crypto.tbls.signTBLS(ID_4,sharedPayloadFor4,message); //{"sigShare":"6b46897a312f2e9e8f515f359f2adeb50c5c9fb5f6317c535a9a351c3e5f6e8a","id":"e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"}
 
 ```
 
@@ -774,17 +776,17 @@ Execute the function
 
 ```javascript
 
-let sigShareAndId1={sigShare:"fe789c95b112099b370d0dfdb7aae4fb80087aa2cea0334266de5792ee27d617",id:"4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a"}
+let sigShareAndId1={sigShare:"fe789c95b112099b370d0dfdb7aae4fb80087aa2cea0334266de5792ee27d617",id:"4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a"};
 
-let sigShareAndId2={sigShare:"3cafeb0275cea62faf29df46c3d7bb52e1a6d33ab89aa0ad53d5bf1f53a0e285",id:"dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906"}
+let sigShareAndId2={sigShare:"3cafeb0275cea62faf29df46c3d7bb52e1a6d33ab89aa0ad53d5bf1f53a0e285",id:"dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906"};
 
-let sigShareAndId3={sigShare:"14a7a88ad49586e8c5a4e2c87b91b82f005fc595e60bd39b3a8d1cc3d20c9815",id:"084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905"}
+let sigShareAndId3={sigShare:"14a7a88ad49586e8c5a4e2c87b91b82f005fc595e60bd39b3a8d1cc3d20c9815",id:"084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905"};
 
-let sigShareAndId4={sigShare:"6b46897a312f2e9e8f515f359f2adeb50c5c9fb5f6317c535a9a351c3e5f6e8a",id:"e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"}
+let sigShareAndId4={sigShare:"6b46897a312f2e9e8f515f359f2adeb50c5c9fb5f6317c535a9a351c3e5f6e8a",id:"e52d9c508c502347344d8c07ad91cbd6068afc75ff6292f062a09ca381c89e11"};
 
 
 
-let masterSignature = crypto.tbls.buildSignature([sigShareAndId1,sigShareAndId2,sigShareAndId3,sigShareAndId4]) //46c1f011e7d7039bb77a638e60e7e1c3acbfb3124ec2b06b918f1fd5d4a0b39c
+let masterSignature = crypto.tbls.buildSignature([sigShareAndId1,sigShareAndId2,sigShareAndId3,sigShareAndId4]); //46c1f011e7d7039bb77a638e60e7e1c3acbfb3124ec2b06b918f1fd5d4a0b39c
 
 ```
 
@@ -801,13 +803,13 @@ _<mark style="color:red;">**8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004b
 And only one what the network needs to do to accept a transaction from friends is simply to make such a check:
 
 ```javascript
-let masterPub = '8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004bffb1458faa045f2c9a640acb466c5c35e2c9af757ac7fad74e3865b8527452619236822f9797'
+let masterPub = '8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004bffb1458faa045f2c9a640acb466c5c35e2c9af757ac7fad74e3865b8527452619236822f9797';
 
-let masterSig = '46c1f011e7d7039bb77a638e60e7e1c3acbfb3124ec2b06b918f1fd5d4a0b39c'
+let masterSig = '46c1f011e7d7039bb77a638e60e7e1c3acbfb3124ec2b06b918f1fd5d4a0b39c';
 
-let message = 'WE BUY A TENT FOR 300$'
+let message = 'WE BUY A TENT FOR 300$';
 
-let isOk = crypto.tbls.verifyTBLS(masterPub,masterSig,message) //true
+let isOk = crypto.tbls.verifyTBLS(masterPub,masterSig,message); //true
 ```
 
 {% hint style="success" %}
@@ -863,10 +865,10 @@ const tblsAccounts = {
 
     rootPub:'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
 
-}
+};
 
 
-const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
 // ID of subchain where you want to transfer KLY or call contract
@@ -917,8 +919,8 @@ const finalTransaction = await web1337.createThresholdTransaction(
     
 );
 
-console.log('============TBLS Transaction that can be deployed to network============\n')
-console.log(finalTransaction)
+console.log('============TBLS Transaction that can be deployed to network============\n');
+console.log(finalTransaction);
 ```
 
 Output:
@@ -992,10 +994,10 @@ const tblsAccounts = {
 
     rootPub:'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
 
-}
+};
 
 
-const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
 // ID of subchain where you want to transfer KLY or call contract
@@ -1048,8 +1050,8 @@ const finalTransaction = await web1337.createThresholdTransaction(
     
 );
 
-console.log('============TBLS Transaction that can be deployed to network============\n')
-console.log(finalTransaction)
+console.log('============TBLS Transaction that can be deployed to network============\n');
+console.log(finalTransaction);
 ```
 
 Output:
@@ -1124,10 +1126,10 @@ const tblsAccounts = {
 
     rootPub:'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
 
-}
+};
 
 
-const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
 // ID of subchain where you want to transfer KLY or call contract
@@ -1178,8 +1180,8 @@ const finalTransaction = await web1337.createThresholdTransaction(
     
 );
 
-console.log('============TBLS Transaction that can be deployed to network============\n')
-console.log(finalTransaction)
+console.log('============TBLS Transaction that can be deployed to network============\n');
+console.log(finalTransaction);
 ```
 
 Output:
@@ -1258,10 +1260,10 @@ const tblsAccounts = {
 
     rootPub:'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
 
-}
+};
 
 
-const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector])
+const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
 // ID of subchain where you want to transfer KLY or call contract
@@ -1312,8 +1314,8 @@ const finalTransaction = await web1337.createThresholdTransaction(
     
 );
 
-console.log('============TBLS Transaction that can be deployed to network============\n')
-console.log(finalTransaction)
+console.log('============TBLS Transaction that can be deployed to network============\n');
+console.log(finalTransaction);
 ```
 
 Output:

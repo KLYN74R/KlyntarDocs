@@ -43,7 +43,7 @@ const dilithiumKeypair = crypto.pqc.dilithium.generateDilithiumKeypair();
 
 console.log(dilithiumKeypair);
 
-const blissKeypair = web1337.crypto.pqc.bliss.generateBlissKeypair();
+const blissKeypair = crypto.pqc.bliss.generateBlissKeypair();
 
 console.log(blissKeypair);
 ```
