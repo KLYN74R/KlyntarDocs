@@ -12,7 +12,7 @@ In addition, KLY offers various interesting features such as RWX codeless smart 
 
 In conclusion, we can add that Web1337 is Web3++, since KLY offers more features than typical blockchain projects. You will learn more about this later.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/KLYN74R/Web1337" %}
 
