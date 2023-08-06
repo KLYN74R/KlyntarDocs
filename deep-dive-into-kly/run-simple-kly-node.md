@@ -1,2 +1,0 @@
-# Run simple KLY node
-
