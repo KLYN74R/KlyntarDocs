@@ -1,5 +1,5 @@
 ---
-description: Get to know about the gateway to WASM
+description: Get to know about the gateway to WASM and native env
 ---
 
 # 🧙♂ Magic address

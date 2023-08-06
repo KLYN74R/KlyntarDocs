@@ -11,6 +11,8 @@
   * [🤝 BLS multisig transactions](web1337/transactions-and-smart-contracts/bls-multisig-transactions.md)
   * [🛡 TBLS thresholdsig transactions](web1337/transactions-and-smart-contracts/tbls-thresholdsig-transactions.md)
   * [⚛ Post-quantum transactions](web1337/transactions-and-smart-contracts/post-quantum-transactions.md)
+  * [📃 Deploy smart-contract to KLY-WVM](web1337/transactions-and-smart-contracts/deploy-smart-contract-to-kly-wvm.md)
+  * [📃 Deploy smart-contract to KLY-EVM](web1337/transactions-and-smart-contracts/deploy-smart-contract-to-kly-evm.md)
 * [🔴 Advance KLY usage](web1337/advance-kly-usage/README.md)
   * [Cryptography](web1337/advance-kly-usage/cryptography/README.md)
     * [🎲 VRF](web1337/advance-kly-usage/cryptography/vrf.md)
@@ -26,7 +28,11 @@
 * [Intro](smart-contracts/intro.md)
 * [👩💻 KLY-EVM](smart-contracts/kly-evm/README.md)
   * [🧙♂ Magic address](smart-contracts/kly-evm/magic-address.md)
-* [👨💻 KLY-WVM](smart-contracts/kly-wvm.md)
+  * [❎ Call WASM from EVM](smart-contracts/kly-evm/call-wasm-from-evm.md)
+  * [❎ Call JS from EVM](smart-contracts/kly-evm/call-js-from-evm.md)
+* [👨💻 KLY-WVM](smart-contracts/kly-wvm/README.md)
+  * [❎ Call EVM from WASM](smart-contracts/kly-wvm/call-evm-from-wasm.md)
+  * [❎ Call JS from WASM](smart-contracts/kly-wvm/call-js-from-wasm.md)
 * [✨ UVM - Universal Virtual Machine](smart-contracts/uvm-universal-virtual-machine.md)
 
 ## 🗺 RWX contracts
