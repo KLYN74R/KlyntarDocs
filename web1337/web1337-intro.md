@@ -19,3 +19,11 @@ In conclusion, we can add that Web1337 is Web3++, since KLY offers more features
 ## Support
 
 Web1337 is now available for JavaScript environments, but we will be adding Web1337 for Python, Rust, and other languages soon. Stay tuned!
+
+## Difficulty levels
+
+The Web1337 user guide has been divided into several levels depending on the complexity:
+
+* :green\_circle: - easy. Simple one-line API call for basic interaction with KLY
+* :orange\_circle: - medium. More advanced usage. Transactions, contract deployments, etc.
+* :red\_circle: - advanced. Instructions of how to use advanced cryptography in EVM / WASM smart-contracts, instructions for DApps 2.0, mutations and other interesting stuff.
