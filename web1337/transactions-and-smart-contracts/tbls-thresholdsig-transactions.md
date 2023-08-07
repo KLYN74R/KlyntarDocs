@@ -4,6 +4,8 @@ description: Get to know how to use TBLS accounts in your DApps on KLY
 
 # 🛡 TBLS thresholdsig transactions
 
+<figure><img src="../../.gitbook/assets/TBLS.jpg" alt=""><figcaption></figcaption></figure>
+
 ## Useful links
 
 {% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#threshold-signatures-tbls" %}

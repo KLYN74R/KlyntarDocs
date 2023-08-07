@@ -4,6 +4,8 @@ description: NextGen cryptography already on KLY
 
 # ⚛ Post-quantum transactions
 
+<figure><img src="../../.gitbook/assets/PQC_Meme.jpg" alt=""><figcaption></figcaption></figure>
+
 {% hint style="info" %}
 PQC - Post-Quantum Cryptography
 {% endhint %}

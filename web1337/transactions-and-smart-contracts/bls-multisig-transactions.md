@@ -1,5 +1,7 @@
 # 🤝 BLS multisig transactions
 
+<figure><img src="../../.gitbook/assets/MultiSigMeme.jpg" alt=""><figcaption></figcaption></figure>
+
 ## Useful links
 
 {% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#bls12-381" %}
