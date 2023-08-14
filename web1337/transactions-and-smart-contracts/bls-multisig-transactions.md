@@ -25,13 +25,13 @@ Shortly, the typical keypair looks like this:
 * 32-bytes hexadecimal private key
 * 96-bytes Base64 encoded signature
 
-### Generate BLS keypair(s)
+## Generate BLS keypair(s)
 
 {% hint style="success" %}
 Read detailed information [here](default-ed25519-transactions.md#ed25519-greater-than-bls-multisig-address-transaction)
 {% endhint %}
 
-### BLS => Ed25519 transaction
+## BLS => Ed25519 transaction
 
 ```javascript
 import Web1337,{crypto} from 'web1337';
@@ -150,7 +150,7 @@ let result = await web1337.sendTransaction(finalTx)
 
 
 
-### BLS => BLS(multisig address) transaction
+## BLS => BLS(multisig address) transaction
 
 ```javascript
 import Web1337,{crypto} from 'web1337';
@@ -266,7 +266,7 @@ Output:
 
 ###
 
-### BLS => TBLS(thresholdsig address) transaction
+## BLS => TBLS(thresholdsig address) transaction
 
 Here we omit the part of explanations because you just need to know the TBLS root public key of group to send transactions to.
 
@@ -381,7 +381,7 @@ Output:
 
 ###
 
-### BLS => PostQuantum(Dilithium/BLISS) transaction
+## BLS => PostQuantum(Dilithium/BLISS) transaction
 
 Here we omit the part of explanations because you just need to know the hash of public key to send transactions to.
 

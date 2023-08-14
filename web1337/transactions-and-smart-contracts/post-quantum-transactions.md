@@ -28,7 +28,7 @@ As we said earlier, we use Dilithium and BLISS signatures as post-quantum signat
 Post-quantum cryptography is just coming into play. Unlike other cryptography primitives which works for decades for various purposes(AES, ED25519, ECDSA, RSA, SHA, etc.), these algorithms are still going through the final stages of NIST certification. Although we have chosen the best ones, there is still the possibility of a zerodays and errors in the implementation. Be careful
 {% endhint %}
 
-### Generate account
+## Generate account
 
 ```javascript
 import Web1337,{crypto} from 'web1337';
@@ -74,9 +74,11 @@ _<mark style="color:red;">**BLISS**</mark>_
 
 Now, you can use these addresses on KLY network&#x20;
 
-###
+## Send to public key first
 
-### PQC => Ed25519 transaction
+TODO
+
+## PQC => Ed25519 transaction
 
 ```javascript
 import Web1337 from 'web1337';
@@ -201,7 +203,7 @@ let receipt2 = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedBlis
 
 ###
 
-### PQC => BLS(multisig address) transaction
+## PQC => BLS(multisig address) transaction
 
 No rocket science - just add the `rev_t` field to transaction building process
 
@@ -310,7 +312,7 @@ Output:
 
 ###
 
-### PQC => TBLS(thresholdsig address) transaction
+## PQC => TBLS(thresholdsig address) transaction
 
 Nothing hard - just change the recipient to 96-bytes TBLS master public key
 
@@ -379,7 +381,7 @@ console.log(signedBlissTx);
 
 ###
 
-### PQC => PostQuantum(Dilithium/BLISS) transaction
+## PQC => PostQuantum(Dilithium/BLISS) transaction
 
 Set the 256-bit PQC address of recipient
 

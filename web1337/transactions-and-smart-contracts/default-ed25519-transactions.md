@@ -312,7 +312,7 @@ RootPubKey => 68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1
 
 Now you can accept payments for this address.
 
-### From sender point of view
+### From sender's point of view
 
 When you need to send something to multisig account you need to set the reverse threshold if account still not exists or use \`rev\_t\` property of already existed account
 

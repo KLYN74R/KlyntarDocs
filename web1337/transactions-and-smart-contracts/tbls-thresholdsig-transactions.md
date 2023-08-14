@@ -820,7 +820,7 @@ We hope that such a step-by-step example where we describe generation and exchan
 
 Now, let's build the transactions
 
-### TBLS => Ed25519 transaction
+## TBLS => Ed25519 transaction
 
 ```javascript
 import Web1337,{crypto} from 'web1337';
@@ -945,7 +945,7 @@ Output:
 }
 ```
 
-### TBLS => BLS(multisig address) transaction
+## TBLS => BLS(multisig address) transaction
 
 {% hint style="info" %}
 The same for TBLs but remember about `rev_t` for new account
@@ -1077,7 +1077,7 @@ Output:
 }
 ```
 
-### TBLS => TBLS(thresholdsig address) transaction
+## TBLS => TBLS(thresholdsig address) transaction
 
 Here you just need to set the master pubkey of recipient. The structure as for => Ed25519 tx
 
@@ -1206,7 +1206,7 @@ Output:
 }
 ```
 
-### TBLS => PostQuantum(Dilithium/BLISS) transaction
+## TBLS => PostQuantum(Dilithium/BLISS) transaction
 
 Finally, PQC. As usual - default structure as for => Ed25519 or => TBLS
 
