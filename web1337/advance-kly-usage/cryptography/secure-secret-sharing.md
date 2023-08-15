@@ -1,7 +1,7 @@
 # 🤫 Secure Secret Sharing
 
-## Using PQC in KLY-EVM
+## Using secret sharing in KLY-EVM
 
 
 
-## Using PQC in KLY-WVM
+## Using secret sharing in KLY-WVM
