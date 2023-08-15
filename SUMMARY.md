@@ -58,6 +58,7 @@
   * [KLY staking](deep-dive-into-kly/run-kly-validator/kly-staking.md)
   * [KLY unstaking](deep-dive-into-kly/run-kly-validator/kly-unstaking.md)
   * [Multistaking](deep-dive-into-kly/run-kly-validator/multistaking.md)
+* [😦 Return of lost funds](deep-dive-into-kly/return-of-lost-funds.md)
 
 ## Bots
 
