@@ -1,6 +1,7 @@
 # Table of contents
 
 * [KLYNTAR Docs](README.md)
+* [📚 Glossary](glossary.md)
 
 ## Web1337
 
