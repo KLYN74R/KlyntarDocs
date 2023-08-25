@@ -15,9 +15,11 @@
   * [📃 Deploy smart-contract to KLY-WVM](web1337/transactions-and-smart-contracts/deploy-smart-contract-to-kly-wvm.md)
   * [📃 Deploy smart-contract to KLY-EVM](web1337/transactions-and-smart-contracts/deploy-smart-contract-to-kly-evm.md)
 * [🔴 Advance KLY usage](web1337/advance-kly-usage/README.md)
+  * [☄ Dump EVM & WASM contract storage](web1337/advance-kly-usage/dump-evm-and-wasm-contract-storage.md)
+  * [🔃 Manual deployment of the storage for your contract](web1337/advance-kly-usage/manual-deployment-of-the-storage-for-your-contract.md)
   * [🌩 Thundercloud](web1337/advance-kly-usage/thundercloud/README.md)
     * [🏷 Using KLY Aliases in transactions](web1337/advance-kly-usage/thundercloud/using-kly-aliases-in-transactions.md)
-  * [Cryptography](web1337/advance-kly-usage/cryptography/README.md)
+  * [🔐 Cryptography](web1337/advance-kly-usage/cryptography/README.md)
     * [🎲 VRF](web1337/advance-kly-usage/cryptography/vrf.md)
     * [⚛ Post-quantum cryptography](web1337/advance-kly-usage/cryptography/post-quantum-cryptography.md)
     * [👀 zkSNARK](web1337/advance-kly-usage/cryptography/zksnark.md)
@@ -40,7 +42,9 @@
 
 ## 🗺 RWX contracts
 
-* [Intro to real-world-execution smart contracts](rwx-contracts/intro-to-real-world-execution-smart-contracts.md)
+* [ℹ Intro to real-world-execution smart contracts](rwx-contracts/intro-to-real-world-execution-smart-contracts.md)
+* [🤝 Create RWX contract](rwx-contracts/create-rwx-contract.md)
+* [🕵♂ Become verifier](rwx-contracts/become-verifier.md)
 
 ## deep dive into KLY
 
@@ -60,6 +64,7 @@
   * [KLY unstaking](deep-dive-into-kly/run-kly-validator/kly-unstaking.md)
   * [Multistaking](deep-dive-into-kly/run-kly-validator/multistaking.md)
 * [😦 Return of lost funds](deep-dive-into-kly/return-of-lost-funds.md)
+* [Page](deep-dive-into-kly/page.md)
 
 ## Bots
 
