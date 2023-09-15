@@ -1,5 +1,7 @@
 # ⚡ Interact with node via websockets
 
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 ## Generate TLS certificate
 
 Prepare the `req.cnf` file

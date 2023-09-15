@@ -287,11 +287,11 @@ After all, we would be interested in knowing how to write the result of a functi
 
 We're in and ready for stepping
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Line 178: Try to read raw returned data. As you see, we get the 32 bytes buffer filled with nulls and 124 as the last value.
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 It is because in function <mark style="color:red;">**foo**</mark> (see **Receiver.sol**) we return the incremented value of parameter. Since we pass the 123 it's obvious that we get 124 as result.
 

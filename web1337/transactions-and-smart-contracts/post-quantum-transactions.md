@@ -147,7 +147,7 @@ Output:
 
 _<mark style="color:red;">**Dilithium**</mark>_
 
-<figure><img src="../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 ===================== Transaction with Dilithium signature =====================
