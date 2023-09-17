@@ -12,38 +12,43 @@
   * [🤝 BLS multisig transactions](web1337/transactions-and-smart-contracts/bls-multisig-transactions.md)
   * [🛡 TBLS thresholdsig transactions](web1337/transactions-and-smart-contracts/tbls-thresholdsig-transactions.md)
   * [⚛ Post-quantum transactions](web1337/transactions-and-smart-contracts/post-quantum-transactions.md)
-  * [📃 Deploy smart-contract to KLY-WVM](web1337/transactions-and-smart-contracts/deploy-smart-contract-to-kly-wvm.md)
-  * [📃 Deploy smart-contract to KLY-EVM](web1337/transactions-and-smart-contracts/deploy-smart-contract-to-kly-evm.md)
-* [🔴 Advance KLY usage](web1337/advance-kly-usage/README.md)
-  * [☄ Dump EVM & WASM contract storage](web1337/advance-kly-usage/dump-evm-and-wasm-contract-storage.md)
-  * [🔃 Manual deployment of the storage for your contract](web1337/advance-kly-usage/manual-deployment-of-the-storage-for-your-contract.md)
-  * [🌩 Thundercloud](web1337/advance-kly-usage/thundercloud/README.md)
-    * [🏷 Using KLY Aliases in transactions](web1337/advance-kly-usage/thundercloud/using-kly-aliases-in-transactions.md)
-  * [🔐 Cryptography](web1337/advance-kly-usage/cryptography/README.md)
-    * [🎲 VRF](web1337/advance-kly-usage/cryptography/vrf.md)
-    * [⚛ Post-quantum cryptography](web1337/advance-kly-usage/cryptography/post-quantum-cryptography.md)
-    * [👀 zkSNARK](web1337/advance-kly-usage/cryptography/zksnark.md)
-    * [🤫 Secure Secret Sharing](web1337/advance-kly-usage/cryptography/secure-secret-sharing.md)
+  * [📃 KLY-WVM - deploy and interact with a smart-contract](web1337/transactions-and-smart-contracts/kly-wvm-deploy-and-interact-with-a-smart-contract.md)
+  * [📃 KLY-EVM - deploy and interact with a smart-contract](web1337/transactions-and-smart-contracts/kly-evm-deploy-and-interact-with-a-smart-contract.md)
+* [🔴 Advance Web1337 usage](web1337/advance-web1337-usage/README.md)
+  * [Send system sync operation](web1337/advance-web1337-usage/send-system-sync-operation.md)
+  * [☄ Dump EVM & WASM contract storage](web1337/advance-web1337-usage/dump-evm-and-wasm-contract-storage.md)
+  * [🔃 Manual deployment of the storage for your contract](web1337/advance-web1337-usage/manual-deployment-of-the-storage-for-your-contract.md)
+  * [🌩 Thundercloud](web1337/advance-web1337-usage/thundercloud/README.md)
+    * [🏷 Using KLY Aliases in transactions](web1337/advance-web1337-usage/thundercloud/using-kly-aliases-in-transactions.md)
 * [🌐 Networking](web1337/networking/README.md)
   * [🙈 Using proxy](web1337/networking/using-proxy.md)
   * [⚡ Interact with node via websockets](web1337/networking/interact-with-node-via-websockets.md)
 
-## Smart Contracts
+## Smart Contracts and vms
 
-* [Intro](smart-contracts/intro.md)
-* [👩💻 KLY-EVM](smart-contracts/kly-evm/README.md)
-  * [🧙♂ Magic address](smart-contracts/kly-evm/magic-address.md)
-  * [❎ Call WASM from EVM](smart-contracts/kly-evm/call-wasm-from-evm.md)
-  * [❎ Call JS from EVM](smart-contracts/kly-evm/call-js-from-evm.md)
-* [👨💻 KLY-WVM](smart-contracts/kly-wvm/README.md)
-  * [❎ Call EVM from WASM](smart-contracts/kly-wvm/call-evm-from-wasm.md)
-  * [❎ Call JS from WASM](smart-contracts/kly-wvm/call-js-from-wasm.md)
-* [✨ UVM - Universal Virtual Machine](smart-contracts/uvm-universal-virtual-machine.md)
+* [Intro](smart-contracts-and-vms/intro.md)
+* [👩💻 KLY-EVM](smart-contracts-and-vms/kly-evm/README.md)
+  * [🧙♂ Magic address](smart-contracts-and-vms/kly-evm/magic-address.md)
+  * [➗ Features of sharding at the EVM level you should know](smart-contracts-and-vms/kly-evm/features-of-sharding-at-the-evm-level-you-should-know.md)
+  * [❎ Call WASM from EVM](smart-contracts-and-vms/kly-evm/call-wasm-from-evm.md)
+  * [❎ Call JS from EVM](smart-contracts-and-vms/kly-evm/call-js-from-evm.md)
+* [👨💻 KLY-WVM](smart-contracts-and-vms/kly-wvm/README.md)
+  * [🔁 Simple cross-contract call (WVM-WVM)](smart-contracts-and-vms/kly-wvm/simple-cross-contract-call-wvm-wvm.md)
+  * [❎ Call EVM from WASM](smart-contracts-and-vms/kly-wvm/call-evm-from-wasm.md)
+  * [❎ Call JS from WASM](smart-contracts-and-vms/kly-wvm/call-js-from-wasm.md)
+* [🧠 Advanced VMs usage](smart-contracts-and-vms/advanced-vms-usage/README.md)
+  * [🔐 Cryptography](smart-contracts-and-vms/advanced-vms-usage/cryptography/README.md)
+    * [🎲 VRF](smart-contracts-and-vms/advanced-vms-usage/cryptography/vrf.md)
+    * [⚛ Post-quantum cryptography](smart-contracts-and-vms/advanced-vms-usage/cryptography/post-quantum-cryptography.md)
+    * [👀 zkSNARK](smart-contracts-and-vms/advanced-vms-usage/cryptography/zksnark.md)
+    * [🤫 Secure Secret Sharing](smart-contracts-and-vms/advanced-vms-usage/cryptography/secure-secret-sharing.md)
+  * [👀 Oracles](smart-contracts-and-vms/advanced-vms-usage/oracles.md)
+* [✨ UVM - Universal Virtual Machine](smart-contracts-and-vms/uvm-universal-virtual-machine.md)
 
 ## 🗺 RWX contracts
 
 * [ℹ Intro to real-world-execution smart contracts](rwx-contracts/intro-to-real-world-execution-smart-contracts.md)
-* [🤝 Create RWX contract](rwx-contracts/create-rwx-contract.md)
+* [🤝 Create RWX contract and deploy with Web1337](rwx-contracts/create-rwx-contract-and-deploy-with-web1337.md)
 * [🕵♂ Become verifier](rwx-contracts/become-verifier.md)
 
 ## deep dive into KLY
@@ -59,16 +64,15 @@
   * [Run your node over TOR](deep-dive-into-kly/run-simple-kly-node/run-your-node-over-tor.md)
   * [Plugins usage](deep-dive-into-kly/run-simple-kly-node/plugins-usage/README.md)
     * [Setting up Savitar](deep-dive-into-kly/run-simple-kly-node/plugins-usage/setting-up-savitar.md)
-* [Run KLY validator](deep-dive-into-kly/run-kly-validator/README.md)
+* [☁ Run KLY validator](deep-dive-into-kly/run-kly-validator/README.md)
   * [KLY staking](deep-dive-into-kly/run-kly-validator/kly-staking.md)
   * [KLY unstaking](deep-dive-into-kly/run-kly-validator/kly-unstaking.md)
   * [Multistaking](deep-dive-into-kly/run-kly-validator/multistaking.md)
 * [😦 Return of lost funds](deep-dive-into-kly/return-of-lost-funds.md)
-* [Page](deep-dive-into-kly/page.md)
 
 ## Bots
 
-* [Intro](bots/intro.md)
+* [🤖 Intro](bots/intro.md)
 
 ## Other resources
 
