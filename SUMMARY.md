@@ -45,7 +45,10 @@
     * [⚛ Post-quantum cryptography](smart-contracts-and-vms/advanced-vms-usage/cryptography/post-quantum-cryptography.md)
     * [👀 zkSNARK](smart-contracts-and-vms/advanced-vms-usage/cryptography/zksnark.md)
     * [🤫 Secure Secret Sharing](smart-contracts-and-vms/advanced-vms-usage/cryptography/secure-secret-sharing.md)
-  * [👀 Oracles](smart-contracts-and-vms/advanced-vms-usage/oracles.md)
+  * [⛈ Thundercloud](smart-contracts-and-vms/advanced-vms-usage/thundercloud/README.md)
+    * [👀 KLY Oracles](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/README.md)
+      * [⏳ Get the real time](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/get-the-real-time.md)
+      * [🌏 Call any API](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/call-any-api.md)
 * [✨ UVM - Universal Virtual Machine](smart-contracts-and-vms/uvm-universal-virtual-machine.md)
 
 ## 🗺 RWX contracts
