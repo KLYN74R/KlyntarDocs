@@ -20,6 +20,7 @@
     * [👨⚖ Become KLY validator with Web1337](web1337/advance-web1337-usage/system-sync-operation/become-kly-validator-with-web1337.md)
   * [☄ Dump EVM & WASM contract storage](web1337/advance-web1337-usage/dump-evm-and-wasm-contract-storage.md)
   * [🔃 Manual deployment of the storage for your contract](web1337/advance-web1337-usage/manual-deployment-of-the-storage-for-your-contract.md)
+  * [💸 Using AFS - advanced fee system](web1337/advance-web1337-usage/using-afs-advanced-fee-system.md)
   * [🌩 Thundercloud](web1337/advance-web1337-usage/thundercloud/README.md)
     * [🏷 Using KLY Aliases in transactions](web1337/advance-web1337-usage/thundercloud/using-kly-aliases-in-transactions.md)
     * [🦾 Deploy KIP](web1337/advance-web1337-usage/thundercloud/deploy-kip.md)
