@@ -143,7 +143,7 @@ TODO
 await web1337.getBlockByBlockID('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:0')
 ```
 
-* **blockID** - id of block in form _<mark style="color:red;">**BlsPubKey:Index**</mark>_
+* **blockID** - id of block in form _<mark style="color:red;">**Ed25519PubKey:Index**</mark>_
 
 #### Response
 
@@ -160,34 +160,7 @@ await web1337.getBlockByBlockID('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8
 }
 ```
 
-##
 
-## Get block by GRID
-
-#### Request
-
-```javascript
-await web1337.getBlockByGRID(0)
-```
-
-* **GRID(General ID)** - just index of block in case we imagine that KLY is linear with indexes _**0, 1 , 2...N**_&#x20;
-
-#### Response
-
-```json5
-{
-  creator: '75XPnpDxrAtyjcwXaATfDhkYTGBoHuonDU1tfqFc6JcNPf5sgtcsvBRXaXZGuJ8USG',
-  time: 1688428218999,
-  checkpoint: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#-1',
-  transactions: [],
-  extraData: { rest: { hello: 'world' } },
-  index: 0,
-  prevHash: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
-  sig: 'iayyJRq3vGled0pbF2RPsThPrlrGsJcGWYwzRKYbJr9hv92I3iEGPgUnI/siQbBQBd9mgo8aXZ+EUlhOvxyuBx4hv5VegLdma/YOYY3TYGUZRrzG/gXCUSIlcxByY8lw'
-}
-```
-
-##
 
 ## Get block by SID
 

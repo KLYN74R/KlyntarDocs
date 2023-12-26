@@ -8,7 +8,7 @@ Since the core is written on Node.js you should to install it. If you already ha
 {% tab title="Linux" %}
 ```bash
 johndoe@klyntar:~$ node -v
-v17.0.0
+v21.4.0
 ```
 {% endtab %}
 
