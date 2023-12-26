@@ -2,16 +2,23 @@
 
 ## Node.js installation
 
-Since the core is written on Node.js you should to install it. If you already have installed, we recommend checking the version
+Since the core is written on Node.js you should to install it. If you already have installed, we recommend checking the version. The recommended version is **v21.4.0**
 
-```sh
+{% tabs %}
+{% tab title="Linux" %}
+```bash
 johndoe@klyntar:~$ node -v
 v17.0.0
 ```
+{% endtab %}
 
-{% hint style="info" %}
-Make sure you have at least version 17
-{% endhint %}
+{% tab title="Windows" %}
+```sh
+C:\Users\JohnDoe>node -v
+v21.4.0
+```
+{% endtab %}
+{% endtabs %}
 
 Use official guides to install Node.js for your platform (Windows/Linux/Mac)
 
@@ -41,21 +48,23 @@ cd KlyntarCore
 
 Finally, run a single build script
 
-```sh
+{% tabs %}
+{% tab title="Linux" %}
+```bash
 pnpm run build:linux
 ```
+{% endtab %}
 
-Or
-
-```sh
+{% tab title="Windows" %}
+```bash
 pnpm run build:windows
 ```
+{% endtab %}
+{% endtabs %}
 
-This script installs all the requirements, compile Go modules and so on.
-
-
-
-
+{% hint style="info" %}
+This script installs all the requirements, compile Go modules and so on
+{% endhint %}
 
 ## Prepare configuration and genesis files
 
