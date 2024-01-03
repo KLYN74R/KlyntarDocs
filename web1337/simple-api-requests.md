@@ -237,7 +237,7 @@ And finally, inform the API users about this redirection:
 </strong></code></pre>
 
 {% hint style="info" %}
-We'll show you how to work with plugins in the section [Plugins usage](../deep-dive-into-kly/run-simple-kly-node/plugins-usage.md)
+We'll show you how to work with plugins in the section [Plugins usage](../deep-dive-into-kly/run-kly-node/plugins-usage.md)
 {% endhint %}
 
 

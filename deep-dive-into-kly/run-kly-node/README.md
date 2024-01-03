@@ -1,4 +1,4 @@
-# Run simple KLY node
+# ☁ Run KLY node
 
 ## Node.js installation
 

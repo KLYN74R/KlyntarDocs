@@ -1,2 +1,2 @@
-# Customizations
+# ⚙ Customizations
 

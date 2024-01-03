@@ -1,2 +1,2 @@
-# ☁ Run KLY validator
+# 🕵 Run KLY validator
 

@@ -60,20 +60,22 @@
 
 ## deep dive into KLY
 
-* [Testnets](deep-dive-into-kly/testnets/README.md)
-  * [Public testnets](deep-dive-into-kly/testnets/public-testnets.md)
-  * [Run your private testnet with single validator](deep-dive-into-kly/testnets/run-your-private-testnet-with-single-validator.md)
-  * [Run your private testnet with 4 nodes](deep-dive-into-kly/testnets/run-your-private-testnet-with-4-nodes.md)
-* [Customizations](deep-dive-into-kly/customizations/README.md)
-  * [Create own mutation](deep-dive-into-kly/customizations/create-own-mutation.md)
-  * [Create own plugin](deep-dive-into-kly/customizations/create-own-plugin.md)
-* [Run simple KLY node](deep-dive-into-kly/run-simple-kly-node/README.md)
-  * [Run your node over TOR](deep-dive-into-kly/run-simple-kly-node/run-your-node-over-tor.md)
-  * [Plugins usage](deep-dive-into-kly/run-simple-kly-node/plugins-usage.md)
-* [☁ Run KLY validator](deep-dive-into-kly/run-kly-validator/README.md)
+* [☁ Run KLY node](deep-dive-into-kly/run-kly-node/README.md)
+  * [Run your node over TOR](deep-dive-into-kly/run-kly-node/run-your-node-over-tor.md)
+  * [Plugins usage](deep-dive-into-kly/run-kly-node/plugins-usage.md)
+* [🕵 Run KLY validator](deep-dive-into-kly/run-kly-validator/README.md)
   * [KLY staking](deep-dive-into-kly/run-kly-validator/kly-staking.md)
   * [KLY unstaking](deep-dive-into-kly/run-kly-validator/kly-unstaking.md)
   * [Multistaking](deep-dive-into-kly/run-kly-validator/multistaking.md)
+* [🤟 Testnets](deep-dive-into-kly/testnets/README.md)
+  * [Your own private testnet](deep-dive-into-kly/testnets/your-own-private-testnet/README.md)
+    * [Run your private testnet with single validator](deep-dive-into-kly/testnets/your-own-private-testnet/run-your-private-testnet-with-single-validator.md)
+    * [Run your private testnet with 4 nodes](deep-dive-into-kly/testnets/your-own-private-testnet/run-your-private-testnet-with-4-nodes.md)
+    * [Run your private testnet with 21 nodes](deep-dive-into-kly/testnets/your-own-private-testnet/run-your-private-testnet-with-21-nodes.md)
+  * [Public testnets](deep-dive-into-kly/testnets/public-testnets.md)
+* [⚙ Customizations](deep-dive-into-kly/customizations/README.md)
+  * [Create own mutation](deep-dive-into-kly/customizations/create-own-mutation.md)
+  * [Create own plugin](deep-dive-into-kly/customizations/create-own-plugin.md)
 * [😦 Return of lost funds](deep-dive-into-kly/return-of-lost-funds.md)
 
 ## Bots
