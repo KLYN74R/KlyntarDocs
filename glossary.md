@@ -14,7 +14,7 @@ Library to work with the KLY network - send transactions, generate accounts, cal
 
 ## KLY-EVM
 
-EVM compatible virtual machine by KLY. Supports low-level sharding, WASM(it's possible to call WASM from EVM and vice versa) and other features like storage-by-subscription model, free calls,etc.
+EVM compatible virtual machine by KLY. Supports low-level sharding, WASM(it's possible to call WASM from EVM and vice versa) and other features like storage-by-subscription model, free calls, advanced fee system, etc.
 
 
 

@@ -2,6 +2,8 @@
 
 ## Node.js installation
 
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 Since the core is written on Node.js you should to install it. If you already have installed, we recommend checking the version. The recommended version is **v21.4.0**
 
 {% tabs %}
@@ -26,6 +28,8 @@ Use official guides to install Node.js for your platform (Windows/Linux/Mac)
 
 ## Go installation
 
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
 Some parts of KLY is written on Go(for example, PQC schemes), so you need to install it too. Use this guide to install Golang for your platform & architecture
 
 {% embed url="https://go.dev/doc/install" %}
@@ -34,6 +38,16 @@ Or, check if you already have Go
 
 ```sh
 go version
+```
+
+## PNPM install
+
+<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+As a package manager for Node.js we use pnpm. To install it globally, run:
+
+```sh
+npm install -g pnpm
 ```
 
 ## After all
@@ -46,25 +60,74 @@ git clone https://github.com/KLYN74R/KlyntarCore.git
 cd KlyntarCore
 ```
 
-Finally, run a single build script
+Now depending on your OS run the following commands:
+
+### Install dependencies
+
+```sh
+pnpm install
+```
+
+### Link core to make it available from any location
+
+```sh
+npm link
+```
+
+### Build Golang addons
+
+Run a simple script
 
 {% tabs %}
 {% tab title="Linux" %}
 ```bash
-pnpm run build:linux
+chmod 700 build_must_have_addons.sh
+
+./build_must_have_addons.sh
 ```
 {% endtab %}
 
 {% tab title="Windows" %}
-```bash
-pnpm run build:windows
+```sh
+build_must_have_addons.bat
 ```
 {% endtab %}
 {% endtabs %}
 
-{% hint style="info" %}
-This script installs all the requirements, compile Go modules and so on
-{% endhint %}
+### Build KLY-EVM
+
+{% tabs %}
+{% tab title="Linux" %}
+```sh
+cd KLY_VirtualMachines\kly_evm
+
+pnpm install
+
+chmod 700 build_kly_evm.sh
+
+./build_kly_evm.sh
+```
+{% endtab %}
+
+{% tab title="Windows" %}
+```sh
+cd KLY_VirtualMachines\kly_evm
+
+pnpm install
+
+build_kly_evm.bat
+```
+{% endtab %}
+{% endtabs %}
+
+### Return to main directory
+
+```sh
+cd ../../
+
+//Linux only
+chmod 700 klyn74r.js
+```
 
 ## Prepare configuration and genesis files
 
