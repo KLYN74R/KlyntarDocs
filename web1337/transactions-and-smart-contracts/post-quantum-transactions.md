@@ -2,7 +2,7 @@
 description: NextGen cryptography already on KLY
 ---
 
-# ⚛ Post-quantum transactions
+# ⚛️ Post-quantum transactions
 
 <figure><img src="../../.gitbook/assets/PQC_Meme.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -22,7 +22,7 @@ As we said earlier, we use Dilithium and BLISS signatures as post-quantum signat
 
 <figure><img src="../../.gitbook/assets/Blake3FromPQC.png" alt=""><figcaption></figcaption></figure>
 
-## <mark style="color:red;">Disclaimer</mark>
+## Disclaimer
 
 {% hint style="danger" %}
 Post-quantum cryptography is just coming into play. Unlike other cryptography primitives which works for decades for various purposes(AES, ED25519, ECDSA, RSA, SHA, etc.), these algorithms are still going through the final stages of NIST certification. Although we have chosen the best ones, there is still the possibility of a zerodays and errors in the implementation. Be careful
