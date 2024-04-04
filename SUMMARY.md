@@ -11,7 +11,7 @@
   * [🔐 Default Ed25519 transactions](web1337/transactions-and-smart-contracts/default-ed25519-transactions.md)
   * [🤝 BLS multisig transactions](web1337/transactions-and-smart-contracts/bls-multisig-transactions.md)
   * [🛡️ TBLS thresholdsig transactions](web1337/transactions-and-smart-contracts/tbls-thresholdsig-transactions.md)
-  * [⚛️ Post-quantum transactions](web1337/transactions-and-smart-contracts/post-quantum-transactions.md)
+  * [⚛️ Post-quantum transactions 2](web1337/transactions-and-smart-contracts/post-quantum-transactions-2.md)
   * [📃 KLY-WVM - deploy and interact with a smart-contract](web1337/transactions-and-smart-contracts/kly-wvm-deploy-and-interact-with-a-smart-contract.md)
   * [📃 KLY-EVM - deploy and interact with a smart-contract](web1337/transactions-and-smart-contracts/kly-evm-deploy-and-interact-with-a-smart-contract.md)
 * [🔴 Advance Web1337 usage](web1337/advance-web1337-usage/README.md)
