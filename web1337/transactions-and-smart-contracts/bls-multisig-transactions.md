@@ -69,8 +69,8 @@ const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1
 const arrayOfAfkSigners = [publicKey4];
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // Typical Ed25519
 const recipient = 'nXSYHp74u88zKPiRi7t22nv4WCBHXUBpGrVw3V93f2s';
@@ -87,11 +87,11 @@ const amountInKLY = 13.37;
 
 // Now 3 sides need to sign the same tx data locally(on their devices)
 
-let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
-let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
-let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
 
 console.log('\n============ Partial signatures ============\n');
@@ -188,8 +188,8 @@ const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1
 const arrayOfAfkSigners = [publicKey4];
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // Now it's multisig
 const recipient = '7QMxLg6GJwQYjc8B2WBEvaQq3TfeBhgBqHGneFu43oLfwhovrPGykbkUGe94FacSuG';
@@ -208,11 +208,11 @@ const amountInKLY = 13.37;
 
 // Now 3 sides need to sign the same tx data locally(on their devices)
 
-let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY,rev_t);
+let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY,rev_t);
 
-let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY,rev_t);
+let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY,rev_t);
 
-let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY,rev_t);
+let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY,rev_t);
 
 
 console.log('\n============ Partial signatures ============\n');
@@ -306,8 +306,8 @@ const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1
 const arrayOfAfkSigners = [publicKey4];
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // Now it's TBLS
 const recipient = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880';
@@ -323,11 +323,11 @@ const amountInKLY = 13.37;
 
 // Now 3 sides need to sign the same tx data locally(on their devices)
 
-let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
-let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
-let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
 
 console.log('\n============ Partial signatures ============\n');
@@ -421,8 +421,8 @@ const aggregatePubKeyOfThreeFriends = crypto.bls.aggregatePublicKeys([publicKey1
 const arrayOfAfkSigners = [publicKey4];
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // Now it's PQC
 const recipient = 'f5091405e28455880fc4191cbda9f1e57f72399e732222d4639294b66d3a5076';
@@ -438,11 +438,11 @@ const amountInKLY = 13.37;
 
 // Now 3 sides need to sign the same tx data locally(on their devices)
 
-let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature1 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey1,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
-let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature2 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey2,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
-let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(subchain,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
+let signature3 = await web1337.signDataForMultisigTxAsOneOfTheActiveSigners(shardID,privateKey3,aggregatePubKeyOfThreeFriends,arrayOfAfkSigners,nonce,fee,recipient,amountInKLY);
 
 
 console.log('\n============ Partial signatures ============\n');
