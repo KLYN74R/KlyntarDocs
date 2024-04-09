@@ -39,7 +39,7 @@ let blissKeyPair = {
 
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 const recipient = '5pJ7Kh1EcAh7NpvgM8hdc72Q2jMc7nA41deMabsw6FoHpqSB5fEZTH11ZNvwPZJ1q4';
 
@@ -53,7 +53,7 @@ const amountInKLY = 13.37;
 const rev_t = 2;
 
 
-let signedDilithiumTx = await web1337.createPostQuantumTransaction(subchain,'dilithium',dilithiumKeyPair.address,dilithiumKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
+let signedDilithiumTx = await web1337.createPostQuantumTransaction(shardID,'dilithium',dilithiumKeyPair.address,dilithiumKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
 
 
 console.log('\n===================== Transaction with Dilithium signature =====================\n');
@@ -64,7 +64,7 @@ console.log('\n===================== Transaction with BLISS signature ==========
 
 // Or BLISS
 
-let signedBlissTx = await web1337.createPostQuantumTransaction(subchain,'bliss',blissKeyPair.address,blissKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
+let signedBlissTx = await web1337.createPostQuantumTransaction(shardID,'bliss',blissKeyPair.address,blissKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
 
 console.log(signedBlissTx);
 ```
@@ -146,7 +146,7 @@ let blissKeyPair = {
 
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 const recipient = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880';
 
@@ -158,7 +158,7 @@ const amountInKLY = 13.37;
 
 
 
-let signedDilithiumTx = await web1337.createPostQuantumTransaction(subchain,'dilithium',dilithiumKeyPair.address,dilithiumKeyPair.prv,nonce,recipient,amountInKLY,fee);
+let signedDilithiumTx = await web1337.createPostQuantumTransaction(shardID,'dilithium',dilithiumKeyPair.address,dilithiumKeyPair.prv,nonce,recipient,amountInKLY,fee);
 
 
 console.log('\n===================== Transaction with Dilithium signature =====================\n');
@@ -169,7 +169,7 @@ console.log('\n===================== Transaction with BLISS signature ==========
 
 // Or BLISS
 
-let signedBlissTx = await web1337.createPostQuantumTransaction(subchain,'bliss',blissKeyPair.address,blissKeyPair.prv,nonce,recipient,amountInKLY,fee);
+let signedBlissTx = await web1337.createPostQuantumTransaction(shardID,'bliss',blissKeyPair.address,blissKeyPair.prv,nonce,recipient,amountInKLY,fee);
 
 console.log(signedBlissTx);
 ```
@@ -213,7 +213,7 @@ let blissKeyPair = {
 
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 const recipient = '82e1e03f70958d92d816ddca5b24036ffba7a788d5ad5f26c7c3ce34f8e47bf1';
 
@@ -224,7 +224,7 @@ const fee = 1;
 const amountInKLY = 13.37;
 
 
-let signedDilithiumTx = await web1337.createPostQuantumTransaction(subchain,'dilithium',dilithiumKeyPair.address,dilithiumKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
+let signedDilithiumTx = await web1337.createPostQuantumTransaction(shardID,'dilithium',dilithiumKeyPair.address,dilithiumKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
 
 
 console.log('\n===================== Transaction with Dilithium signature =====================\n');
@@ -235,7 +235,7 @@ console.log('\n===================== Transaction with BLISS signature ==========
 
 // Or BLISS
 
-let signedBlissTx = await web1337.createPostQuantumTransaction(subchain,'bliss',blissKeyPair.address,blissKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
+let signedBlissTx = await web1337.createPostQuantumTransaction(shardID,'bliss',blissKeyPair.address,blissKeyPair.prv,nonce,recipient,amountInKLY,fee,rev_t);
 
 console.log(signedBlissTx);
 ```
