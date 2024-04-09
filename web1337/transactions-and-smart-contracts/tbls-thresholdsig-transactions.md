@@ -2,7 +2,7 @@
 description: Get to know how to use TBLS accounts in your DApps on KLY
 ---
 
-# 🛡 TBLS thresholdsig transactions
+# 🛡️ TBLS thresholdsig transactions
 
 <figure><img src="../../.gitbook/assets/TBLS.jpg" alt=""><figcaption></figcaption></figure>
 
@@ -873,8 +873,8 @@ const tblsAccounts = {
 const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // Default Ed25519
 const recipient = '6S4yLHorBUjSRjFpwxqPUXzwouZwR716CZ5uLmiy9Sze';
@@ -894,7 +894,7 @@ const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
 
-    subchain, nonce, fee, recipient, amountInKLY
+    shardID, nonce, fee, recipient, amountInKLY
 
 );
 
@@ -904,7 +904,7 @@ const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
 
-    subchain, nonce, fee, recipient, amountInKLY
+    shardID, nonce, fee, recipient, amountInKLY
 
 );
 
@@ -1002,8 +1002,8 @@ const tblsAccounts = {
 const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // BLS
 const recipient = '7V4MxQyKRPemAUrKxrJxBoZ6eHP2n63tibaZv2N59zWM7BDaC13kqDEqoe8g5vYzQu';
@@ -1025,7 +1025,7 @@ const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
 
-    subchain, nonce, fee, recipient, amountInKLY, rev_t
+    shardID, nonce, fee, recipient, amountInKLY, rev_t
 
 );
 
@@ -1035,7 +1035,7 @@ const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
 
-    subchain, nonce, fee, recipient, amountInKLY, rev_t
+    shardID, nonce, fee, recipient, amountInKLY, rev_t
 
 );
 
@@ -1134,8 +1134,8 @@ const tblsAccounts = {
 const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // Rootkey of TBLS
 const recipient = '8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004bffb1458faa045f2c9a640acb466c5c35e2c9af757ac7fad74e3865b85274526192 36822f9797';
@@ -1155,7 +1155,7 @@ const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
 
-    subchain, nonce, fee, recipient, amountInKLY
+    shardID, nonce, fee, recipient, amountInKLY
 
 );
 
@@ -1165,7 +1165,7 @@ const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
 
-    subchain, nonce, fee, recipient, amountInKLY
+    shardID, nonce, fee, recipient, amountInKLY
 
 );
 
@@ -1268,8 +1268,8 @@ const tblsAccounts = {
 const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
 
 
-// ID of subchain where you want to transfer KLY or call contract
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+// ID of shard where you want to transfer KLY or call contract
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // PQC account
 const recipient = '8b9cf608fdc183625334896b054f6421690d5891ddc2e1cee13285f6723823c2';
@@ -1289,7 +1289,7 @@ const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
 
-    subchain, nonce, fee, recipient, amountInKLY
+    shardID, nonce, fee, recipient, amountInKLY
 
 );
 
@@ -1299,7 +1299,7 @@ const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
 
-    subchain, nonce, fee, recipient, amountInKLY
+    shardID, nonce, fee, recipient, amountInKLY
 
 );
 
