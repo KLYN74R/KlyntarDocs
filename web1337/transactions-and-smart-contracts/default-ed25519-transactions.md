@@ -143,7 +143,7 @@ const myKeyPair = {
 };
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 const recipient = 'nXSYHp74u88zKPiRi7t22nv4WCBHXUBpGrVw3V93f2s';
 
@@ -158,7 +158,7 @@ const fee = 1;
 const amountInKLY = 13.37;
 
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipient,fee,amountInKLY);
+let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipient,fee,amountInKLY);
 
 console.log(signedTx);
 ```
@@ -329,7 +329,7 @@ const myKeyPair = {
 };
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1';
 
@@ -348,7 +348,7 @@ const amountInKLY = 13.37;
 // Use the formula rev_t = N-T where N - number of sides, T-threshold
 const reverseThreshold = 1;
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipient,fee,amountInKLY,reverseThreshold);
+let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipient,fee,amountInKLY,reverseThreshold);
 
 console.log(signedTx);
 ```
@@ -381,22 +381,22 @@ After this transaction, new account will be added to state:
     "uno":0,
     "nonce":0,
     "rev_t":1,
-    "subchain":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
+    "shard":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
 }
 ```
 
-As you see, new multisig account is created and binded to subchain where sender sends KLY. Also, the `rev_t` is set to 1 what means that the number of dissenting sides can be 1.
+As you see, new multisig account is created and binded to shard where sender sends KLY. Also, the `rev_t` is set to 1 what means that the number of dissenting sides can be 1.
 
 
 
 In case account was already in state - get the `rev_t` from information about account:
 
 ```javascript
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1';
 
-let accountInfo  = await web1337.getFromState(subchain,recipient);
+let accountInfo  = await web1337.getFromState(shardID,recipient);
 
 console.log('Account:\n\n',accountInfo);
 ```
@@ -410,7 +410,7 @@ Account
     "uno":0,
     "nonce":0,
     "rev_t":1,
-    "subchain":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
+    "shard":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
 }
 ```
 
@@ -437,7 +437,7 @@ const myKeyPair = {
 };
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880';
 
@@ -452,7 +452,7 @@ const fee = 1;
 const amountInKLY = 13.37;
 
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
+let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
 
 console.log(signedTx);
 ```
@@ -480,7 +480,7 @@ const myKeyPair = {
 };
 
 
-const subchain = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
 
 // It might be Dilithium or BLISS, but doesn't matter for you
 const recipientPQC = 'f5091405e28455880fc4191cbda9f1e57f72399e732222d4639294b66d3a5076';
@@ -496,7 +496,7 @@ const fee = 1;
 const amountInKLY = 13.37;
 
 
-let signedTx = await web1337.createDefaultTransaction(subchain,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
+let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
 
 console.log(signedTx);
 ```
