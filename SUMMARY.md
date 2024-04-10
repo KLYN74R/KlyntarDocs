@@ -51,6 +51,8 @@
     * [⚛️ Post-quantum cryptography](smart-contracts-and-vms/advanced-vms-usage/cryptography/post-quantum-cryptography.md)
     * [👀 zkSNARK](smart-contracts-and-vms/advanced-vms-usage/cryptography/zksnark.md)
     * [🤫 Secure Secret Sharing](smart-contracts-and-vms/advanced-vms-usage/cryptography/secure-secret-sharing.md)
+    * [🤹 Using MPC](smart-contracts-and-vms/advanced-vms-usage/cryptography/using-mpc.md)
+    * [🙈 Using FHE](smart-contracts-and-vms/advanced-vms-usage/cryptography/using-fhe.md)
   * [⛈️ Thundercloud](smart-contracts-and-vms/advanced-vms-usage/thundercloud/README.md)
     * [👀 KLY Oracles](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/README.md)
       * [⏳ Get the real time](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/get-the-real-time.md)
