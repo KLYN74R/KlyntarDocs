@@ -85,6 +85,13 @@
   * [Create own plugin](deep-dive-into-kly/customizations/create-own-plugin.md)
 * [😦 Return of lost funds](deep-dive-into-kly/return-of-lost-funds.md)
 
+## Thundercloud
+
+* [🏷️ KLY Aliases](thundercloud/kly-aliases/README.md)
+  * [Web2 domain to KLY Alias](thundercloud/kly-aliases/web2-domain-to-kly-alias.md)
+  * [Web3 domain to KLY Alias](thundercloud/kly-aliases/web3-domain-to-kly-alias.md)
+  * [Social media handle to KLY Alias](thundercloud/kly-aliases/social-media-handle-to-kly-alias.md)
+
 ## Bots
 
 * [🤖 Intro](bots/intro.md)
