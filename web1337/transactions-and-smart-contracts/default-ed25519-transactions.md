@@ -20,6 +20,8 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 
 ## Generate keypair
 
+{% tabs %}
+{% tab title="Node.js" %}
 ```javascript
 import {crypto} from 'web1337';
 
@@ -27,6 +29,12 @@ let keypair = await crypto.ed25519.generateDefaultEd25519Keypair();
 
 console.log(keypair);
 ```
+{% endtab %}
+
+{% tab title="Golang" %}
+
+{% endtab %}
+{% endtabs %}
 
 Output:
 
