@@ -25,7 +25,13 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 ```javascript
 import {crypto} from 'web1337';
 
-let keypair = await crypto.ed25519.generateDefaultEd25519Keypair();
+let mnemonic = "" // mnemonic should be empty in case you generate a new pair
+
+let mnemonicPassword = "" // set the password for your mnemonic
+
+let bip44Path = [44,7331,0,0] // 7331 is KLY ID and the next values - derivation path
+
+let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,mnemonicPassword,bip44Path);
 
 console.log(keypair);
 ```
