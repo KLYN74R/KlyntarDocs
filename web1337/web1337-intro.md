@@ -1,6 +1,6 @@
 # Web1337 intro
 
-<figure><img src="../.gitbook/assets/Web1337.gif" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/SDKHover.svg" alt=""><figcaption></figcaption></figure>
 
 ## What is Web1337?
 
