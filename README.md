@@ -8,4 +8,4 @@ description: >-
 
 ## Intro
 
-<figure><img src=".gitbook/assets/KlyFinalCoverForGithub.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/Github Cover.png" alt=""><figcaption></figcaption></figure>
