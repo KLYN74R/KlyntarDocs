@@ -38,7 +38,24 @@ console.log(keypair);
 {% endtab %}
 
 {% tab title="Golang" %}
+```go
+import "fmt"
+import ed25519 "github.com/KLYN74R/Web1337Golang/crypto_primitives/ed25519"
 
+func main() {
+
+	mnemonic := ""
+
+	mnemonicPassword := ""
+
+	bip44Path := []uint32{44, 7331, 0, 0}
+
+	keypair := ed25519.GenerateKeyPair(mnemonic, mnemonicPassword, bip44Path)
+
+ 	fmt.Println(keypair)
+	
+}
+```
 {% endtab %}
 {% endtabs %}
 
@@ -64,6 +81,8 @@ For example:
 
 Get the first keypair in future chain:
 
+{% tabs %}
+{% tab title="JavaScript" %}
 ```javascript
 import {crypto} from 'web1337';
 
@@ -79,6 +98,29 @@ let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,bip44P
 
 console.log(keypair);
 ```
+{% endtab %}
+
+{% tab title="Golang" %}
+```go
+import "fmt"
+import ed25519 "github.com/KLYN74R/Web1337Golang/crypto_primitives/ed25519"
+
+func main() {
+
+	mnemonic := ""
+
+	mnemonicPassword := "HelloKlyntar"
+
+	bip44Path := []uint32{}
+
+	keypair := ed25519.GenerateKeyPair(mnemonic, mnemonicPassword, bip44Path)
+
+ 	fmt.Println(keypair)
+	
+}
+```
+{% endtab %}
+{% endtabs %}
 
 Output:
 
