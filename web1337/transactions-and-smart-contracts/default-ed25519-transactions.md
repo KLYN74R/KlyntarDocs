@@ -44,11 +44,11 @@ import ed25519 "github.com/KLYN74R/Web1337Golang/crypto_primitives/ed25519"
 
 func main() {
 
-	mnemonic := ""
+	mnemonic := "" // mnemonic should be empty in case you generate a new pair
 
-	mnemonicPassword := ""
+	mnemonicPassword := "" // set the password for your mnemonic
 
-	bip44Path := []uint32{44, 7331, 0, 0}
+	bip44Path := []uint32{44, 7331, 0, 0} // 7331 is KLY ID and the next values - derivation path
 
 	keypair := ed25519.GenerateKeyPair(mnemonic, mnemonicPassword, bip44Path)
 
@@ -87,11 +87,11 @@ Get the first keypair in future chain:
 import {crypto} from 'web1337';
 
 
-const mnemonic = null;
-
-const bip44Path = null;
+const mnemonic = "";
 
 const mnemoPassword = 'HelloKlyntar';
+
+const bip44Path = [44,7331,0,0];
 
 
 let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword);
@@ -147,14 +147,14 @@ import {crypto} from 'web1337';
 
 const firstKeypairInChain = {
     mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
-    bip44Path: "m/44'/7331'/0'/0'",
+    bip44Path: [44,7331,0,0],
     pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
     prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
 };
 
-console.log('0 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,firstKeypairInChain.bip44Path,'HelloKlyntar'));
-console.log('1 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/1'",'HelloKlyntar'));
-console.log('2 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,"m/44'/7331'/0'/2'",'HelloKlyntar'));
+console.log('0 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,0]));
+console.log('1 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,1]));
+console.log('2 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,2]));
 ```
 
 Output:
