@@ -28,6 +28,10 @@ Post-quantum cryptography is just coming into play. Unlike other cryptography pr
 
 ## Generate account
 
+
+
+{% tabs %}
+{% tab title="JS" %}
 ```javascript
 import Web1337,{crypto} from 'web1337';
 
@@ -47,6 +51,13 @@ const blissKeypair = crypto.pqc.bliss.generateBlissKeypair();
 
 console.log(blissKeypair);
 ```
+{% endtab %}
+
+{% tab title="Golang" %}
+```go
+```
+{% endtab %}
+{% endtabs %}
 
 Output:
 
@@ -79,6 +90,18 @@ Now, you can use these addresses on KLY network&#x20;
 TODO
 
 ## PQC => Ed25519 transaction
+
+
+
+{% tabs %}
+{% tab title="JS" %}
+
+{% endtab %}
+
+{% tab title="Golang" %}
+
+{% endtab %}
+{% endtabs %}
 
 ```javascript
 import Web1337 from 'web1337';
