@@ -4,13 +4,15 @@ description: Simple, one-line APIs. No rocket science
 
 # 🟢 Simple API requests
 
-## Useful links
+## Postman
 
-We also have a Postman organization account where we publish API for KLY. Use it if you need
+All APIs that the KLY core contains are well documented and available in our Postman organization
 
 <figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://documenter.getpostman.com/view/25402389/2s93Y2S2FJ#097a6b76-d477-48c0-90b2-edb5743ebbf7" %}
+
+Please, follow the link to test it on your own and check the useful example for each request :relaxed:
 
 ## Create the Web1337 instance
 
@@ -38,70 +40,6 @@ let web1337 = new Web1337({
 {% hint style="info" %}
 Only three first components are required for proper work
 {% endhint %}
-
-
-
-
-
-***
-
-
-
-
-
-{% hint style="info" %}
-Note - the data here is a mock data, but the structure of responses is right
-{% endhint %}
-
-## Get the current checkpoint
-
-#### Request
-
-{% code fullWidth="false" %}
-```javascript
-await web1337.getCurrentCheckpoint())
-```
-{% endcode %}
-
-#### Response
-
-```json5
-{
-  header: {
-    id: -1,
-    payloadHash: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
-    quorumAggregatedSignersPubKey: '',
-    quorumAggregatedSignature: '',
-    afkVoters: []
-  },
-  payload: {
-    prevCheckpointPayloadHash: '',
-    poolsMetadata: {
-      '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta':{index:1337,hash:'',isReserve:false},
-      '75XPnpDxrAtyjcwXaATfDhkYTGBoHuonDU1tfqFc6JcNPf5sgtcsvBRXaXZGuJ8USG':{index:-1,hash:'',isReserve:false},
-      '61TXxKDrBtb7bjpBym8zS9xRDoUQU6sW9aLvvqN9Bp9LVFiSxhRPd9Dwy3N3621RQ8':{index:0,hash:'',isReserve:false},
-      '6YHBZxZfBPk8oDPARGT4ZM9ZUPksMUngyCBYw8Ec6ufWkR6jpnjQ9HAJRLcon76sE7':{index:1,hash:'',isReserve:true}
-    },
-    operations: [],
-    otherSymbiotes: {}
-  },
-  timestamp: 1688428143239,
-  completed: true,
-  quorum: [
-    '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
-    '75XPnpDxrAtyjcwXaATfDhkYTGBoHuonDU1tfqFc6JcNPf5sgtcsvBRXaXZGuJ8USG',
-    '61TXxKDrBtb7bjpBym8zS9xRDoUQU6sW9aLvvqN9Bp9LVFiSxhRPd9Dwy3N3621RQ8',
-    '6YHBZxZfBPk8oDPARGT4ZM9ZUPksMUngyCBYw8Ec6ufWkR6jpnjQ9HAJRLcon76sE7'
-  ],
-  reassignmentChains: {
-    '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta': [
-      '6YHBZxZfBPk8oDPARGT4ZM9ZUPksMUngyCBYw8Ec6ufWkR6jpnjQ9HAJRLcon76sE7'
-    ],
-    '75XPnpDxrAtyjcwXaATfDhkYTGBoHuonDU1tfqFc6JcNPf5sgtcsvBRXaXZGuJ8USG': [],
-    '61TXxKDrBtb7bjpBym8zS9xRDoUQU6sW9aLvvqN9Bp9LVFiSxhRPd9Dwy3N3621RQ8': []
-  }
-}
-```
 
 
 
