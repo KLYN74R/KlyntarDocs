@@ -14,6 +14,16 @@ All APIs that the KLY core contains are well documented and available in our Pos
 
 Please, follow the link to test it on your own and check the useful example for each request :relaxed:
 
+## Multilanguage support
+
+<figure><img src="../.gitbook/assets/SDKCover.svg" alt=""><figcaption></figcaption></figure>
+
+Web1337 SDK has implementations for various languages ​​such as JS(Node.js), Golang, Python and others!
+
+In the initial stages, this documentation will provide an example of an API call for the JS SDK, but in other languages ​​the methods and their names have a similar meaning.
+
+Also, don't forget to use the Postman documentation where you can learn about queries and data formats.
+
 ## Create the Web1337 instance
 
 Here you just need to import the library to your project workspace and create the instance using this snippet:
@@ -41,161 +51,33 @@ let web1337 = new Web1337({
 Only three first components are required for proper work
 {% endhint %}
 
+## Call methods
 
+Once you create web1337 instance you have ability to call methods without manual request construction.
 
-## Get aggregated finalization proof
-
-#### Request
-
-```javascript
-await web1337.getAggregatedFinalizationProofForBlock('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:0')
-```
-
-* **blockID** - id of block in form _<mark style="color:red;">**BlsPubKey:Index**</mark>_
-
-#### Response
-
-```json5
-{
-  blockID: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:0',
-  blockHash: 'd6682d62f263fe16943f0c2cd36f78b3e7dda73f2dda3514b59908d75d01d769bd6be09a6ecb10e09bfc938a2a11854d6c27bd99ddacd9e684dad8bc9f0e552a',
-  aggregatedPub: '6yeebqG6qBxiSx126Sg6FHqrkBW94Smmqp1ifEUK1TLQEumstVTrZFx4UTBJdvhKwb',
-  aggregatedSignature: 'lMqaRrjtp5LwFwwDJbTWYiMfi4BwQ8YM7niYeRVLNaB9S/mBFiyeprQekRs8/DjSBVYDGd6pXSFlPj4WgoS26dO3/R7p/9yJn0Gr4S48yBOpJ/3mG1lQH5zbrwHr4cjc',
-  afkVoters: [
-    '6YHBZxZfBPk8oDPARGT4ZM9ZUPksMUngyCBYw8Ec6ufWkR6jpnjQ9HAJRLcon76sE7'
-  ]
-}
-```
-
-#### To verify that AFP is ok
-
-TODO
-
-##
-
-## Get block by BlockID
-
-#### Request
+For example, to get block by ID, call:
 
 ```javascript
-await web1337.getBlockByBlockID('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:0')
+// Block id format is <epochIndex>:<pubkeyOfCreator>:<blockIndexInEpoch>
+let blockID = "1:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:15"
+
+await web1337.getBlockByBlockID(blockID)
 ```
 
-* **blockID** - id of block in form _<mark style="color:red;">**Ed25519PubKey:Index**</mark>_
-
-#### Response
-
-```json5
-{
-  creator: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
-  time: 1688428206254,
-  checkpoint: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#-1',
-  transactions: [],
-  extraData: { rest: { hello: 'world' } },
-  index: 0,
-  prevHash: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
-  sig: 'gh9litqCOrQ89VVNMlnDu1zDa/Hy6ILBr7R5PzSkKtdH+FIlS3bcWq42l1X9bgwLCqt/mn0WFJQaQ6Gb6R5D9kKNxkQD6BqE+8LZogr04jPvQ7PCB00DLe9qg9xut/J0'
-}
-```
-
-
-
-## Get block by SID
-
-#### Request
+For example, to get information about pool call
 
 ```javascript
-await web1337.getBlockBySID('7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',0)
+let poolPubKey = "6XvZpuCDjdvSuot3eLr24C1wqzcf2w4QqeDh9BnDKsNE"
+
+await web1337.getPoolStats(poolPubKey)
 ```
 
-* **subchainID** - identificator of subchain (Base58 encoded BLS pubkey of prime pool)
-* **index** - index of block in this subchain
-
-#### Response
-
-```json5
-{
-  creator: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
-  time: 1688428206254,
-  checkpoint: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#-1',
-  transactions: [],
-  extraData: { rest: { hello: 'world' } },
-  index: 0,
-  prevHash: '0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef',
-  sig: 'gh9litqCOrQ89VVNMlnDu1zDa/Hy6ILBr7R5PzSkKtdH+FIlS3bcWq42l1X9bgwLCqt/mn0WFJQaQ6Gb6R5D9kKNxkQD6BqE+8LZogr04jPvQ7PCB00DLe9qg9xut/J0'
-}
-```
-
-
-
-## Get information about infrastructure
-
-#### Request
+Or, to check the synchronization status of your node, call
 
 ```javascript
-await web1337.getGeneralInfoAboutKLYInfrastructure()
+await web1337.getSynchronizationStatus()
 ```
 
-#### Response
+## Try yourself :nerd:
 
-This data has no defined structure because node owner sets this data in configs. Here you can add the info about supported APIs, other nodes in your infrastructure, override the logic of some routes,etc. For example, some public pool can add their Telegram / mail to response to communicate with users:
-
-```json5
-{ mail: 'hello@somecoolstakingpool.com', telegram: '@some_cool_staking_pool' }
-```
-
-Also, since KLY supports routes disabling(see in configs), you can stop native route implementation, override it and inform node users about this.
-
-Saying, you've found interesting plugin with advance filtering system before adding transactions to mempool and want to use this logic of txs acception instead of native one. For this you should disable native route:
-
-<pre class="language-javascript"><code class="lang-javascript"><strong>CONFIG.SYMBIOTE.TRIGGERS.MAIN.ACCEPT_TXS:false
-</strong></code></pre>
-
-{% hint style="info" %}
-See **workflow.json** to find this option
-{% endhint %}
-
-Then, enable the plugin:
-
-```json
-"PLUGINS":["some_cool_plugin_to_improve_txs_filters/index.js"]
-```
-
-And finally, inform the API users about this redirection:
-
-<pre class="language-json5"><code class="lang-json5"><strong>CONFIG.SYMBIOTE.INFO:{
-</strong><strong>
-</strong><strong>    "override":{
-</strong><strong>    
-</strong><strong>        "/transaction":"Guys, use this endpoint to send txs to me => https://some.another.endpoint.io:9999"
-</strong><strong>    
-</strong><strong>    }
-</strong><strong>
-</strong><strong>}
-</strong></code></pre>
-
-{% hint style="info" %}
-We'll show you how to work with plugins in the section [Plugins usage](../deep-dive-into-kly/run-kly-node/plugins-usage.md)
-{% endhint %}
-
-
-
-## Get current state of node
-
-#### Request
-
-```javascript
-await web1337.getSyncState()
-```
-
-#### Response
-
-```json5
-{
-  subchain: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
-  currentAuthority: '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta',
-  index: 9,
-  hash: '333970c621724bf923e64513d81c19efdf0346b4844309a6473696b976cb920c2e8e9d229a83b1481b1162c59c9f6f093aef2316d11bb69648e340ad478561bd',
-  grid: 30
-}
-```
+Try playing and studying the methods available in the SDK. If necessary, as mentioned earlier, check Postman.
