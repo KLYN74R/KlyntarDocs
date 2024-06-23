@@ -74,11 +74,11 @@
 ## build core and join network
 
 * [☁️ Run KLY node](build-core-and-join-network/run-kly-node.md)
-* [🕵️ Run KLY validator](build-core-and-join-network/run-kly-validator/README.md)
-  * [Default staking](build-core-and-join-network/run-kly-validator/default-staking/README.md)
-    * [Staking](build-core-and-join-network/run-kly-validator/default-staking/staking.md)
-    * [Unstaking](build-core-and-join-network/run-kly-validator/default-staking/unstaking.md)
-  * [Multistaking](build-core-and-join-network/run-kly-validator/multistaking.md)
+* [🕵️ Become KLY validator](build-core-and-join-network/become-kly-validator/README.md)
+  * [Default staking](build-core-and-join-network/become-kly-validator/default-staking/README.md)
+    * [Staking](build-core-and-join-network/become-kly-validator/default-staking/staking.md)
+    * [Unstaking](build-core-and-join-network/become-kly-validator/default-staking/unstaking.md)
+  * [Multistaking](build-core-and-join-network/become-kly-validator/multistaking.md)
 * [🕸️ Networks](build-core-and-join-network/networks/README.md)
   * [Your own private testnet](build-core-and-join-network/networks/your-own-private-testnet/README.md)
     * [Run your private testnet with single validator](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-single-validator.md)
