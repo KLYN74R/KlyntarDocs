@@ -24,6 +24,16 @@ WASM-based virtual machine by KLY. Supports several languages, EVM(call EVM from
 
 
 
+## XVM
+
+Hybrid virtual machine with multiple architectures support:
+
+* EVM
+* WASM
+* Other(soon - Solana VM, Cosmos VM, etc)
+
+
+
 ## RWX contract
 
 RWX - Real World eXecution codeless smart contracts. Details soon!

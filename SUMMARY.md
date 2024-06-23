@@ -63,7 +63,7 @@
     * [👀 KLY Oracles](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/README.md)
       * [⏳ Get the real time](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/get-the-real-time.md)
       * [🌏 Call any API](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/call-any-api.md)
-* [✨ UVM - Universal Virtual Machine](smart-contracts-and-vms/uvm-universal-virtual-machine.md)
+* [✨ XVM - Hybrid Virtual Machine](smart-contracts-and-vms/xvm-hybrid-virtual-machine.md)
 
 ## 🗺️ RWX contracts
 
