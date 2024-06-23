@@ -8,7 +8,7 @@ description: Simple, one-line APIs. No rocket science
 
 All APIs that the KLY core contains are well documented and available in our Postman organization
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://documenter.getpostman.com/view/25402389/2s93Y2S2FJ#097a6b76-d477-48c0-90b2-edb5743ebbf7" %}
 
@@ -16,7 +16,7 @@ Please, follow the link to test it on your own and check the useful example for 
 
 ## Multilanguage support
 
-<figure><img src="../.gitbook/assets/SDKCover.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/SDKCover.svg" alt=""><figcaption></figcaption></figure>
 
 Web1337 SDK has implementations for various languages ​​such as JS(Node.js), Golang, Python and others!
 

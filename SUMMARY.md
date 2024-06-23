@@ -6,7 +6,13 @@
 ## Web1337
 
 * [Web1337 intro](web1337/web1337-intro.md)
-* [🟢 Simple API requests](web1337/simple-api-requests.md)
+* [🟢 Simple API requests](web1337/simple-api-requests/README.md)
+  * [Block API](web1337/simple-api-requests/block-api.md)
+  * [Epoch API](web1337/simple-api-requests/epoch-api.md)
+  * [State API](web1337/simple-api-requests/state-api.md)
+  * [Misc API](web1337/simple-api-requests/misc-api.md)
+  * [Consensus related API](web1337/simple-api-requests/consensus-related-api.md)
+  * [Transactions API](web1337/simple-api-requests/transactions-api.md)
 * [🟠 Transactions and smart-contracts](web1337/transactions-and-smart-contracts/README.md)
   * [🔐 Default Ed25519 transactions](web1337/transactions-and-smart-contracts/default-ed25519-transactions.md)
   * [🤝 BLS multisig transactions](web1337/transactions-and-smart-contracts/bls-multisig-transactions.md)
