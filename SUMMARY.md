@@ -90,7 +90,10 @@
   * [Create own plugin](build-core-and-join-network/customizations/create-own-plugin.md)
   * [Run your node over TOR](build-core-and-join-network/customizations/run-your-node-over-tor.md)
   * [Plugins usage](build-core-and-join-network/customizations/plugins-usage.md)
-* [😦 Return of lost funds](build-core-and-join-network/return-of-lost-funds.md)
+
+## 👀 Interesting features you must know
+
+* [😦 Return of lost funds](interesting-features-you-must-know/return-of-lost-funds.md)
 
 ## Thundercloud
 
