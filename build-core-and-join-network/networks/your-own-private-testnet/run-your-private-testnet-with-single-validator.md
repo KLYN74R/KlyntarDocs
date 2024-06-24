@@ -138,5 +138,6 @@ Once you run node, leave this console and start to work with KLY. Now you can ca
 ## IMPORTANT
 
 {% hint style="danger" %}
-
+**Due to the nature of consensus, the network must generate at least 1 block per epoch in order to correctly change epochs and continue fault-tolerant work**
 {% endhint %}
+
