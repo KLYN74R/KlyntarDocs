@@ -33,6 +33,8 @@ mkdir CONFIGS GENESIS
 
 ## Set configuration files
 
+Go to CONFIGS directory and add the following files there
+
 ```sh
 cd CONFIGS
 ```
@@ -45,4 +47,96 @@ cd CONFIGS
 
 ## Set genesis
 
+Now, go to GENESIS directory and add the appropriate genesis file there
+
 {% file src="../../../.gitbook/assets/single_node_testnet_genesis.json" %}
+
+## Finally
+
+Now, the hierarchy should looks like this
+
+```
+│
+├───CONFIGS
+│   ├───kly_wvm.json
+│   ├───kly_evm.json
+│   ├───workflow.json
+└───GENESIS
+    ├───genesis.json
+```
+
+Once you run your node, the structure will be&#x20;
+
+```
+├───CHAINDATA
+│   ├───0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#0
+│   ├───APPROVEMENT_THREAD_METADATA
+│   ├───BLOCKS
+│   ├───EPOCH_DATA
+│   ├───KLY_EVM
+│   └───STATE
+│
+├───CONFIGS
+│   ├───kly_wvm.json
+│   ├───kly_evm.json
+│   ├───workflow.json
+└───GENESIS
+    ├───genesis.json
+```
+
+These three directories contain everything necessary for the correct operation of the node
+
+## Prepare the env variables
+
+In the environment variables you should specify the core launch mode (`testnet/mainnet`) and the path to a directory with 3 subdirectories (mentioned earlier).
+
+```bash
+export KLY_MODE=testnet
+
+# Choose your own path
+export SYMBIOTE_DIR=$HOME/klyntar
+```
+
+## Set appropriate first epoch time
+
+In order to run your local testnet correctly, you need to make some changes to the genesis file. Namely, you need to set the start time of the current epoch.
+
+To get the current time, use the following JS snippet
+
+```javascript
+console.log(new Date().getTime()) // E.g: 1719237980952
+```
+
+Now, modify the `genesis.json`:
+
+```json
+"EPOCH_TIMESTAMP": 1719237980952
+```
+
+Now, you can run your node. From your console run:
+
+```
+klyntar
+```
+
+And you have to see the following:
+
+<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="success" %}
+The password to decrypt your private key(stored in workflow.json, encrypted by AES-256) is `qwerty`
+{% endhint %}
+
+{% hint style="danger" %}
+**DO NOT USE THIS PASSWORD FOR PRODUCTION TO PREVENT BRUTEFORCING / DICTIONARY ATTACKS**
+{% endhint %}
+
+## Keep it work
+
+Once you run node, leave this console and start to work with KLY. Now you can call APIs, create/send transactions, interact with smart-contracts and so on
+
+## IMPORTANT
+
+{% hint style="danger" %}
+
+{% endhint %}
