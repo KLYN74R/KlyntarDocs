@@ -1,8 +1,8 @@
-# ☁ Run KLY node
+# ☁️ Run KLY node
 
 ## Node.js installation
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 Since the core is written on Node.js you should to install it. If you already have installed, we recommend checking the version. The recommended version is **v21.4.0**
 
@@ -28,7 +28,7 @@ Use official guides to install Node.js for your platform (Windows/Linux/Mac)
 
 ## Go installation
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 Some parts of KLY is written on Go(for example, PQC schemes), so you need to install it too. Use this guide to install Golang for your platform & architecture
 
@@ -42,7 +42,7 @@ go version
 
 ## PNPM install
 
-<figure><img src="../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 As a package manager for Node.js we use pnpm. To install it globally, run:
 
@@ -131,6 +131,12 @@ chmod 700 klyn74r.js
 
 ## Prepare configuration and genesis files
 
+At this stage, the build process ends and the preparation of files for work begins.
 
+Depending on the network you want to connect to, you will need an appropriate genesis file, as well as a set of configurations for your node.
 
-## Run your node
+To find the files that suit you, follow the instructions in the block:
+
+{% content-ref url="networks/" %}
+[networks](networks/)
+{% endcontent-ref %}
