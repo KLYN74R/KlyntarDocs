@@ -88,7 +88,7 @@ These three directories contain everything necessary for the correct operation o
 
 ## Prepare the env variables
 
-In the environment variables you should specify the core launch mode (`testnet/mainnet`) and the path to a directory with 3 subdirectories (mentioned earlier).
+In the environment variables you should specify the core launch mode (`testnet/mainnet`) and the path to a directory with 3 subdirectories (mentioned earlier). You can set these variables in your shell configuration files (e.g., `.bashrc` or `.zshrc`), depending on your OS.
 
 ```bash
 export KLY_MODE=testnet
