@@ -8,4 +8,4 @@ description: >-
 
 ## Intro
 
-<figure><img src=".gitbook/assets/Github Cover.svg" alt=""><figcaption></figcaption></figure>
+<figure><img src=".gitbook/assets/MainCover.svg" alt=""><figcaption></figcaption></figure>
