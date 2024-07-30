@@ -42,6 +42,7 @@
 ## Smart Contracts and vms
 
 * [Intro](smart-contracts-and-vms/intro.md)
+* [✨ XVM - Hybrid Virtual Machine](smart-contracts-and-vms/xvm-hybrid-virtual-machine.md)
 * [👩‍💻 KLY-EVM](smart-contracts-and-vms/kly-evm/README.md)
   * [🧙‍♂️ Magic address](smart-contracts-and-vms/kly-evm/magic-address.md)
   * [➗ Features of sharding at the EVM level you should know](smart-contracts-and-vms/kly-evm/features-of-sharding-at-the-evm-level-you-should-know.md)
@@ -51,6 +52,8 @@
   * [🔁 Simple cross-contract call (WVM-WVM)](smart-contracts-and-vms/kly-wvm/simple-cross-contract-call-wvm-wvm.md)
   * [❎ Call EVM from WASM](smart-contracts-and-vms/kly-wvm/call-evm-from-wasm.md)
   * [❎ Call JS from WASM](smart-contracts-and-vms/kly-wvm/call-js-from-wasm.md)
+* [Writing Smart Contracts](smart-contracts-and-vms/writing-smart-contracts/README.md)
+  * [Page 1](smart-contracts-and-vms/writing-smart-contracts/page-1.md)
 * [🧠 Advanced VMs usage](smart-contracts-and-vms/advanced-vms-usage/README.md)
   * [🔐 Cryptography](smart-contracts-and-vms/advanced-vms-usage/cryptography/README.md)
     * [🎲 VRF](smart-contracts-and-vms/advanced-vms-usage/cryptography/vrf.md)
@@ -63,7 +66,6 @@
     * [👀 KLY Oracles](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/README.md)
       * [⏳ Get the real time](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/get-the-real-time.md)
       * [🌏 Call any API](smart-contracts-and-vms/advanced-vms-usage/thundercloud/kly-oracles/call-any-api.md)
-* [✨ XVM - Hybrid Virtual Machine](smart-contracts-and-vms/xvm-hybrid-virtual-machine.md)
 
 ## 🗺️ RWX contracts
 
