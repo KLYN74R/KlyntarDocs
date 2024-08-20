@@ -199,7 +199,7 @@ const myKeyPair = {
 };
 
 
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = 'shard_0';
 
 const recipient = 'nXSYHp74u88zKPiRi7t22nv4WCBHXUBpGrVw3V93f2s';
 
@@ -255,7 +255,7 @@ console.log(receipt);
 
 ```json5
 {
-    "blockID": "7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta:4228",
+    "blockID": "0:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:4228",
     "id": 0,
     "isOk": true
 }
@@ -265,9 +265,9 @@ where:
 
 * **blockID** - the block where tx is
 * **id** - index of this tx in block
-* **isOk** - was this tx successfully processed or not
+* **isOk** - status to check if tx successfully processed or not
 
-###
+
 
 ## Ed25519 => BLS(multisig address) transaction
 
