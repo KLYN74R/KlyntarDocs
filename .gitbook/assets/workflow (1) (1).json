@@ -4,6 +4,8 @@
         "PUBLIC_KEY":"9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK",
         "PRIVATE_KEY":"e4a1935e868c44c8b45eccfc4098b6e51a0eee35640bfe25c933d9035c153105fa8095b782c2a27c3fefd6c82494eeedf16c19b7fd0ccebaba14c7e84ba846ce6144189d1ccd730b2424a6b997699ef2",
     
+        "PRIME_POOL_PUBKEY":false,
+    
         "MY_KLY_INFRASTRUCTURE":{
             
             "redirects":{},
@@ -13,22 +15,75 @@
     
         },
     
-        "FASTIFY_OPTIONS":{"origin":"*"},
-    
         "STORE_BLOCKS_IN_LOCAL_DATABASE":true,
     
-        "EXTRA_DATA_TO_BLOCK":{
-            "hello":"world"
+        "EXTRA_DATA_TO_BLOCK":{},
+    
+        "WAIT_IF_CANT_FIND_CHECKPOINT":4000,
+    
+        "POLLING_TIMEOUT_TO_FIND_CHECKPOINT_FOR_QUORUM_THREAD":10000,
+        "TEMPORARY_REASSIGNMENTS_BUILDER_TIMEOUT":10000,
+        
+    
+        "TRUSTED_POOLS":{
+            "VERSION_UPDATE":["6BT43SvoKHPfzVuuMNCUTFs15iaRryJ3sARNrSc8NdA9"],
+            "RUBICON_UPDATE":["6BT43SvoKHPfzVuuMNCUTFs15iaRryJ3sARNrSc8NdA9"],
+            "WORKFLOW_UPDATE":["6BT43SvoKHPfzVuuMNCUTFs15iaRryJ3sARNrSc8NdA9"],
+            "SLASH_UNSTAKE":["6BT43SvoKHPfzVuuMNCUTFs15iaRryJ3sARNrSc8NdA9"]
         },
     
-        "WAIT_IF_CANT_FIND_AEFP":4000,
-    
-        "POLLING_TIMEOUT_TO_FIND_AEFP_FOR_QUORUM_THREAD":10000,
-        "TIMEOUT_TO_FIND_TEMP_INFO_ABOUT_LAST_BLOCKS_BY_PREVIOUS_POOLS_ON_SHARDS":10000,
-    
+        
         "TXS_MEMPOOL_SIZE":300000,
         "EPOCH_EDGE_OPS_MEMPOOL_SIZE":10000,
         "BLOCK_TO_BLOCK_CACHE_SIZE":100000,
+    
+        "NODES":{
+        
+            "AF":[
+                "https://0.mynearpub.com:7777",
+                "https://1.mynearpub.com:7777",
+                "https://2.mynearpub.com:7777",
+                "https://3.mynearpub.com:7777",
+                "https://4.mynearpub.com:7777",
+                "https://5.mynearpub.com:7777",
+                "https://6.mynearpub.com:7777",
+                "https://7.mynearpub.com:7777",
+                "https://8.mynearpub.com:7777",
+                "https://9.mynearpub.com:7777",
+                "https://10.mynearpub.com:7777",
+                "https://11.mynearpub.com:7777",
+                "https://12.mynearpub.com:7777",
+                "https://13.mynearpub.com:7777",
+                "https://14.mynearpub.com:7777",
+                "https://15.mynearpub.com:7777",
+                "https://16.mynearpub.com:7777",
+                "https://17.mynearpub.com:7777",
+                "https://18.mynearpub.com:7777"
+            ],
+                
+            "AS":[
+                "https://0.mynearpub.com:7777",
+                "https://1.mynearpub.com:7777",
+                "https://2.mynearpub.com:7777",
+                "https://3.mynearpub.com:7777",
+                "https://4.mynearpub.com:7777",
+                "https://5.mynearpub.com:7777",
+                "https://6.mynearpub.com:7777",
+                "https://7.mynearpub.com:7777",
+                "https://8.mynearpub.com:7777",
+                "https://9.mynearpub.com:7777",
+                "https://10.mynearpub.com:7777",
+                "https://11.mynearpub.com:7777",
+                "https://12.mynearpub.com:7777",
+                "https://13.mynearpub.com:7777",
+                "https://14.mynearpub.com:7777",
+                "https://15.mynearpub.com:7777",
+                "https://16.mynearpub.com:7777",
+                "https://17.mynearpub.com:7777",
+                "https://18.mynearpub.com:7777"
+            ]
+        
+        },
         
         "BOOTSTRAP_NODES":[
             "http://localhost:7332",
@@ -36,6 +91,16 @@
             "http://localhost:44444"
         ],
         
+                
+        "MUST_SEND":{
+    
+            "BINANCE_EU1_API":"https://api.binancefriendone.com:7777",
+            "PANOPTICON_UA":"https://somesubdomainid.panopticon.com:7777",
+            "SOME_CDN_PROVIDER":"https://someexplorer.io:7777"
+        
+        },
+        
+        "NODES_PORTION":8,
         "MAX_CONNECTIONS":15,
         "MY_HOSTNAME":"http://localhost:7332",
             
@@ -54,15 +119,13 @@
                 "MY_KLY_INFRASTRUCTURE":600,
                 "SYNC_STATS":2,
                 "CHAIN_INFO":5,
+                "SEARCH_RESULT":5,
                 "TX_RECEIPT":100,
                 "VERIFICATION_STATS_PER_POOL":5,
                 "DATA_ABOUT_EPOCH_ON_THREAD":5,
                 "GET_CURRENT_SHARD_LEADERS":5,
                 "GET_EPOCH_BY_INDEX":5,
-                "KLY_EVM_METADATA":5,
-                "QUORUM_URLS_AND_PUBKEYS":5,
-                "VT_TOTAL_STATS":5,
-                "VT_STATS_PER_EPOCH":5
+                "KLY_EVM_METADATA":5
     
             }   
         
@@ -71,15 +134,16 @@
         "ROUTE_TRIGGERS":{
     
             "MAIN":{
-    
+
                 "ACCEPT_BLOCKS_AND_RETURN_FINALIZATION_PROOFS":1,
                 "ACCEPT_TXS":1,
                 "GET_AGGREGATED_FINALIZATION_PROOFS":1,
                 "GET_AGGREGATED_EPOCH_FINALIZATION_PROOF":1,
+                "EPOCH_EDGE_OPERATIONS":1,
                 "NEW_NODES":1
     
             },
-    
+        
     
             "API":{
     
@@ -89,12 +153,11 @@
                 "BLOCK":1,
                 "BLOCK_BY_SID":1,
                 "LATEST_N_BLOCKS":1,
-                "VT_TOTAL_STATS":1,
-                "VT_STATS_PER_EPOCH":1,
     
                 "MY_KLY_INFRASTRUCTURE":1,
                 "SYNC_STATS":1,
                 "CHAIN_INFO":1,
+                "SEARCH_RESULT":1,
                 "TX_RECEIPT":1,
                 "VERIFICATION_STATS_PER_POOL":1,
                 "DATA_ABOUT_EPOCH_ON_THREAD":1,
@@ -109,11 +172,11 @@
         "GET_BLOCKS_URL":"http://localhost:7332",
         "GET_AGGREGATED_FINALIZATION_PROOF_URL":"http://localhost:7332",
         "GET_PREVIOUS_EPOCH_AGGREGATED_FINALIZATION_PROOF_URL":"http://localhost:7332",
-    
+
         "ANIMATION_DURATION":0,
     
         "PLUGINS":[],
-    
+
         "INTERFACE":"::",
         "PORT":7332,
     
@@ -121,6 +184,7 @@
         "WEBSOCKET_PORT":9999,
     
         "PAYLOAD_SIZE":1000,
+        "EXTENDED_PAYLOAD_SIZE":10000,
         "MAX_PAYLOAD_SIZE":10000000,
     
     
@@ -136,6 +200,6 @@
     
             }
         }
-    
+   
     }
 }

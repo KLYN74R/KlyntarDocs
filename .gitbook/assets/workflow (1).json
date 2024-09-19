@@ -125,7 +125,9 @@
                 "DATA_ABOUT_EPOCH_ON_THREAD":5,
                 "GET_CURRENT_SHARD_LEADERS":5,
                 "GET_EPOCH_BY_INDEX":5,
-                "KLY_EVM_METADATA":5
+                "KLY_EVM_METADATA":5,
+                "VT_TOTAL_STATS":5,
+                "VT_STATS_PER_EPOCH":5
     
             }   
         
@@ -163,7 +165,9 @@
                 "DATA_ABOUT_EPOCH_ON_THREAD":1,
                 "GET_CURRENT_SHARD_LEADERS":1,
                 "GET_EPOCH_BY_INDEX":1,
-                "KLY_EVM_METADATA":1
+                "KLY_EVM_METADATA":1,
+                "VT_TOTAL_STATS":1,
+                "VT_STATS_PER_EPOCH":1
             
             }
         
