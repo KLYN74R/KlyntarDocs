@@ -4,13 +4,17 @@
 
 > ### We use their <mark style="color:red;">TOTAL POWER</mark> as the maximum source of liquidity and decentralization
 
-## <mark style="color:red;">Problem:</mark> PoS/BFT blockchains are vulnerable to so-called <mark style="color:purple;">long-range attack</mark>
+## <mark style="color:red;">Problem</mark>
+
+### PoS/BFT blockchains are vulnerable to so-called <mark style="color:purple;">long-range attack</mark>
 
 Its essence is that when you start synchronizing your node with the current state of the blockchain, you have to start checking blocks 0,1,2,... and so on. At the same time, you need to take these blocks from somewhere and here is the problem - <mark style="color:blue;">**how to make sure which block is valid?**</mark>
 
 If, say, block 1337th was generated and confirmed by the network more than 3 years ago, then with a high degree of probability those old validators are no longer active and may have even removed their shares from staking. A problem arises - you cannot clearly determine which block with index 1337 was correct - anyone can offer you any valid fork.
 
-## <mark style="color:green;">Solution:</mark> In order for you to be able to check the relevance of your copy of the blockchain, the current quorum (current validators who have frozen their stake and who can be trusted because they have something to risk) makes "checkpoints" to other blockchains once per epoch (or with other frequency).
+## <mark style="color:green;">Solution</mark>
+
+### In order for you to be able to check the relevance of your copy of the blockchain, the current quorum (current validators who have frozen their stake and who can be trusted because they have something to risk) makes "checkpoints" to other blockchains once per epoch (or with other frequency)
 
 A checkpoint is a fact that looks like this, for example:
 
