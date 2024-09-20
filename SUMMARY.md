@@ -96,9 +96,15 @@
   * [Create own plugin](build-core-and-join-network/customizations/create-own-plugin.md)
   * [Run your node over TOR](build-core-and-join-network/customizations/run-your-node-over-tor.md)
   * [Plugins usage](build-core-and-join-network/customizations/plugins-usage.md)
-* [Explorer Usage](build-core-and-join-network/explorer-usage/README.md)
-  * [Public Explorer](build-core-and-join-network/explorer-usage/public-explorer.md)
-  * [Your own custom explorer](build-core-and-join-network/explorer-usage/your-own-custom-explorer.md)
+* [Explorers and how to use them](build-core-and-join-network/explorers-and-how-to-use-them/README.md)
+  * [Public Explorer](build-core-and-join-network/explorers-and-how-to-use-them/public-explorer.md)
+  * [Your own custom explorer](build-core-and-join-network/explorers-and-how-to-use-them/your-own-custom-explorer.md)
+  * [Usage guide](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/README.md)
+    * [Network Parameters](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-parameters.md)
+    * [Searchbar](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/searchbar.md)
+    * [Network Info](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/README.md)
+      * [Epoches data](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/epoches-data.md)
+      * [Hostchain checkpoints](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/hostchain-checkpoints.md)
 
 ## 👀 Interesting features you must know
 
