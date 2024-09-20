@@ -4,7 +4,7 @@ description: Solana compatible accounts
 
 # 🔐 Default Ed25519 transactions
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Create and send default transaction
 

@@ -330,7 +330,7 @@ Here we try to rewrite the 124 with 93 **aa** bytes. Now, let's finish. After lo
 
 ## Magic
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, we can pre-set specific address to handle calls to WASM and JS(or other env).
 

@@ -30,7 +30,7 @@ If such a message is saved on many blockchains, then even after many years it ca
 
 So, on this page you will find this
 
-<figure><img src="../../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (29).png" alt=""><figcaption></figcaption></figure>
 
 Here for each epoch, a list of checkpoints and links to the corresponding transactions in other blockchains is available.
 
@@ -40,12 +40,12 @@ In many cases, it is recommended to trust the validity of the epoch data where 2
 
 Long story short you can trust this
 
-<figure><img src="../../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
 
 And this
 
-<figure><img src="../../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
 
 But doubt this:
 
-<figure><img src="../../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>

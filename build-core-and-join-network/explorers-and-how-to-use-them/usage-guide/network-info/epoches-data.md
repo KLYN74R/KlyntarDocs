@@ -14,8 +14,8 @@ Below you can also check the list of validators and selector of shards. By chang
 
 By clicking on validator above - you will be redirected to page about this pool
 
-<figure><img src="../../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 Get the list of stakers and explore their accounts
 
-<figure><img src="../../../../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>

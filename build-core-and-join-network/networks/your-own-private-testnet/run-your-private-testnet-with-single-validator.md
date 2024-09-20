@@ -39,7 +39,7 @@ Go to CONFIGS directory and add the following files there
 cd CONFIGS
 ```
 
-{% file src="../../../.gitbook/assets/kly_wvm.json" %}
+{% file src="../../../.gitbook/assets/kly_wvm (1).json" %}
 
 {% file src="../../../.gitbook/assets/kly_evm.json" %}
 
@@ -49,7 +49,7 @@ cd CONFIGS
 
 Now, go to GENESIS directory and add the appropriate genesis file there
 
-{% file src="../../../.gitbook/assets/single_node_testnet_genesis.json" %}
+{% file src="../../../.gitbook/assets/genesis.json" %}
 
 ## Finally
 
@@ -65,7 +65,7 @@ Now, the hierarchy should looks like this
     ├───genesis.json
 ```
 
-Once you run your node, the structure will be&#x20;
+Once you run your node, the structure will be
 
 ```
 ├───CHAINDATA
@@ -121,7 +121,7 @@ klyntar
 
 And you have to see the following:
 
-<figure><img src="../../../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 The password to decrypt your private key(stored in workflow.json, encrypted by AES-256) is `qwerty`
@@ -140,4 +140,3 @@ Once you run node, leave this console and start to work with KLY. Now you can ca
 {% hint style="danger" %}
 **Due to the nature of consensus, the network must generate at least 1 block per epoch in order to correctly change epochs and continue fault-tolerant work**
 {% endhint %}
-
