@@ -96,6 +96,9 @@
   * [Create own plugin](build-core-and-join-network/customizations/create-own-plugin.md)
   * [Run your node over TOR](build-core-and-join-network/customizations/run-your-node-over-tor.md)
   * [Plugins usage](build-core-and-join-network/customizations/plugins-usage.md)
+* [Explorer Usage](build-core-and-join-network/explorer-usage/README.md)
+  * [Public Explorer](build-core-and-join-network/explorer-usage/public-explorer.md)
+  * [Page 1](build-core-and-join-network/explorer-usage/page-1.md)
 
 ## 👀 Interesting features you must know
 
