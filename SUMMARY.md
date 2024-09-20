@@ -98,7 +98,7 @@
   * [Plugins usage](build-core-and-join-network/customizations/plugins-usage.md)
 * [Explorer Usage](build-core-and-join-network/explorer-usage/README.md)
   * [Public Explorer](build-core-and-join-network/explorer-usage/public-explorer.md)
-  * [Page 1](build-core-and-join-network/explorer-usage/page-1.md)
+  * [Your own custom explorer](build-core-and-join-network/explorer-usage/your-own-custom-explorer.md)
 
 ## 👀 Interesting features you must know
 
