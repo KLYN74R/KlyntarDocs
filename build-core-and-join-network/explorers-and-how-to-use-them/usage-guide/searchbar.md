@@ -15,7 +15,7 @@ Choose appropriate filter and paste TxID. Please note that:
 
 For example:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
@@ -25,13 +25,17 @@ The same works for EVM transactions. Get the txid from your wallet or web3 SDK a
 
 <figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="success" %}
+Note that there are 2 types of transactions shown here - the transaction is running in parallel mode and not in parallel. **Klyntar has full parallel support - parallel WASM VM, parallel EVM, etc.**
+{% endhint %}
+
 ## Find block by shard index&#x20;
 
 Each shard works as independent linear blockchain. So, to find the first block on shard or, saying 1337th block on shard choose filter and paste required input
 
 Find the first block on shard 0 (indexation starts from 0)
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 Result
 
