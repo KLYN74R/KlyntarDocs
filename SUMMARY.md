@@ -35,6 +35,7 @@
   * [🌩️ Thundercloud](web1337/advance-web1337-usage/thundercloud/README.md)
     * [🏷️ Using KLY Aliases in transactions](web1337/advance-web1337-usage/thundercloud/using-kly-aliases-in-transactions.md)
     * [🦾 Deploy KIP](web1337/advance-web1337-usage/thundercloud/deploy-kip.md)
+  * [Parallel execution](web1337/advance-web1337-usage/parallel-execution.md)
 * [🌐 Networking](web1337/networking/README.md)
   * [🙈 Using proxy](web1337/networking/using-proxy.md)
   * [⚡ Interact with node via websockets](web1337/networking/interact-with-node-via-websockets.md)
