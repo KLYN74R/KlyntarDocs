@@ -21,6 +21,7 @@
     * [Other PQC transactions options](web1337/transactions-and-smart-contracts/post-quantum-transactions/other-pqc-transactions-options.md)
   * [📃 KLY-WVM - deploy and interact with a smart-contract](web1337/transactions-and-smart-contracts/kly-wvm-deploy-and-interact-with-a-smart-contract.md)
   * [📃 KLY-EVM - deploy and interact with a smart-contract](web1337/transactions-and-smart-contracts/kly-evm-deploy-and-interact-with-a-smart-contract.md)
+  * [Transfer coins between EVM and native environment](web1337/transactions-and-smart-contracts/transfer-coins-between-evm-and-native-environment.md)
 * [🔴 Advance Web1337 usage](web1337/advance-web1337-usage/README.md)
   * [💫 Epoch edge operations](web1337/advance-web1337-usage/epoch-edge-operations/README.md)
     * [🕊️ Send epoch edge operation to KLY](web1337/advance-web1337-usage/epoch-edge-operations/send-epoch-edge-operation-to-kly.md)
