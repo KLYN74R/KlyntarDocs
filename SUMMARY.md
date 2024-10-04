@@ -3,6 +3,11 @@
 * [KLYNTAR Docs](README.md)
 * [📚 Glossary](glossary.md)
 
+## Wallets usage
+
+* [Wallets to work with WVM and native environment](wallets-usage/wallets-to-work-with-wvm-and-native-environment.md)
+* [EVM compatible wallets](wallets-usage/evm-compatible-wallets.md)
+
 ## Web1337
 
 * [Web1337 intro](web1337/web1337-intro.md)
@@ -28,8 +33,7 @@
     * [👨‍⚖️ Become KLY validator with Web1337](web1337/advance-web1337-usage/epoch-edge-operations/become-kly-validator-with-web1337.md)
   * [🪄 Abstraction](web1337/advance-web1337-usage/abstraction/README.md)
     * [⛓️ Chain abstraction](web1337/advance-web1337-usage/abstraction/chain-abstraction.md)
-    * [🦸‍♂️ Account abstraction 2.0](web1337/advance-web1337-usage/abstraction/account-abstraction-2.0/README.md)
-      * [💸 Using AFS - advanced fee system](web1337/advance-web1337-usage/abstraction/account-abstraction-2.0/using-afs-advanced-fee-system.md)
+    * [🦸‍♂️ Account abstraction 2.0](web1337/advance-web1337-usage/abstraction/account-abstraction-2.0.md)
     * [💾 Storage Abstraction](web1337/advance-web1337-usage/abstraction/storage-abstraction/README.md)
       * [🔃 Manual deployment of the storage for your contract](web1337/advance-web1337-usage/abstraction/storage-abstraction/manual-deployment-of-the-storage-for-your-contract.md)
       * [☄️ Dump EVM & WASM contract storage](web1337/advance-web1337-usage/abstraction/storage-abstraction/dump-evm-and-wasm-contract-storage.md)
@@ -37,6 +41,7 @@
     * [🏷️ Using KLY Aliases in transactions](web1337/advance-web1337-usage/thundercloud/using-kly-aliases-in-transactions.md)
     * [🦾 Deploy KIP](web1337/advance-web1337-usage/thundercloud/deploy-kip.md)
   * [Parallel execution](web1337/advance-web1337-usage/parallel-execution.md)
+  * [Using boosts & subscriptions](web1337/advance-web1337-usage/using-boosts-and-subscriptions.md)
 * [🌐 Networking](web1337/networking/README.md)
   * [🙈 Using proxy](web1337/networking/using-proxy.md)
   * [⚡ Interact with node via websockets](web1337/networking/interact-with-node-via-websockets.md)
