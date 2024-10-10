@@ -549,7 +549,17 @@ console.log(tx);
 In this transaction you send your assets to the BLAKE3 hash of public key of some post-quantum signatures schemes like DIlithium or BLISS (we support 2 algorithms)
 
 {% hint style="info" %}
-We'll talk about PQC accounts later. Just now, as a sender you just need to know only the  address of recipient - it's 256-bit hash of public key
+In case PQC account of recipient do not exist - include additional field pqcPub to payload to let the network to create **pubkey:address** pair in state
+{% endhint %}
+
+See
+
+{% content-ref url="post-quantum-transactions/" %}
+[post-quantum-transactions](post-quantum-transactions/)
+{% endcontent-ref %}
+
+{% hint style="info" %}
+We'll talk about PQC accounts later. Just now, as a sender you just need to know only the  address of recipient - it's 256-bit BLAKE3 hash of public key
 {% endhint %}
 
 ```javascript
