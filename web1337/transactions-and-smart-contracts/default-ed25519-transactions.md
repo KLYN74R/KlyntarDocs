@@ -319,19 +319,20 @@ Going back to the 4 friends example, if we have a threshold of 3/4, then it make
 You and 3 your friends generate multisig pairs(public + private key) locally. Let's do it with Web1337:
 
 ```javascript
-import {bls} from 'web1337'
+import {crypto} from 'web1337';
 
-let privateKey1 = await bls.generatePrivateKey();
-let publicKey1 = bls.derivePubKey(privateKey1);
 
-let privateKey2 = await bls.generatePrivateKey();
-let publicKey2 = bls.derivePubKey(privateKey2);
+let privateKey1 = await crypto.bls.generatePrivateKey();
+let publicKey1 = crypto.bls.derivePubKeyFromHexPrivateKey(privateKey1);
 
-let privateKey3 = await bls.generatePrivateKey();
-let publicKey3 = bls.derivePubKey(privateKey3);
+let privateKey2 = await crypto.bls.generatePrivateKey();
+let publicKey2 = crypto.bls.derivePubKeyFromHexPrivateKey(privateKey2);
 
-let privateKey4 = await bls.generatePrivateKey();
-let publicKey4 = bls.derivePubKey(privateKey4);
+let privateKey3 = await crypto.bls.generatePrivateKey();
+let publicKey3 = crypto.bls.derivePubKeyFromHexPrivateKey(privateKey3);
+
+let privateKey4 = await crypto.bls.generatePrivateKey();
+let publicKey4 = crypto.bls.derivePubKeyFromHexPrivateKey(privateKey4);
 
 
 console.log(`Pair 1 => ${privateKey1} : ${publicKey1}`);
@@ -343,80 +344,92 @@ console.log(`Pair 4 => ${privateKey4} : ${publicKey4}`);
 Output:
 
 ```code-runner-output
-Pair 1 => 6bcdb86cd8f9d24e9fe934905431de5c224499af8788bf12cae8597f0af4cb23 : 6Pz5B3xLQKDxtnESqk3tWnsd4kwkVYLNsvgKJy31HssK3eGSy7Tvratk5pZNFW5z8S
-Pair 2 => e5ca94e2c60cbb3ca9d5f9c233a99f01e3250ef62bd48fbc09caf25ae70040b5 : 5uj1Sgrvo9mwF6v8Z3Kxe4arQcu53Q2z9QBYsRPWCdo972jBeL8hD3Kmo4So3dSLt5
-Pair 3 => ead8698b5ef285e6019e22e54dfe2c592c020946e803df8c6e79f98baf849d48 : 6ZmLf52hp5FgCxuaNJ6Jmi2M7FSJTr115WRMuV1yCvEihepnEKJBhgopDMpUKLpe2F
-Pair 4 => 414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a : 61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPPbhpMDn
+Pair 1 => 69bfb956053e034b1b7d8b634c9bb8acd1b5743fab64245fad4b1472f63799a9 : 0xabe301a20289d1e014c69906febbee42626e084dc93f70c689803e163963101fc90a3674576f86ff90ba9c71310685f1
+Pair 2 => 001b9abf2e6d23e13b30a4d35242a11848530f5e40a0fea8c3c50d2902c6c056 : 0x8486ccde87fe2603815587a64bd43596d45b383d12563e6b513a9ca033ec9974490f9d577125bbd2b80ada893476a603
+Pair 3 => 5eca1e38f579064091c4c84eab47b5b5f2a0256847674e6f590879c2dc1605e0 : 0x87960819a282b2092825c73ac3afbe2e1d5680dff8e00c1f10851ab0b025ae45ac46698d6c0dfda229e2a187bde9690c
+Pair 4 => 1635f5c69f695673e83184aba52316a9d2a458016e791ae0180d8c42d05a144c : 0x965c986dc91c1a45b6a6d24bb7b8509e9c80f6e77827de1e70737bdeeb23ef3362864da538da57a57384c17dcc9a3fc7
 ```
 
 Now, you need to aggregate your 4 public keys to get the root public key and receive payments for collective usage.
 
 ```javascript
-let publicKey1 = '6Pz5B3xLQKDxtnESqk3tWnsd4kwkVYLNsvgKJy31HssK3eGSy7Tvratk5pZNFW5z8S';
-let privateKey1 = '6bcdb86cd8f9d24e9fe934905431de5c224499af8788bf12cae8597f0af4cb23';
+let publicKey1 = '0xabe301a20289d1e014c69906febbee42626e084dc93f70c689803e163963101fc90a3674576f86ff90ba9c71310685f1';
+let privateKey1 = '69bfb956053e034b1b7d8b634c9bb8acd1b5743fab64245fad4b1472f63799a9';
 
-let publicKey2 = '5uj1Sgrvo9mwF6v8Z3Kxe4arQcu53Q2z9QBYsRPWCdo972jBeL8hD3Kmo4So3dSLt5';
-let privateKey2 = 'e5ca94e2c60cbb3ca9d5f9c233a99f01e3250ef62bd48fbc09caf25ae70040b5';
+let publicKey2 = '0x8486ccde87fe2603815587a64bd43596d45b383d12563e6b513a9ca033ec9974490f9d577125bbd2b80ada893476a603';
+let privateKey2 = '001b9abf2e6d23e13b30a4d35242a11848530f5e40a0fea8c3c50d2902c6c056';
 
-let publicKey3 = '6ZmLf52hp5FgCxuaNJ6Jmi2M7FSJTr115WRMuV1yCvEihepnEKJBhgopDMpUKLpe2F';
-let privateKey3 = 'ead8698b5ef285e6019e22e54dfe2c592c020946e803df8c6e79f98baf849d48';
+let publicKey3 = '0x87960819a282b2092825c73ac3afbe2e1d5680dff8e00c1f10851ab0b025ae45ac46698d6c0dfda229e2a187bde9690c';
+let privateKey3 = '5eca1e38f579064091c4c84eab47b5b5f2a0256847674e6f590879c2dc1605e0';
 
-let publicKey4 = '61tPxmio9Y21GtkiyYG3qTkreKfqm6ktk7MVk2hxqiXVURXxM6qNb9vPfvPPbhpMDn';
-let privateKey4 = '414230b72c59ac8db6ec47b629607057edaa5c7c553d44b4b9fd1c0090141c5a';
+let publicKey4 = '0x965c986dc91c1a45b6a6d24bb7b8509e9c80f6e77827de1e70737bdeeb23ef3362864da538da57a57384c17dcc9a3fc7';
+let privateKey4 = '1635f5c69f695673e83184aba52316a9d2a458016e791ae0180d8c42d05a144c';
 
 
-let rootPubKey = bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
+let rootPubKey = crypto.bls.aggregatePublicKeys([publicKey1,publicKey2,publicKey3,publicKey4]);
 
-console.log('RootPubKey =>',rootPubKey);
+console.log('RootPubKey => ',rootPubKey);
 ```
 
 Output:
 
 ```code-runner-output
-RootPubKey => 68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1
+RootPubKey =>  0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4
 ```
 
 Now you can accept payments for this address.
 
 ### From sender's point of view
 
-When you need to send something to multisig account you need to set the reverse threshold if account still not exists or use \`rev\_t\` property of already existed account
+When you need to send something to multisig account you need to set the reverse threshold if account still not exists or use `rev_t` property of already existed account
 
-So, if account `68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1` still not in state - use this template:
+So, if account `0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4` still not in state - use this template:
 
 ```javascript
-const myKeyPair = {
+let web1337 = new Web1337({
 
-    mnemonic: 'south badge state hedgehog carpet aerobic float million enforce opinion hungry race',
-    bip44Path: "m/44'/7331'/0'/0'",
-    pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
-    prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
-      
+    chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    workflowVersion:0,
+    nodeURL: 'http://localhost:7332'
+
+}); // need node endpoint to return the correct nonce. If you know your nonce - you can omit it
+
+const keypair = {
+    
+    pub:"9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK",
+    
+    prv:"MC4CAQAwBQYDK2VwBCIEILdhTMVYFz2GP8+uKUA+1FnZTEdN8eHFzbb8400cpEU9",
+
 };
 
-
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
-
-const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1';
-
-const from = myKeyPair.pub;
-
-const myPrivateKey = myKeyPair.prv;
-
-const nonce = 0;
-
-const fee = 1;
-
-const amountInKLY = 13.37;
 
 // In our example with 4 friends, since we want 3/4 agreements
 // to use account, the reverse threshold will be 4-3=1
 // Use the formula rev_t = N-T where N - number of sides, T-threshold
 const reverseThreshold = 1;
 
-let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipient,fee,amountInKLY,reverseThreshold);
 
-console.log(signedTx);
+const payload = {
+
+    to: "0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4",
+
+    amount: 13.37,
+
+    rev_t: reverseThreshold
+
+};
+
+const shardID = "shard_0";
+
+const fee = 0.03;
+
+const nonce = await web1337.getAccount(shardID,keypair.pub).then(account=>account.nonce+1);
+
+const txType = "TX";
+
+let tx = web1337.createEd25519Transaction(shardID,txType,keypair.pub,keypair.prv,nonce,fee,payload);
+
+console.log(tx);
 ```
 
 Result:
@@ -424,45 +437,44 @@ Result:
 ```json5
 {
   v: 0,
-  creator: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
+  creator: '9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK',
   type: 'TX',
-  nonce: 0,
-  fee: 1,
+  nonce: 7028,
+  fee: 0.03,
   payload: {
-    type: 'D',
-    to: '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1',
+    to: '0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4',
     amount: 13.37,
     rev_t: 1
   },
-  sig: 'VxL7dEsA+TZRVkj2jn3LBH7D8wuyyseDYkPptEicRHXJ9vIDSfjxYBiz1GCIESIXSWZKlcOx5Ld2hK1FaWsLDw=='
+  sigType: 'D',
+  sig: 'm6k4I1AMLA1W8lDZWZb1UcFE1OYfe6uTvrzr6b9XyOe/MIk04R7GJQ575If3JUgNDl+1uq0PDJoVibKgsqvlAQ=='
 }
 ```
 
 After this transaction, new account will be added to state:
 
 ```json
-"68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1":{
-    "type":"account",
-    "balance":13.37,
-    "uno":0,
-    "nonce":0,
-    "rev_t":1,
-    "shard":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
+"0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4":{
+    "type": "eoa",
+    "balance": 13.37,
+    "uno": 0,
+    "nonce": 0,
+    "gas": 0,
+    "rev_t": 1,
+    "shard": "shard_0"
 }
 ```
 
 As you see, new multisig account is created and binded to shard where sender sends KLY. Also, the `rev_t` is set to 1 what means that the number of dissenting sides can be 1.
 
-
-
 In case account was already in state - get the `rev_t` from information about account:
 
 ```javascript
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = 'shard_0';
 
-const recipient = '68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1';
+const recipient = '0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4';
 
-let accountInfo  = await web1337.getFromState(shardID,recipient);
+let accountInfo  = await web1337.getAccount(shardID,recipient);
 
 console.log('Account:\n\n',accountInfo);
 ```
@@ -470,13 +482,14 @@ console.log('Account:\n\n',accountInfo);
 ```
 Account
 
-"68Bpgi6MbRX9q3T9h8DDWomPGu85HqWSfPMT23r6g29xyn1dN7qfquwxpfFNMdMpU1":{
-    "type":"account",
-    "balance":123456,
-    "uno":0,
-    "nonce":0,
-    "rev_t":1,
-    "shard":"7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta"
+{
+    "type": "eoa",
+    "balance": 13.37,
+    "uno": 0,
+    "nonce": 0,
+    "gas": 0,
+    "rev_t": 1,
+    "shard": "shard_0"
 }
 ```
 
