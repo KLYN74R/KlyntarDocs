@@ -12,9 +12,7 @@ description: Solana compatible accounts
 Here we propose the example of simple transaction from default account(ed25519) to any other account
 {% endhint %}
 
-Also, read more about our default ed25519 accounts in MasteringKlyntar
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/key-pairs" %}
+## Keypair creation process
 
 <figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -25,15 +23,15 @@ Also, read more about our default ed25519 accounts in MasteringKlyntar
 ```javascript
 import {crypto} from 'web1337';
 
-let mnemonic = "" // mnemonic should be empty in case you generate a new pair
+let mnemonic = ""; // mnemonic should be empty in case you generate a new pair
 
-let mnemonicPassword = "" // set the password for your mnemonic
+let mnemonicPassword = "HelloKlyntar"; // set the password for your mnemonic
 
-let bip44Path = [44,7331,0,0] // 7331 is KLY ID and the next values - derivation path
+let bip44Path = [44,7331,0,0]; // 7331 is KLY ID and the next values - derivation path
 
 let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,mnemonicPassword,bip44Path);
 
-console.log(keypair);
+console.log(JSON.parse(keypair));
 ```
 {% endtab %}
 
@@ -63,10 +61,10 @@ Output:
 
 ```json5
 {
-  mnemonic: 'job october hold grape novel horror stay major pledge bonus energy fringe',
-  bip44Path: "m/44'/7331'/0'/0'",
-  pub: 'GbjtpGjt1G9pJe667cQcBswRMGq9XogmrGEGUj94enuc',
-  prv: 'MC4CAQAwBQYDK2VwBCIEIMOJVCiaURXxlZrkXe+fa2r061eqdOQAxux1/gxDGRi9'
+  mnemonic: 'refuse enroll glance tree laptop hill void lobster oxygen regular salad hour ice knife lazy gap decrease hundred garden waste move hundred kitchen tissue',
+  bip44Path: [ 44, 7331, 0, 0 ],
+  pub: 'n2XZqcPUeXjcn9Gt5iAT4aEx8uLTKwThTPNWf8gAgbS',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIH7Pttf8d85IAkB0M3c2BcEthzckDnSSq4Gg8NsQI1xj'
 }
 ```
 
@@ -86,17 +84,15 @@ Get the first keypair in future chain:
 ```javascript
 import {crypto} from 'web1337';
 
+let mnemonic = ""; // mnemonic should be empty in case you generate a new pair
 
-const mnemonic = "";
+let mnemonicPassword = "HelloKlyntar"; // DO NOT USE IN REAL USE CASES
 
-const mnemoPassword = 'HelloKlyntar';
+let bip44Path = [44,7331,0,0]; // 7331 is KLY ID and the next values - derivation path
 
-const bip44Path = [44,7331,0,0];
+let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,mnemonicPassword,bip44Path);
 
-
-let keypair = await crypto.ed25519.generateDefaultEd25519Keypair(mnemonic,bip44Path,mnemoPassword);
-
-console.log(keypair);
+console.log(JSON.parse(keypair));
 ```
 {% endtab %}
 
@@ -126,10 +122,10 @@ Output:
 
 ```json5
 {
-  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
-  bip44Path: "m/44'/7331'/0'/0'",
-  pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
-  prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
+  mnemonic: 'slam lab chief wire inquiry transfer trigger object segment jeans lawn trumpet tuition amount penalty provide frost tortoise display shiver desert vintage erase vague',
+  bip44Path: [ 44, 7331, 0, 0 ],
+  pub: 'E64Sp6NQsHHYhujdrTvGj8dkkhu9ZiDubddm7TW6NmYP',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIMWqtM5c1FAUA4wtb26RUlAUqNYTEE7ALLcw6KvJELrJ'
 }
 ```
 
@@ -146,37 +142,38 @@ import {crypto} from 'web1337';
 
 
 const firstKeypairInChain = {
-    mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
-    bip44Path: [44,7331,0,0],
-    pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
-    prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
+  mnemonic: 'slam lab chief wire inquiry transfer trigger object segment jeans lawn trumpet tuition amount penalty provide frost tortoise display shiver desert vintage erase vague',
+  bip44Path: [ 44, 7331, 0, 0 ],
+  pub: 'E64Sp6NQsHHYhujdrTvGj8dkkhu9ZiDubddm7TW6NmYP',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIMWqtM5c1FAUA4wtb26RUlAUqNYTEE7ALLcw6KvJELrJ'
 };
 
-console.log('0 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,0]));
-console.log('1 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,1]));
-console.log('2 in chain => ',await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,2]));
+
+console.log('0 in chain => ',JSON.parse(await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,0])));
+console.log('1 in chain => ',JSON.parse(await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,1])));
+console.log('2 in chain => ',JSON.parse(await crypto.ed25519.generateDefaultEd25519Keypair(firstKeypairInChain.mnemonic,'HelloKlyntar',[44,7331,0,2])));
 ```
 
 Output:
 
 ```code-runner-output
 0 in chain =>  {
-  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
-  bip44Path: "m/44'/7331'/0'/0'",
-  pub: '5oFCA179BeABvcUx921adoU4N9mXGGGS6DaoAwcTgFzs',
-  prv: 'MC4CAQAwBQYDK2VwBCIEIB5ghaD82U+RixQ9KuGtFwADQu1FMVl4dTWs1zd094Q2'
+  mnemonic: 'slam lab chief wire inquiry transfer trigger object segment jeans lawn trumpet tuition amount penalty provide frost tortoise display shiver desert vintage erase vague',
+  bip44Path: [ 44, 7331, 0, 0 ],
+  pub: 'E64Sp6NQsHHYhujdrTvGj8dkkhu9ZiDubddm7TW6NmYP',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIMWqtM5c1FAUA4wtb26RUlAUqNYTEE7ALLcw6KvJELrJ'
 }
 1 in chain =>  {
-  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
-  bip44Path: "m/44'/7331'/0'/1'",
-  pub: '6GSUoBos7P3ZZLeq5jjH4AJ8vvVMJQHqGVh1ZsH8FeGF',
-  prv: 'MC4CAQAwBQYDK2VwBCIEILp+iBVOXkbVy4J3Dbw8w22bJ+TNXHyRmvYIeQcBHl+f'
+  mnemonic: 'slam lab chief wire inquiry transfer trigger object segment jeans lawn trumpet tuition amount penalty provide frost tortoise display shiver desert vintage erase vague',
+  bip44Path: [ 44, 7331, 0, 1 ],
+  pub: 'HmLyx89V2mif1H4GNJVDEodH5kw7r78h3tfymCqCBFri',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIEaZiwgvgvf0naUUHfM6OidMbn6o+SuDDsgEl/NHcIH+'
 }
 2 in chain =>  {
-  mnemonic: 'final lottery shell supply lottery doll drive flavor awesome tool matter argue',
-  bip44Path: "m/44'/7331'/0'/2'",
-  pub: '8DZ92AyXjfyRYhWJB1rxHy38bYwtm1bW6xz3sFkLAkUU',
-  prv: 'MC4CAQAwBQYDK2VwBCIEIJXTGksc61wuV1rB2YjCkgCsp0RPoN8pJ1slCmQL0igU'
+  mnemonic: 'slam lab chief wire inquiry transfer trigger object segment jeans lawn trumpet tuition amount penalty provide frost tortoise display shiver desert vintage erase vague',
+  bip44Path: [ 44, 7331, 0, 2 ],
+  pub: '2uAts9XG7dvBj3zuLyEGFFf6315jKPKouJeX8b9bYhd7',
+  prv: 'MC4CAQAwBQYDK2VwBCIEII6I6eA9G6LjHvGKlwYJTsjs1QYCvsA5g14JFGAEVx3y'
 }
 ```
 
@@ -185,38 +182,42 @@ Output:
 Example of simplest transaction - from default account to default account
 
 ```javascript
-// Get your own keys using:
-// Method 0(via Web1337) - await crypto.ed25519.generateDefaultEd25519Keypair()
-// Method 1(via Apollo CLI) - apollo keygen
+let web1337 = new Web1337({
 
-const myKeyPair = {
+    chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    workflowVersion:0,
+    nodeURL: 'http://localhost:7332'
 
-    mnemonic: 'south badge state hedgehog carpet aerobic float million enforce opinion hungry race',
-    bip44Path: "m/44'/7331'/0'/0'",
-    pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
-    prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
-      
+}); // need node endpoint to return the correct nonce. If you know your nonce - you can omit it
+
+const keypair = {
+    
+    pub:"9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK",
+    
+    prv:"MC4CAQAwBQYDK2VwBCIEILdhTMVYFz2GP8+uKUA+1FnZTEdN8eHFzbb8400cpEU9",
+
 };
 
 
-const shardID = 'shard_0';
+const payload = {
 
-const recipient = 'nXSYHp74u88zKPiRi7t22nv4WCBHXUBpGrVw3V93f2s';
+    to: "Ai1Pk9RzmgeiSAptc1W69NAmSB52GqjNqGdGQGgqxQA1",
 
-const from = myKeyPair.pub;
+    amount: 13.37
 
-const myPrivateKey = myKeyPair.prv;
+};
 
-const nonce = 0;
+const shardID = "shard_0";
 
-const fee = 1;
+const fee = 0.03;
 
-const amountInKLY = 13.37;
+const nonce = await web1337.getAccount(shardID,keypair.pub).then(account=>account.nonce+1);
 
+const txType = "TX";
 
-let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipient,fee,amountInKLY);
+let tx = web1337.createEd25519Transaction(shardID,txType,keypair.pub,keypair.prv,nonce,fee,payload);
 
-console.log(signedTx);
+console.log(tx);
 ```
 
 #### Result(see the structure)
@@ -224,29 +225,26 @@ console.log(signedTx);
 ```json5
 {
   v: 0,
-  creator: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
+  creator: '9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK',
   type: 'TX',
-  nonce: 0,
-  fee: 1,
-  payload: {
-    type: 'D',
-    to: 'nXSYHp74u88zKPiRi7t22nv4WCBHXUBpGrVw3V93f2s',
-    amount: 13.37
-  },
-  sig: '5AGkLlK3knzYZeZwjHKPzlX25lPMd7nU+rR5XG9RZa3sDpYrYpfnzqecm5nNONnl5wDcxmjOkKMbO7ulAwTFDQ=='
+  nonce: 7027,
+  fee: 0.03,
+  payload: { to: 'Ai1Pk9RzmgeiSAptc1W69NAmSB52GqjNqGdGQGgqxQA1', amount: 13.37 },
+  sigType: 'D',
+  sig: 'RLKzD1oKtUd+zvb2SD0cPguWgUYh2ZBK4INf+ve2NTRcysxrv8+0jRnjBHn/9xh+SRXwTZLskQp4+K1EpmkgDw=='
 }
 ```
 
 #### Send
 
 ```javascript
-let txStatus = await web1337.sendTransaction(signedTx);
+let sendStatus = await web1337.sendTransaction(tx);
 
-console.log(txStatus);
+console.log(sendStatus);
 
 // After that - you can check the tx receipt
 // TxID - it's a BLAKE3 hash of transaction signature
-let receipt = await web1337.getTransactionReceiptById(web1337.BLAKE3(signedTx.sig));
+let receipt = await web1337.getTransactionReceiptById(web1337.BLAKE3(tx.sig));
 
 console.log(receipt);
 ```
@@ -255,19 +253,31 @@ console.log(receipt);
 
 ```json5
 {
-    "blockID": "0:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:4228",
-    "id": 0,
-    "isOk": true
+  shard: 'shard_0',
+  blockID: '0:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:7220',
+  order: 0,
+  isOk: true
 }
 ```
 
 where:
 
+* **shard** - context of transaction. Account of sender and recipient also binded to this shard
 * **blockID** - the block where tx is
-* **id** - index of this tx in block
+* **order** - position of this tx in block
 * **isOk** - status to check if tx successfully processed or not
 
+Optional fields:
 
+* **reason** - in case tx failed you can use this reason to understand why
+* **createdContractAddress - only in txs where contract was deployed. It might be WASM or EVM contract**
+* **extraDataToReceipt** - optional object with extra data (for example - result of contract call)
+
+### Check explorer:
+
+If you check this tx in explorer you should see:
+
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Picture from local explorer</p></figcaption></figure>
 
 ## Ed25519 => BLS(multisig address) transaction
 
@@ -472,45 +482,46 @@ Account
 
 And then, use the value of `rev_t` to build the transaction as above
 
-##
-
 ## Ed25519 => TBLS(thresholdsig address) transaction
 
 In this transaction you send something to TBLS root public key which controled by group of <mark style="color:red;">**`N`**</mark> members
 
 {% hint style="info" %}
-We'll talk more about TBLS in the next parts. Just now you need to know the 96-byte root public key
+We'll talk more about TBLS in the next parts. Just now you need to know the 48-byte root public key
 {% endhint %}
 
 ```javascript
 const myKeyPair = {
 
-    mnemonic: 'south badge state hedgehog carpet aerobic float million enforce opinion hungry race',
-    bip44Path: "m/44'/7331'/0'/0'",
-    pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
-    prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
-      
+  mnemonic: 'pudding record forget once lunch cable shiver million tobacco window detail chicken account bring talk water antenna fortune fox story grain fortune error wine',
+  bip44Path: [ 44, 7331, 0, 0 ],
+  pub: '2hXpBF5MUY3cPmkNrsB6DUf2pdf3uwPLTP2znCFGMbRn',
+  prv: 'MC4CAQAwBQYDK2VwBCIEIBSVvzGJAMtc+XNPh0sCTUdx9VQ0xnfr5YEATkVFo2E5'
+
 };
 
 
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = 'shard_0';
 
-const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880';
+const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a';
 
 const from = myKeyPair.pub;
 
 const myPrivateKey = myKeyPair.prv;
 
-const nonce = 0;
+const nonce = await web1337.getAccount(shardID,keypair.pub).then(account=>account.nonce+1);
 
 const fee = 1;
 
 const amountInKLY = 13.37;
 
+let tx = web1337.createEd25519Transaction(shardID,txType,keypair.pub,keypair.prv,nonce,fee,payload)
 
-let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
+web1337.sendTransaction(tx).then(()=>{
 
-console.log(signedTx);
+    console.log(`Transaction was sent. The TxID is ${web1337.blake3(tx.sig)}`)
+
+}).catch(err=>console.error('Error: ',err))
 ```
 
 
