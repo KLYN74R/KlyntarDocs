@@ -2,28 +2,18 @@
 
 <figure><img src="../../.gitbook/assets/MultiSigMeme.jpg" alt=""><figcaption></figcaption></figure>
 
-## Useful links
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#bls12-381" %}
-General information
-{% endembed %}
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#demonstration" %}
-Demonstration
-{% endembed %}
+## Intro
 
 Shortly, the typical keypair looks like this:
 
 ```javascript
-{
-   "privateKey":"caad28a7da57fb28879bfdd886714629e4152553a28540caed6f51531f5af61a",
-   "pubKey":"7QMxLg6GJwQYjc8B2WBEvaQq3TfeBhgBqHGneFu43oLfwhovrPGykbkUGe94FacSuG"
-}
+let publicKey = '0xabe301a20289d1e014c69906febbee42626e084dc93f70c689803e163963101fc90a3674576f86ff90ba9c71310685f1';
+let privateKey = '69bfb956053e034b1b7d8b634c9bb8acd1b5743fab64245fad4b1472f63799a9';
 ```
 
-* 48-bytes Base58 ecoded public key(used as address)
+* 48-bytes, <mark style="color:red;">**0x-prefixed**</mark> hex encoded public key(used as address)
 * 32-bytes hexadecimal private key
-* 96-bytes Base64 encoded signature
+* 96-bytes hex encoded signature
 
 ## Generate BLS keypair(s)
 
