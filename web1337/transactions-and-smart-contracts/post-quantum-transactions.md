@@ -4,7 +4,7 @@ description: NextGen cryptography already on KLY
 
 # ⚛️ Post-quantum transactions
 
-<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 PQC - Post-Quantum Cryptography
@@ -14,7 +14,7 @@ PQC - Post-Quantum Cryptography
 
 As we said earlier, we use Dilithium and BLISS signatures as post-quantum signature schemes. Depending on the Dilithium mode, the size of the keys may change, but the structure of the key pair remains unchanged. Also, since post-quantum schemes usually have large public keys, the address of the post-quantum key pair will be the [_<mark style="color:red;">**BLAKE3**</mark>_](https://mastering.klyntar.org/beginning/cryptography/hash-functions) hash of the public key. Here's what it looks like:
 
-<figure><img src="../../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## <mark style="color:red;">Disclaimer</mark>
 
@@ -254,12 +254,23 @@ let receipt2 = await web1337.getTransactionReceiptById(web1337.blake3(signedBlis
 
 ## PQC => BLS
 
-Same as [#ed25519-greater-than-bls-multisig-address-transaction](../default-ed25519-transactions.md#ed25519-greater-than-bls-multisig-address-transaction "mention")
+Same as [#ed25519-greater-than-bls-multisig-address-transaction](default-ed25519-transactions.md#ed25519-greater-than-bls-multisig-address-transaction "mention")
 
 ## PQC => TBLS
 
-Same as [#ed25519-greater-than-tbls-thresholdsig-address-transaction](../default-ed25519-transactions.md#ed25519-greater-than-tbls-thresholdsig-address-transaction "mention")
+Same as [#ed25519-greater-than-tbls-thresholdsig-address-transaction](default-ed25519-transactions.md#ed25519-greater-than-tbls-thresholdsig-address-transaction "mention")
 
 ## PQC => PQC
 
-Same as [#ed25519-greater-than-postquantum-dilithium-bliss-transaction](../default-ed25519-transactions.md#ed25519-greater-than-postquantum-dilithium-bliss-transaction "mention")
+Same as [#ed25519-greater-than-postquantum-dilithium-bliss-transaction](default-ed25519-transactions.md#ed25519-greater-than-postquantum-dilithium-bliss-transaction "mention")
+
+
+
+## What's the point of adding the support for two algorithms?
+
+We decided to add Dilithium and BLISS support because:
+
+* BLISS have a short enough signatures
+* Dilithium is a prime candidate for NIST certification
+
+So it was kind of like a compromise. In any case, only users can choose what to us

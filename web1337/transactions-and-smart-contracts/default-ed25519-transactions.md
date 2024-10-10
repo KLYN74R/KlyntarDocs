@@ -554,8 +554,8 @@ In case PQC account of recipient do not exist - include additional field pqcPub 
 
 See
 
-{% content-ref url="post-quantum-transactions/" %}
-[post-quantum-transactions](post-quantum-transactions/)
+{% content-ref url="post-quantum-transactions.md" %}
+[post-quantum-transactions.md](post-quantum-transactions.md)
 {% endcontent-ref %}
 
 {% hint style="info" %}
