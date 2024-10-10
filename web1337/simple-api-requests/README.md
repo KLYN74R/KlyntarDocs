@@ -59,17 +59,17 @@ For example, to get block by ID, call:
 
 ```javascript
 // Block id format is <epochIndex>:<pubkeyOfCreator>:<blockIndexInEpoch>
-let blockID = "1:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:15"
+let blockID = "1:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:15";
 
-await web1337.getBlockByBlockID(blockID)
+await web1337.getBlockByBlockID(blockID);
 ```
 
 For example, to get information about pool call
 
 ```javascript
-let poolPubKey = "6XvZpuCDjdvSuot3eLr24C1wqzcf2w4QqeDh9BnDKsNE"
+let poolID = "6XvZpuCDjdvSuot3eLr24C1wqzcf2w4QqeDh9BnDKsNE(POOL)";
 
-await web1337.getPoolStats(poolPubKey)
+await web1337.getPoolStats(poolID);
 ```
 
 Or, to check the synchronization status of your node, call
