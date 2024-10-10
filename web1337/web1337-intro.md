@@ -1,7 +1,5 @@
 # Web1337 intro
 
-<figure><img src="broken-reference" alt=""><figcaption></figcaption></figure>
-
 ## What is Web1337?
 
 Web2, Web3, Web5...OMG what next? To stop and/or ridicule the manifesto of insanity, we have decided to create a new term, Web1337. If every day every new project invents its own new **Web**<mark style="color:red;">**\<set number here>**</mark> we thought - why are we worse?
@@ -12,7 +10,7 @@ In addition, KLY offers various interesting features such as RWX codeless smart 
 
 In conclusion, we can add that Web1337 is Web3++, since KLY offers more features than typical blockchain projects. You will learn more about this later.
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Web1337Cover.svg" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/KLYN74R/Web1337" %}
 
