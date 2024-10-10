@@ -504,40 +504,43 @@ We'll talk more about TBLS in the next parts. Just now you need to know the 48-b
 {% endhint %}
 
 ```javascript
-const myKeyPair = {
+let web1337 = new Web1337({
 
-  mnemonic: 'pudding record forget once lunch cable shiver million tobacco window detail chicken account bring talk water antenna fortune fox story grain fortune error wine',
-  bip44Path: [ 44, 7331, 0, 0 ],
-  pub: '2hXpBF5MUY3cPmkNrsB6DUf2pdf3uwPLTP2znCFGMbRn',
-  prv: 'MC4CAQAwBQYDK2VwBCIEIBSVvzGJAMtc+XNPh0sCTUdx9VQ0xnfr5YEATkVFo2E5'
+    chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    workflowVersion:0,
+    nodeURL: 'http://localhost:7332'
+
+}); // need node endpoint to return the correct nonce. If you know your nonce - you can omit it
+
+const keypair = {
+    
+    pub:"9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK",
+    
+    prv:"MC4CAQAwBQYDK2VwBCIEILdhTMVYFz2GP8+uKUA+1FnZTEdN8eHFzbb8400cpEU9",
 
 };
 
 
-const shardID = 'shard_0';
+const payload = {
 
-const recipientTblsRootPub = 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a';
+    to: "b89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4",
 
-const from = myKeyPair.pub;
+    amount: 13.37
 
-const myPrivateKey = myKeyPair.prv;
+};
+
+const shardID = "shard_0";
+
+const fee = 0.03;
 
 const nonce = await web1337.getAccount(shardID,keypair.pub).then(account=>account.nonce+1);
 
-const fee = 1;
+const txType = "TX";
 
-const amountInKLY = 13.37;
+let tx = web1337.createEd25519Transaction(shardID,txType,keypair.pub,keypair.prv,nonce,fee,payload);
 
-let tx = web1337.createEd25519Transaction(shardID,txType,keypair.pub,keypair.prv,nonce,fee,payload)
-
-web1337.sendTransaction(tx).then(()=>{
-
-    console.log(`Transaction was sent. The TxID is ${web1337.blake3(tx.sig)}`)
-
-}).catch(err=>console.error('Error: ',err))
+console.log(tx);
 ```
-
-
 
 
 
@@ -550,36 +553,39 @@ We'll talk about PQC accounts later. Just now, as a sender you just need to know
 {% endhint %}
 
 ```javascript
-const myKeyPair = {
+let web1337 = new Web1337({
 
-    mnemonic: 'south badge state hedgehog carpet aerobic float million enforce opinion hungry race',
-    bip44Path: "m/44'/7331'/0'/0'",
-    pub: '2VEzwUdvSRuv1k2JaAEaMiL7LLNDTUf9bXSapqccCcSb',
-    prv: 'MC4CAQAwBQYDK2VwBCIEIDEf/4H5iiY3ebAfWsFIFkeZrB8HpcvBYK5zjEe9/8ga'
-      
+    chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    workflowVersion:0,
+    nodeURL: 'http://localhost:7332'
+
+}); // need node endpoint to return the correct nonce. If you know your nonce - you can omit it
+
+const keypair = {
+    
+    pub:"9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK",
+    
+    prv:"MC4CAQAwBQYDK2VwBCIEILdhTMVYFz2GP8+uKUA+1FnZTEdN8eHFzbb8400cpEU9",
+
 };
 
+const payload = {
 
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+    to: "4218fb0aaace62c4bfafbdd9adb05b99a9bf1a33eeae074215a51cb644b9a85c",
 
-// It might be Dilithium or BLISS, but doesn't matter for you
-const recipientPQC = 'f5091405e28455880fc4191cbda9f1e57f72399e732222d4639294b66d3a5076';
+    amount: 13.37
 
-const from = myKeyPair.pub;
+};
 
-const myPrivateKey = myKeyPair.prv;
+const shardID = "shard_0";
 
-const nonce = 0;
+const fee = 0.03;
 
-const fee = 1;
+const nonce = await web1337.getAccount(shardID,keypair.pub).then(account=>account.nonce+1);
 
-const amountInKLY = 13.37;
+const txType = "TX";
 
+let tx = web1337.createEd25519Transaction(shardID,txType,keypair.pub,keypair.prv,nonce,fee,payload);
 
-let signedTx = await web1337.createDefaultTransaction(shardID,from,myPrivateKey,nonce,recipientTblsRootPub,fee,amountInKLY);
-
-console.log(signedTx);
+console.log(tx);
 ```
-
-
-
