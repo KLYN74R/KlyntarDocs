@@ -51,3 +51,11 @@ await web1337.getLatestNBlocksOnShard(shard,startIndex,limit);
 {% hint style="info" %}
 This route is useful for explorer pages, pagination, etc.
 {% endhint %}
+
+## Get total number of blocks, transactions and successful transactions
+
+This API returns general stats - from genesis to the current time. Number of blocks and transactions during the whole time - on each shard
+
+```javascript
+await web1337.getTotalBlocksAndTxsStats()
+```
