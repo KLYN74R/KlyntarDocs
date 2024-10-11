@@ -11,12 +11,7 @@ Klyntar was created to implement best practices. That is why parallel transactio
 
 Currently, parallel transaction execution is supported for:
 
-| Transaction type | Description                                                  | Implementation status                         |
-| ---------------- | ------------------------------------------------------------ | --------------------------------------------- |
-| **TX**           | Default address to address coins transfer                    | [✅](https://emojipedia.org/check-mark-button) |
-| **WVM\_DEPLOY**  | Contract deployment to WASM vm                               | [✅](https://emojipedia.org/check-mark-button) |
-| **WVM\_CALL**    | Call smart-contract in WASM vm                               | [✅](https://emojipedia.org/check-mark-button) |
-| **EVM\_CALL**    | Interaction with EVM(default transfer, contract interaction) | [✅](https://emojipedia.org/check-mark-button) |
+<table><thead><tr><th width="274">Transaction type</th><th>Description</th><th>Implementation status</th></tr></thead><tbody><tr><td><strong>TX</strong></td><td>Default address to address coins transfer</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr><tr><td><strong>WVM_DEPLOY</strong></td><td>Contract deployment to WASM vm</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr><tr><td><strong>WVM_CALL</strong></td><td>Call smart-contract in WASM vm</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr><tr><td><strong>EVM_CALL</strong></td><td>Interaction with EVM(default transfer, contract interaction)</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr></tbody></table>
 
 ## How
 
