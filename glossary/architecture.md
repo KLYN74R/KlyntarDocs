@@ -1,0 +1,6 @@
+---
+icon: sitemap
+---
+
+# Architecture
+

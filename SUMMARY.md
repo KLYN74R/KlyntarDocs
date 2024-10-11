@@ -1,7 +1,12 @@
 # Table of contents
 
 * [KLYNTAR Docs](README.md)
-* [📚 Glossary](glossary.md)
+* [📚 Glossary](glossary/README.md)
+  * [Architecture](glossary/architecture.md)
+  * [Types of transactions](glossary/types-of-transactions.md)
+  * [Virtual machines](glossary/virtual-machines.md)
+  * [Consensus](glossary/consensus.md)
+  * [RWX codeless smart contracts](glossary/rwx-codeless-smart-contracts.md)
 
 ## Wallets usage
 
