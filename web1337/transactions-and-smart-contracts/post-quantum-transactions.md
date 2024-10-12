@@ -39,11 +39,6 @@ console.log(blissKeypair);
 ```
 ````
 {% endtab %}
-
-{% tab title="Golang" %}
-```go
-```
-{% endtab %}
 {% endtabs %}
 
 Output:

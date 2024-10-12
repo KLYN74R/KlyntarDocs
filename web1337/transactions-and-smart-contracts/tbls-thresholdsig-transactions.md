@@ -6,21 +6,13 @@ description: Get to know how to use TBLS accounts in your DApps on KLY
 
 <figure><img src="../../.gitbook/assets/TBLS.jpg" alt=""><figcaption></figcaption></figure>
 
-## Useful links
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#threshold-signatures-tbls" %}
-General info about TBLS
-{% endembed %}
-
-{% embed url="https://mastering.klyntar.org/beginning/cryptography/multi-threshold-aggregated-signatures#threshold-signatures" %}
-Example of usage
-{% endembed %}
+## Intro
 
 Threshold signatures may seem more complex than the multi-signatures described earlier. And yet, with a large number of parties involved, it is recommended to use TBLS, since the size of such a transaction will be much smaller.
 
 For example, if we have 100 parties that together manage a certain account and it was decided that the decision threshold is 60% (60 parties), then you will need to send 40 public keys in the `afkVoters` array.
 
-At the same time, in TBLS, the identifier of the entire group of signers is a 96-byte root key and in order for the network to understand that the initially set threshold has been reached (it doesn’t matter whether 60 participants, 63, 87, or all 100 agree with the decision, the main thing is more than initialy defined threshold) you need to provide only 1 signature. By verifying it using the master key, the network will allow the group to complete the transaction.
+At the same time, in TBLS, the identifier of the entire group of signers is a 48-byte root key and in order for the network to understand that the initially set threshold has been reached (it doesn’t matter whether 60 participants, 63, 87, or all 100 agree with the decision, the main thing is more than initialy defined threshold) you need to provide only 1 signature. By verifying it using the master key, the network will allow the group to complete the transaction.
 
 ## Use case
 
@@ -61,21 +53,20 @@ Output:
 
 ```code-runner-output
 Use with VV =>  [
-    'a7e972de2362e725831efdebe080842f9ee275915a718dea43e561fa0d1af41b3192f849e1128d69f62018b9e7a9387f8b8611488a72480305991d480dad0e11',
-    '0003e06c68ba56e45db0ee64a06a6935554e0b7f4849da26223cf831cdfd341bf9fe628590eb436197145206eb8f2eb0baef673eff23f63eaa6fe74e59da7c05',
-    '53ad69e15e782a60fe63ee07d9e768dff002dfc54fa6fd6e4ea4531fc00d2700472fb244c9fa740ec354e417e8bd241c875caf29c4abad251a042d7becca4d15',
-    '21b090515bf15d9ec6c4f4dd4df5f49a64f21e9b9c268b91b09bd77adcf2d517303fe3cf3bdd710ab783ae413476f7ccd050c1be02524a42484243b47767b71f'
+  'a76d8d35fe2862f06023b84c0ddb51b5d1ef7f51a3a75e30cc44dc16ef394df663064e394b600ef4a01f5a56211e12f1',
+  'a4ec5ea273162fa638a705c05f2856773a9ffc4b05748a2a2460a1056fa79c3fe1970c964dd6cc05e8c4b9d632562b5a',
+  'a45dcde6d64b0b8fbe832c37261122917c773153cd2fedde38453269a7cf1e10cd1c364b29e87f888a0531f9680ac58f',
+  'ad63014f0a527a4f64fa191e976b07b228daa30a5af9687a7e47a9625e2d8eedd6e7a3a6f53b651f0a45fe174e1657d9'
 ]
 Array of secret shares to share among friends =>  [
-    "79b359142147dd33383e32ac2476577d7760245a644fdad8730b22fad5726b0d",
-    "2ba86e244fe8ad6ea665598257e1a8700b433a2e5bd967116fcf982b9db0df05",
-    "af5f947ef9db70f50a8a5a5ee07170e78974c641b52942681a229605ff860e1f",
-    "0f0389cb5fdc97c14d3c494ada022bafb78988efb891258b9c487b9475febd0a",
-    "c8472e66991a8a1121a5f89f3ae5c1200455f77da838b965f8b9ef5af0701e07",
-    "565a252bc870bdcf046fb76a25c45c56cab9d4a5624e794319dd13dbc7e9781f"
-
+  '1bf733f46fc9cc7b23602bda959cb0c4984c3ca7681301e01dd6e0fae70ba9f0',
+  '1d3fe21eee5127e6b071a80a18182afe867956f9ee7560ed518e5ae43b341ac4',
+  '117e89f528f2cb2ba094a303b8cd6623f416aa968d176b29d8da0436e08e786c',
+  '4dd9a6b1fbf4fc4350d1f8f96d32d3d9513f7823245bc8cd4c163ce0ff476705',
+  '3291b6b687fd89b561d1b01543fcf3e220a28b9f0c3cd3f1b66103309b2d57a1',
+  '1be39b80136feb48d2fabc68ad3f885e4043499a2b5191c7f9eb1a446f30ac79'
 ]
-Your id => 4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a
+Your id =>  1a4585773ce2ccd7a585c331d60a60d1e3b7d28cbb2ede3bc55445342f12f54b
 ```
 
 Cool, now let's figure out what we have:
@@ -101,7 +92,7 @@ And so on
 
 ### Step 3 - get the root public key
 
-At this stage, friends will receive 96-bytes hex encoded address in the KLY network to which they can send funds for shared use. For this purpose, they exchange verification vectors. When you receive 5 verification vectors from 5 other friends, then add your sixth one and call the `deriveGroupPubTBLS()` function. But before we break it down, let's create some imaginary dataset with the data of the other 5 friends. So, let it look like this:
+At this stage, friends will receive 48-bytes hex encoded address in the KLY network to which they can send funds for shared use. For this purpose, they exchange verification vectors. When you receive 5 verification vectors from 5 other friends, then add your sixth one and call the `deriveGroupPubTBLS()` function. But before we break it down, let's create some imaginary dataset with the data of the other 5 friends. So, let it look like this:
 
 {% code fullWidth="false" %}
 ```javascript
@@ -114,10 +105,10 @@ Verification vector
 
 [
     
-    "a7e972de2362e725831efdebe080842f9ee275915a718dea43e561fa0d1af41b3192f849e1128d69f62018b9e7a9387f8b8611488a72480305991d480dad0e11"
-    "0003e06c68ba56e45db0ee64a06a6935554e0b7f4849da26223cf831cdfd341bf9fe628590eb436197145206eb8f2eb0baef673eff23f63eaa6fe74e59da7c05"
-    "53ad69e15e782a60fe63ee07d9e768dff002dfc54fa6fd6e4ea4531fc00d2700472fb244c9fa740ec354e417e8bd241c875caf29c4abad251a042d7becca4d15"
-    "21b090515bf15d9ec6c4f4dd4df5f49a64f21e9b9c268b91b09bd77adcf2d517303fe3cf3bdd710ab783ae413476f7ccd050c1be02524a42484243b47767b71f"
+    "a7e972de2362e725831efdebe080842f9ee275915a718dea43e561fa0d1af41b3192f849e1128d69f62018b9e7a9387f"
+    "0003e06c68ba56e45db0ee64a06a6935554e0b7f4849da26223cf831cdfd341bf9fe628590eb436197145206eb8f2eb0"
+    "53ad69e15e782a60fe63ee07d9e768dff002dfc54fa6fd6e4ea4531fc00d2700472fb244c9fa740ec354e417e8bd241c"
+    "21b090515bf15d9ec6c4f4dd4df5f49a64f21e9b9c268b91b09bd77adcf2d517303fe3cf3bdd710ab783ae413476f7cc"
     
 ]
 
@@ -142,10 +133,10 @@ Verification vector
 
 [
     
-    "6f4c90be986832a71aa5b8d25007d27adc3aa267acdca189a42b9a17efc8dd17bcde25c173d18eeba5bae067e52cc5ba16fd3099af04804c8a40b79ac595c617"
-    "775449cde76ce6333c53317e6b6a1eb47ee87af2bc56548bb38fea5da266dd0704ae043c288f9fb792b870128738ad7360454724325b5260bb45e332a3d51221"
-    "dd5a9d1f3236dd7e091dcb4272fb3cec624c22a0e59de283ce345603850e180e263806875158263b2bd46f0b7af4d78596e43008948431b07d174b6c8d6da388"
-    "8176bdd4610dd21cdb6bfb9b526a9e3ee2804c57ac9b9094235a4c1947c2f20aa1282cc8dd5e2ec09183c677920106024aab0bd9a2ecaa5539ff9e1c4025d1a3"
+    "6f4c90be986832a71aa5b8d25007d27adc3aa267acdca189a42b9a17efc8dd17bcde25c173d18eeba5bae067e52cc5ba1"
+    "775449cde76ce6333c53317e6b6a1eb47ee87af2bc56548bb38fea5da266dd0704ae043c288f9fb792b870128738ad736"
+    "dd5a9d1f3236dd7e091dcb4272fb3cec624c22a0e59de283ce345603850e180e263806875158263b2bd46f0b7af4d7859"
+    "8176bdd4610dd21cdb6bfb9b526a9e3ee2804c57ac9b9094235a4c1947c2f20aa1282cc8dd5e2ec09183c677920106024"
 ]
 
 Array of shares
@@ -170,10 +161,10 @@ ID=dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906
 Verification vector
 
 [
-    "586797df712ba4dcb15e78a36e6ef4a3f9ba1b05ce3a6a9001f0cdfefbd8f8080a33a3182a9204657594ebc6749656166f119ab2a81515266f62ce10e327ca09"
-    "62b9b08eadbbb20ef840923c89ac53b73aa31fa3e493097f49496693a795131b46dba854f76bfaf369beb77a7a80e2fe66525b16341a88022e1dc635bd7dc385"
-    "2577181e0384bc99ceb066acf69323e236160796df37f6e688d3274e4e026a03997460021b39da01a8a1465566e08f6a455333742fb6646f11beeab2a8dd2420"
-    "b2a2ace162f22b200c7aa807083bae80e69214dcdaa9708c66f81d1e8d4a0c18c3b459214292bd683c9b80809ea3e7e95288656caf0b34ec260b820a79b08520"
+    "586797df712ba4dcb15e78a36e6ef4a3f9ba1b05ce3a6a9001f0cdfefbd8f8080a33a3182a9204657594ebc6749656166f1"
+    "62b9b08eadbbb20ef840923c89ac53b73aa31fa3e493097f49496693a795131b46dba854f76bfaf369beb77a7a80e2fe665"
+    "2577181e0384bc99ceb066acf69323e236160796df37f6e688d3274e4e026a03997460021b39da01a8a1465566e08f6a455"
+    "b2a2ace162f22b200c7aa807083bae80e69214dcdaa9708c66f81d1e8d4a0c18c3b459214292bd683c9b80809ea3e7e9528"
 ]
 
 Array of shares
@@ -197,10 +188,10 @@ ID=084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905
 Verification vector
 
 [
-    "7a4a81ba14f4b32b3c7f061f718cc15b0ca3ab76196a7e9e62f70dcc0add10092906a237d27b034f541731df41fee38d2f4b5d8998678b7d06cad2532fbecc13"
-    "6edfa6a70925257e952f161d941092bf30cd70d1f27a6cba53affbe9de7a450dfc02b5c500fbeb9ca2443df0a941269ad65c8bede560f033ae802d6499281a9e"
-    "492a5db1fdf4f133e4d8e92c0637ae13a8da6f19bc93da4ed6b0736d8bc602063a229846a43e18b8ba39de1cdba274a11fcda3cf482e3ca908cdf3c3f7ffdb04"
-    "8396e4d78a12580388c919b8a201036d48a1470c9684eb653ea89f458927730bc32e8f91763dfce581ff60125664cd6e1a20ed684677a6d8dccbb6b23c3a0182"
+    "7a4a81ba14f4b32b3c7f061f718cc15b0ca3ab76196a7e9e62f70dcc0add10092906a237d27b034f541731df41fee38d2f4b5d"
+    "6edfa6a70925257e952f161d941092bf30cd70d1f27a6cba53affbe9de7a450dfc02b5c500fbeb9ca2443df0a941269ad65c8b"
+    "492a5db1fdf4f133e4d8e92c0637ae13a8da6f19bc93da4ed6b0736d8bc602063a229846a43e18b8ba39de1cdba274a11fcda3"
+    "8396e4d78a12580388c919b8a201036d48a1470c9684eb653ea89f458927730bc32e8f91763dfce581ff60125664cd6e1a20ed"
 ]
 
 Array of shares
@@ -828,7 +819,7 @@ import Web1337,{crypto} from 'web1337';
 
 let web1337 = new Web1337({
 
-    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     workflowVersion:0,
     nodeURL: 'http://localhost:7332'
 
@@ -874,37 +865,55 @@ const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificati
 
 
 // ID of shard where you want to transfer KLY or call contract
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
+const shardID = 'shard_0';
 
 // Default Ed25519
 const recipient = '6S4yLHorBUjSRjFpwxqPUXzwouZwR716CZ5uLmiy9Sze';
 
-const nonce = 0;
+const nonce = await web1337.getAccount(shardID,rootPubKey).then(account=>account.nonce+1);
 
 const fee = 1;
 
 const amountInKLY = 13.37;
+
+const txType = "TX";
+
+const payload = {
+
+    to: recipient,
+    
+    amount: amountInKLY
+
+};
 
 
 //_____________ GENERATE SIG_SHARES _____________
 
 const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
 
+    shardID,
+    
+    txType,
+
     tblsAccounts.ALICE.id,
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
 
-    shardID, nonce, fee, recipient, amountInKLY
+    nonce, fee, payload
 
 );
 
 const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
 
+    shardID,
+    
+    txType,
+
     tblsAccounts.BOB.id,
     
     [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
 
-    shardID, nonce, fee, recipient, amountInKLY
+    nonce, fee, payload
 
 );
 
@@ -915,9 +924,11 @@ const finalTransaction = await web1337.createThresholdTransaction(
     
     rootPubKey,
     
+    txType,
+    
     [partialSignatureOfFriend1,partialSignatureOfFriend2],
 
-    nonce, recipient, amountInKLY, fee
+    nonce, fee, payload
     
 );
 
@@ -934,12 +945,12 @@ Output:
   v: 0,
   creator: 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880',
   type: 'TX',
+  sigType: 'T',
   nonce: 0,
   fee: 1,
   payload: {
     to: '6S4yLHorBUjSRjFpwxqPUXzwouZwR716CZ5uLmiy9Sze',
-    amount: 13.37,
-    type: 'T'
+    amount: 13.37
   },
   sig: 'bd602b821a12789cab6e191da09a813b6236fe3eb780a14c88d2a4d192b2221b'
 }
@@ -951,112 +962,7 @@ Output:
 The same for TBLs but remember about `rev_t` for new account
 {% endhint %}
 
-```javascript
-import Web1337,{crypto} from 'web1337';
-
-
-let web1337 = new Web1337({
-
-    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-    workflowVersion:0,
-    nodeURL: 'http://localhost:7332'
-
-});
-
-
-// 3 friends, threshold is 2/3
-
-const tblsAccounts = {
-
-    ALICE:{
-    
-        verificationVector:["79309fde56bf1e0420408b79b9adb8b675b85eddb78b675d66b1931106a3d113f34d23257c912ee1800fcc31290e525bfbaf5d18a51eabc7daefc3ff8d183d17","67c2572d5b5e9be849917ba16a2152d70dff21094915ccf03969acbc0046870ece2fe2d9afbdd6dc5b65e2e528ee702a3343de6caf3b25f0f9c571fcfd55d084"],
-        shares:['f77ffec138a41033c3f278774685a53fa4f49687365d788c0efd671f29359703','f5b187d48cd56e9680985f5f0a6f7744bef11092a142bbbc0d5f0c4c92ed0a02','48f13b18936fabb681d7ed21bd0e747e9553b3777547795e9ad878734197631a'],
-        id:'4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a'
-    },
-    
-
-    BOB:{
-
-        verificationVector:["0af3b5585e92422fd02d0370043e193f258896df63b4fcf37f5323c8d0545b00e67f1b3b728751ef2dabc3378959376b83edec5d0b788c367edb195cc9bca402","29480aacb9fd7c9fc02f2f201cf2958b1bac764f1b1d9b4ad0c4f24c981a891db271723d076eb06b0a5c6bddf758b3fc9ade4542628f583796fa55b5855bf194"],
-        shares:['1bfe78127fb2e4ee5eab8d0875aef9c49606535825fbb2619edb29ccd1a93508','ba706c61ab4be0b619b523021e79afddf21e124ecca08c1af4d057b3b6dd7213','a97319f37cdf2833a996334952eb73f8903260574d1ef549007a0d2de1ccb41c'],
-        id:'dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906'
-
-    },
-    
-    CHARLIE:{
-
-        verificationVector:["0e4b8473bfe882f056d3ce4de2550b2f3415ec83b04fc9580656e74e308fa207730a126afe151feef1b505b3a00bc5939d6b55a622d47fdf3e71baabe614c89a","d6d8a177714216b4e4398fad40e17b6503fc7c06fc4b669e5010c4d5b0fe0c14e179ac57824d509f50dc233a00a5752de816dfb2c1aebaaafd8700310c9c4f08"],
-
-        shares:['4d941e9d6755581106df5189c54cffbc104709867f3c77078f3ac17c0880fc1e','cb00cad4e2c6d490d322ec0eb55ee7e381cd2e6a0e598eca12a1cf06a918791a','315dd8656357528f41e6140cf01b9f40cd01d1e2b4fafad40e706bc08aa45912'],
-
-        id:'084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905'
-
-    },
-
-    rootPub:'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
-
-};
-
-
-const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
-
-
-// ID of shard where you want to transfer KLY or call contract
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
-
-// BLS
-const recipient = '7V4MxQyKRPemAUrKxrJxBoZ6eHP2n63tibaZv2N59zWM7BDaC13kqDEqoe8g5vYzQu';
-
-const nonce = 0;
-
-const fee = 1;
-
-const amountInKLY = 13.37;
-
-const rev_t = 2; // for example, imagine that 7V4MxQyKRPemAUrKxrJxBoZ6eHP2n63tibaZv2N59zWM7BDaC13kqDEqoe8g5vYzQu is under control of group of 6 members and the wished threshold is 4/6(so rev_t=6-4=2)
-
-
-//_____________ GENERATE SIG_SHARES _____________
-
-const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
-
-    tblsAccounts.ALICE.id,
-    
-    [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
-
-    shardID, nonce, fee, recipient, amountInKLY, rev_t
-
-);
-
-const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
-
-    tblsAccounts.BOB.id,
-    
-    [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
-
-    shardID, nonce, fee, recipient, amountInKLY, rev_t
-
-);
-
-//_____________ BUILD TRANSACTION _______________
-
-
-const finalTransaction = await web1337.createThresholdTransaction(
-    
-    rootPubKey,
-    
-    [partialSignatureOfFriend1,partialSignatureOfFriend2],
-
-    nonce, recipient, amountInKLY, fee, rev_t
-    
-);
-
-console.log('============TBLS Transaction that can be deployed to network============\n');
-console.log(finalTransaction);
-```
-
-Output:
+Tx structure should be like this:
 
 ```code-runner-output
 ============TBLS Transaction that can be deployed to network============
@@ -1065,12 +971,12 @@ Output:
   v: 0,
   creator: 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880',
   type: 'TX',
+  sigType:'T',
   nonce: 0,
   fee: 1,
   payload: {
-    to: '7V4MxQyKRPemAUrKxrJxBoZ6eHP2n63tibaZv2N59zWM7BDaC13kqDEqoe8g5vYzQu',
+    to: '0x8f079049121d5e2ae885bdc6581df9fb68eab94a7aa3ae54bfe1d1ac35aceefbb202f656b0c1b56d64583630612a9970',
     amount: 13.37,
-    type: 'T',
     rev_t: 2
   },
   sig: '3a985ce737b26c9217ca9e516c89cd83c0bb8be827cecf95449fee1f6d366081'
@@ -1079,263 +985,8 @@ Output:
 
 ## TBLS => TBLS(thresholdsig address) transaction
 
-Here you just need to set the master pubkey of recipient. The structure as for => Ed25519 tx
-
-```javascript
-import Web1337,{crypto} from 'web1337';
-
-
-
-
-let web1337 = new Web1337({
-
-    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-    workflowVersion:0,
-    nodeURL: 'http://localhost:7332'
-
-});
-
-
-// 3 friends, threshold is 2/3
-
-const tblsAccounts = {
-
-    ALICE:{
-    
-        verificationVector:["79309fde56bf1e0420408b79b9adb8b675b85eddb78b675d66b1931106a3d113f34d23257c912ee1800fcc31290e525bfbaf5d18a51eabc7daefc3ff8d183d17","67c2572d5b5e9be849917ba16a2152d70dff21094915ccf03969acbc0046870ece2fe2d9afbdd6dc5b65e2e528ee702a3343de6caf3b25f0f9c571fcfd55d084"],
-        shares:['f77ffec138a41033c3f278774685a53fa4f49687365d788c0efd671f29359703','f5b187d48cd56e9680985f5f0a6f7744bef11092a142bbbc0d5f0c4c92ed0a02','48f13b18936fabb681d7ed21bd0e747e9553b3777547795e9ad878734197631a'],
-        id:'4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a'
-    },
-    
-
-    BOB:{
-
-        verificationVector:["0af3b5585e92422fd02d0370043e193f258896df63b4fcf37f5323c8d0545b00e67f1b3b728751ef2dabc3378959376b83edec5d0b788c367edb195cc9bca402","29480aacb9fd7c9fc02f2f201cf2958b1bac764f1b1d9b4ad0c4f24c981a891db271723d076eb06b0a5c6bddf758b3fc9ade4542628f583796fa55b5855bf194"],
-        shares:['1bfe78127fb2e4ee5eab8d0875aef9c49606535825fbb2619edb29ccd1a93508','ba706c61ab4be0b619b523021e79afddf21e124ecca08c1af4d057b3b6dd7213','a97319f37cdf2833a996334952eb73f8903260574d1ef549007a0d2de1ccb41c'],
-        id:'dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906'
-
-    },
-    
-    CHARLIE:{
-
-        verificationVector:["0e4b8473bfe882f056d3ce4de2550b2f3415ec83b04fc9580656e74e308fa207730a126afe151feef1b505b3a00bc5939d6b55a622d47fdf3e71baabe614c89a","d6d8a177714216b4e4398fad40e17b6503fc7c06fc4b669e5010c4d5b0fe0c14e179ac57824d509f50dc233a00a5752de816dfb2c1aebaaafd8700310c9c4f08"],
-
-        shares:['4d941e9d6755581106df5189c54cffbc104709867f3c77078f3ac17c0880fc1e','cb00cad4e2c6d490d322ec0eb55ee7e381cd2e6a0e598eca12a1cf06a918791a','315dd8656357528f41e6140cf01b9f40cd01d1e2b4fafad40e706bc08aa45912'],
-
-        id:'084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905'
-
-    },
-
-    rootPub:'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
-
-};
-
-
-const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
-
-
-// ID of shard where you want to transfer KLY or call contract
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
-
-// Rootkey of TBLS
-const recipient = '8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004bffb1458faa045f2c9a640acb466c5c35e2c9af757ac7fad74e3865b85274526192 36822f9797';
-
-const nonce = 0;
-
-const fee = 1;
-
-const amountInKLY = 13.37;
-
-
-//_____________ GENERATE SIG_SHARES _____________
-
-const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
-
-    tblsAccounts.ALICE.id,
-    
-    [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
-
-    shardID, nonce, fee, recipient, amountInKLY
-
-);
-
-const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
-
-    tblsAccounts.BOB.id,
-    
-    [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
-
-    shardID, nonce, fee, recipient, amountInKLY
-
-);
-
-//_____________ BUILD TRANSACTION _______________
-
-
-const finalTransaction = await web1337.createThresholdTransaction(
-    
-    rootPubKey,
-    
-    [partialSignatureOfFriend1,partialSignatureOfFriend2],
-
-    nonce, recipient, amountInKLY, fee
-    
-);
-
-console.log('============TBLS Transaction that can be deployed to network============\n');
-console.log(finalTransaction);
-```
-
-Output:
-
-```code-runner-output
-============TBLS Transaction that can be deployed to network============
-
-{
-  v: 0,
-  creator: 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880',
-  type: 'TX',
-  nonce: 0,
-  fee: 1,
-  payload: {
-    to: '8aae5ae3b51a6f4bba62f64ab44b2135339831f662f8ef9e004bffb1458faa045f2c9a640acb466c5c35e2c9af757ac7fad74e3865b8527452619236822f9797',
-    amount: 13.37,
-    type: 'T'
-  },
-  sig: 'a8c80ca9bae1cf9431d692cfa6cdc2e89342711132ebc263530c48bcaed8b594'
-}
-```
+Here you just need to set the master pubkey of recipient. The snippet as for [#tbls-greater-than-ed25519-transaction](tbls-thresholdsig-transactions.md#tbls-greater-than-ed25519-transaction "mention")
 
 ## TBLS => PostQuantum(Dilithium/BLISS) transaction
 
-Finally, PQC. As usual - default structure as for => Ed25519 or => TBLS
-
-{% hint style="info" %}
-The address of PQC account is BLAKE3 256-bit hash of public key&#x20;
-{% endhint %}
-
-```javascript
-
-import Web1337,{crypto} from 'web1337';
-
-
-
-
-let web1337 = new Web1337({
-
-    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
-    workflowVersion:0,
-    nodeURL: 'http://localhost:7332'
-
-});
-
-
-// 3 friends, threshold is 2/3
-
-const tblsAccounts = {
-
-    ALICE:{
-    
-        verificationVector:["79309fde56bf1e0420408b79b9adb8b675b85eddb78b675d66b1931106a3d113f34d23257c912ee1800fcc31290e525bfbaf5d18a51eabc7daefc3ff8d183d17","67c2572d5b5e9be849917ba16a2152d70dff21094915ccf03969acbc0046870ece2fe2d9afbdd6dc5b65e2e528ee702a3343de6caf3b25f0f9c571fcfd55d084"],
-        shares:['f77ffec138a41033c3f278774685a53fa4f49687365d788c0efd671f29359703','f5b187d48cd56e9680985f5f0a6f7744bef11092a142bbbc0d5f0c4c92ed0a02','48f13b18936fabb681d7ed21bd0e747e9553b3777547795e9ad878734197631a'],
-        id:'4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785451a'
-    },
-    
-
-    BOB:{
-
-        verificationVector:["0af3b5585e92422fd02d0370043e193f258896df63b4fcf37f5323c8d0545b00e67f1b3b728751ef2dabc3378959376b83edec5d0b788c367edb195cc9bca402","29480aacb9fd7c9fc02f2f201cf2958b1bac764f1b1d9b4ad0c4f24c981a891db271723d076eb06b0a5c6bddf758b3fc9ade4542628f583796fa55b5855bf194"],
-        shares:['1bfe78127fb2e4ee5eab8d0875aef9c49606535825fbb2619edb29ccd1a93508','ba706c61ab4be0b619b523021e79afddf21e124ecca08c1af4d057b3b6dd7213','a97319f37cdf2833a996334952eb73f8903260574d1ef549007a0d2de1ccb41c'],
-        id:'dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d906'
-
-    },
-    
-    CHARLIE:{
-
-        verificationVector:["0e4b8473bfe882f056d3ce4de2550b2f3415ec83b04fc9580656e74e308fa207730a126afe151feef1b505b3a00bc5939d6b55a622d47fdf3e71baabe614c89a","d6d8a177714216b4e4398fad40e17b6503fc7c06fc4b669e5010c4d5b0fe0c14e179ac57824d509f50dc233a00a5752de816dfb2c1aebaaafd8700310c9c4f08"],
-
-        shares:['4d941e9d6755581106df5189c54cffbc104709867f3c77078f3ac17c0880fc1e','cb00cad4e2c6d490d322ec0eb55ee7e381cd2e6a0e598eca12a1cf06a918791a','315dd8656357528f41e6140cf01b9f40cd01d1e2b4fafad40e706bc08aa45912'],
-
-        id:'084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff2905'
-
-    },
-
-    rootPub:'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880'
-
-};
-
-
-const rootPubKey = crypto.tbls.deriveGroupPubTBLS([tblsAccounts.ALICE.verificationVector,tblsAccounts.BOB.verificationVector,tblsAccounts.CHARLIE.verificationVector]);
-
-
-// ID of shard where you want to transfer KLY or call contract
-const shardID = '7GPupbq1vtKUgaqVeHiDbEJcxS7sSjwPnbht4eRaDBAEJv8ZKHNCSu2Am3CuWnHjta';
-
-// PQC account
-const recipient = '8b9cf608fdc183625334896b054f6421690d5891ddc2e1cee13285f6723823c2';
-
-const nonce = 0;
-
-const fee = 1;
-
-const amountInKLY = 13.37;
-
-
-//_____________ GENERATE SIG_SHARES _____________
-
-const partialSignatureOfFriend1 = await web1337.buildPartialSignatureWithTxData(
-
-    tblsAccounts.ALICE.id,
-    
-    [{secretKeyShare:tblsAccounts.ALICE.shares[0]},{secretKeyShare:tblsAccounts.BOB.shares[0]},{secretKeyShare:tblsAccounts.CHARLIE.shares[0]}],
-
-    shardID, nonce, fee, recipient, amountInKLY
-
-);
-
-const partialSignatureOfFriend2 = await web1337.buildPartialSignatureWithTxData(
-
-    tblsAccounts.BOB.id,
-    
-    [{secretKeyShare:tblsAccounts.ALICE.shares[1]},{secretKeyShare:tblsAccounts.BOB.shares[1]},{secretKeyShare:tblsAccounts.CHARLIE.shares[1]}],
-
-    shardID, nonce, fee, recipient, amountInKLY
-
-);
-
-//_____________ BUILD TRANSACTION _______________
-
-
-const finalTransaction = await web1337.createThresholdTransaction(
-    
-    rootPubKey,
-    
-    [partialSignatureOfFriend1,partialSignatureOfFriend2],
-
-    nonce, recipient, amountInKLY, fee
-    
-);
-
-console.log('============TBLS Transaction that can be deployed to network============\n');
-console.log(finalTransaction);
-```
-
-Output:
-
-```code-runner-output
-============TBLS Transaction that can be deployed to network============
-
-{
-  v: 0,
-  creator: 'bedc88644f0deea4c0a77ba687712f494a1af7d8869f09768a0db42284f89d17b7b9225e0c87c2cb5511907dfd5eae3a53d789298721039e833770de29595880',
-  type: 'TX',
-  nonce: 0,
-  fee: 1,
-  payload: {
-    to: '8b9cf608fdc183625334896b054f6421690d5891ddc2e1cee13285f6723823c2',
-    amount: 13.37,
-    type: 'T'
-  },
-  sig: 'fd538ca7876777b99b21fcc9e9f6d93f4b109a5d679c29b888528568309e9417'
-}
-```
+See [#ed25519-greater-than-postquantum-dilithium-bliss-transaction](default-ed25519-transactions.md#ed25519-greater-than-postquantum-dilithium-bliss-transaction "mention") and [#bls-greater-than-postquantum-dilithium-bliss-transaction](bls-multisig-transactions.md#bls-greater-than-postquantum-dilithium-bliss-transaction "mention")
