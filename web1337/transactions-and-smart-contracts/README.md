@@ -17,8 +17,6 @@ KLY has 4 types of accounts:
 Due to the peculiarities of each of them, we decided to show how to conduct transactions from any type to any other (4x4, total - 16 examples)
 {% endhint %}
 
-##
-
 ## Create Web1337 instance
 
 It's initial step - as previously
@@ -36,8 +34,6 @@ let web1337 = new Web1337({
 });
 ```
 
-
-
 ## BIP 44 support
 
 KLY also supports BIP-44 with 7331 identificator(reversed 1337). Here is pull request that prove it
@@ -47,8 +43,6 @@ KLY also supports BIP-44 with 7331 identificator(reversed 1337). Here is pull re
 {% hint style="info" %}
 Currently, only Ed25519 accounts supports BIP-44 but later we'll add support for other types of KLY accounts
 {% endhint %}
-
-***
 
 ## Links
 

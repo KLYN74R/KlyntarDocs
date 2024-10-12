@@ -18,8 +18,6 @@ let txID = web1337.blake3(tx.sig)
 
 See also [#find-your-transaction-by-tx-id](../../build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/searchbar.md#find-your-transaction-by-tx-id "mention")
 
-##
-
 ## How to calculate the contractID locally to predict the future contract identifier
 
 ```javascript
