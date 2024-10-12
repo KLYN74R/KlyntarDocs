@@ -2,7 +2,7 @@
 description: Let's show you how to start with different types of KLY transactions
 ---
 
-# 🟠 Send transactions
+# 🟠 Transactions and smart-contracts
 
 ## Intro
 
@@ -29,7 +29,7 @@ import Web1337 from 'web1337';
 
 let web1337 = new Web1337({
 
-    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     workflowVersion:0,
     nodeURL: 'http://localhost:7332'
 

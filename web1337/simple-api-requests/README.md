@@ -34,7 +34,7 @@ import Web1337 from 'web1337';
 
 let web1337 = new Web1337({
 
-    symbioteID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+    chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     workflowVersion:0,
     nodeURL:'http://localhost:7332'
     proxyURL:'http://localhost:8888' // optional - for example 'http(s)://login:password@127.0.0.1:8080' or 'socks5h://Vlad:Cher@127.0.0.1:9150'
@@ -42,7 +42,7 @@ let web1337 = new Web1337({
 });
 ```
 
-* **symbioteID** - 256-bit identifier of appropriate symbiote(something like chain id in EVM). On a technical level, this is the BLAKE3 manifest hash of the chain file which includes the genesis hash, the repository version hash and so on. For maximum security, it is recommended to include the manifest in several blockchains (hostchains) at once
+* **chainID** - 256-bit identifier of appropriate symbiote(something like chain id in EVM). On a technical level, this is the BLAKE3 manifest hash of the chain file which includes the genesis hash, the repository version hash and so on. For maximum security, it is recommended to include the manifest in several blockchains (hostchains) at once
 * **workflowVersion** - major version number of workflow of your symbiote to make sure you know the further logic in this version
 * **nodeURL** - the endpoint of node to interact with network. It might be your own node, Node-as-a-Service provider, etc.
 * **proxyURL **<mark style="color:red;">**(optional)**</mark> - the URL of proxy that will be used to interact with node. It might be HTTP(s) or SOCKS proxy(to allow connections over TOR/I2P or other SOCKS)
