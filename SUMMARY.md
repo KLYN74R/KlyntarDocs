@@ -24,6 +24,7 @@
   * [Consensus related API](web1337/simple-api-requests/consensus-related-api.md)
   * [Transactions API](web1337/simple-api-requests/transactions-api.md)
 * [🟠 Transactions and smart-contracts](web1337/transactions-and-smart-contracts/README.md)
+  * [Useful advices & FAQ](web1337/transactions-and-smart-contracts/useful-advices-and-faq.md)
   * [🔐 Default Ed25519 transactions](web1337/transactions-and-smart-contracts/default-ed25519-transactions.md)
   * [🤝 BLS multisig transactions](web1337/transactions-and-smart-contracts/bls-multisig-transactions.md)
   * [🛡️ TBLS thresholdsig transactions](web1337/transactions-and-smart-contracts/tbls-thresholdsig-transactions.md)

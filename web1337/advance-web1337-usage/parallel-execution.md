@@ -11,7 +11,7 @@ Klyntar was created to implement best practices. That is why parallel transactio
 
 Currently, parallel transaction execution is supported for:
 
-<table><thead><tr><th width="274">Transaction type</th><th>Description</th><th>Implementation status</th></tr></thead><tbody><tr><td><strong>TX</strong></td><td>Default address to address coins transfer</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr><tr><td><strong>WVM_DEPLOY</strong></td><td>Contract deployment to WASM vm</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr><tr><td><strong>WVM_CALL</strong></td><td>Call smart-contract in WASM vm</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr><tr><td><strong>EVM_CALL</strong></td><td>Interaction with EVM(default transfer, contract interaction)</td><td><a href="https://emojipedia.org/check-mark-button">✅</a></td></tr></tbody></table>
+<table><thead><tr><th width="274">Transaction type</th><th width="269">Description</th><th data-type="checkbox">Implementation status</th></tr></thead><tbody><tr><td><strong>TX</strong></td><td>Default address to address coins transfer</td><td>true</td></tr><tr><td><strong>WVM_DEPLOY</strong></td><td>Contract deployment to WASM vm</td><td>true</td></tr><tr><td><strong>WVM_CALL</strong></td><td>Call smart-contract in WASM vm</td><td>true</td></tr><tr><td><strong>EVM_CALL</strong></td><td>Interaction with EVM(default transfer, contract interaction)</td><td>true</td></tr></tbody></table>
 
 ## How
 
@@ -33,12 +33,7 @@ const payload = {
 
 For example - here is what you need to add to the array for different types of transactions
 
-| Transaction type | What to add to array           |
-| ---------------- | ------------------------------ |
-| **TX**           | \[creator, payload.to]         |
-| **WVM\_DEPLOY**  | \[creator]                     |
-| **WVM\_CALL**    | \[creator, payload.contractID] |
-| **EVM\_CALL**    | \[from, to]                    |
+<table><thead><tr><th width="180">Transaction type</th><th>What to add to array</th></tr></thead><tbody><tr><td><strong>TX</strong></td><td>[creator, payload.to]</td></tr><tr><td><strong>WVM_DEPLOY</strong></td><td>[creator]</td></tr><tr><td><strong>WVM_CALL</strong></td><td>[creator, contractID, ....(all contracts addresses in case of internal calls)]</td></tr><tr><td><strong>EVM_CALL</strong></td><td>[from, to, ....(all contracts addresses in case of internal calls)]</td></tr></tbody></table>
 
 This is example of parallel transaction:
 
@@ -49,7 +44,5 @@ And this transaction is not parallel - it was executed in a sync way
 <figure><img src="../../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
 
 ## Parallel execution for native transactions and WASM vm
-
-
 
 ## Parallel execution for EVM

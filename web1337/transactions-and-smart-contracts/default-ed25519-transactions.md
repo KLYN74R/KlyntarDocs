@@ -4,7 +4,7 @@ description: Solana compatible accounts
 
 # 🔐 Default Ed25519 transactions
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Create and send default transaction
 
@@ -14,7 +14,7 @@ Here we propose the example of simple transaction from default account(ed25519) 
 
 ## Keypair creation process
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Generate keypair
 
@@ -235,7 +235,7 @@ Optional fields:
 
 If you check this tx in explorer you should see:
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Picture from local explorer</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Picture from local explorer</p></figcaption></figure>
 
 ## Ed25519 => BLS(multisig address) transaction
 
