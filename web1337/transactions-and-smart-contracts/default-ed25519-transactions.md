@@ -235,7 +235,7 @@ Optional fields:
 
 If you check this tx in explorer you should see:
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption><p>Picture from local explorer</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (9).png" alt=""><figcaption><p>Picture from local explorer</p></figcaption></figure>
 
 ## Ed25519 => BLS(multisig address) transaction
 

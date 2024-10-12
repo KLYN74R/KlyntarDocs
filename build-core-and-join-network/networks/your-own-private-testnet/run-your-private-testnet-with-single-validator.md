@@ -121,7 +121,7 @@ klyntar
 
 And you have to see the following:
 
-<figure><img src="../../../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (9) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 The password to decrypt your private key(stored in workflow.json, encrypted by AES-256) is `qwerty`
