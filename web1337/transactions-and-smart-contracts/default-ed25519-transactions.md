@@ -270,7 +270,7 @@ where:
 Optional fields:
 
 * **reason** - in case tx failed you can use this reason to understand why
-* **createdContractAddress - only in txs where contract was deployed. It might be WASM or EVM contract**
+* **createdContractAddress -** only in txs where contract was deployed. It might be WASM or EVM contract
 * **extraDataToReceipt** - optional object with extra data (for example - result of contract call)
 
 ### Check explorer:
