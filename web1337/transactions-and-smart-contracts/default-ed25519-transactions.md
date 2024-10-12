@@ -156,16 +156,17 @@ const keypair = {
 
 };
 
+const shardID = "shard_0";
 
 const payload = {
 
     to: "Ai1Pk9RzmgeiSAptc1W69NAmSB52GqjNqGdGQGgqxQA1",
 
-    amount: 13.37
+    amount: 13.37,
+    
+    shard: shardID
 
 };
-
-const shardID = "shard_0";
 
 const fee = 0.03;
 
@@ -366,18 +367,19 @@ const keypair = {
 // Use the formula rev_t = N-T where N - number of sides, T-threshold
 const reverseThreshold = 1;
 
+const shardID = "shard_0";
 
 const payload = {
 
     to: "0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4",
 
     amount: 13.37,
+    
+    shard: shardID,
 
     rev_t: reverseThreshold
 
 };
-
-const shardID = "shard_0";
 
 const fee = 0.03;
 
@@ -401,6 +403,7 @@ Result:
   fee: 0.03,
   payload: {
     to: '0xb89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4',
+    shard:"shard_0",
     amount: 13.37,
     rev_t: 1
   },
@@ -478,16 +481,17 @@ const keypair = {
 
 };
 
+const shardID = "shard_0";
 
 const payload = {
 
     to: "b89c4bf0b9dab0224201d06d46ed6cb49b94f34f8dc8feb0d7bad77caab5b41fc16531dce9ba2cba5784359d2b701cc4",
 
-    amount: 13.37
+    amount: 13.37,
+    
+    shard:shardID
 
 };
-
-const shardID = "shard_0";
 
 const fee = 0.03;
 
@@ -535,7 +539,9 @@ let payload = {
 
     to: "1826d3782d53b127c53129fe67f4a3e3c1140feb2af36a0517077297a6e867e5",
     
-    amount: 13.37
+    amount: 13.37,
+    
+    shard:shardID
     
 }
 ```
@@ -549,7 +555,9 @@ let payload = {
 
     to: "1826d3782d53b127c53129fe67f4a3e3c1140feb2af36a0517077297a6e867e5",
     
-    amount: 13.37
+    amount: 13.37,
+    
+    shard:shardID,
     
     pqcPub:"001b4609d500e31a0a188911900aac07fb06f91566038104e90c01031707d6154701701a15046d07f5089f0c730c8515e712c90b5a130d10081bca0ab40c8f0027101501870ccb17041d691bac0c30162d11ff0566198710f308cd08b30be804261a040c530cb8042e16841623069200b9175410a5016a171e1ceb10f813261bae0acc06be176214471d7013530d92180a0dbd15c800fd09f700ed0a8616141a14095b08a71c3317031d78106602ef1c1f1a53097016df192905b50ad40b5c1d1c027e026b0ecb115417ae1b6f1c1101c60d3f1c12016010a309f8183411840d7d12d414071a5b10d1162111f712951b36066209500e1d137d1dbf055417e6075c0ce307460ff9040715b51d0000cc11cf1bd1194c0a2d19e901191c5306040c8002be0d19024f10b31b19152912fe06900de21b2e10110ab111f80b6403ac1b8505221bac09830e3501a1175705c7138e1db6035c09871c4c121706b70b560ac70c001d2305b0107117ef02c1178a13f010bb193004ca02bc035e036f109419770a2017f11dd00cb3016405b41604091206c61603085208fa0df0130912cb14cd187914b009e306440a3018ca0c5810c305400507103b1113016c0ead00100e3f02b6003410981cdf04c50d0213d61984110c0ba700ae0c8912f618a01a231bc81066010a1d051242103013ac05c30dae14030f890e1117b319a002a707f30923"
     
@@ -587,15 +595,17 @@ const keypair = {
 
 };
 
+const shardID = "shard_0";
+
 const payload = {
 
     to: "4218fb0aaace62c4bfafbdd9adb05b99a9bf1a33eeae074215a51cb644b9a85c",
 
-    amount: 13.37
+    amount: 13.37,
+    
+    shard:shardID
 
 };
-
-const shardID = "shard_0";
 
 const fee = 0.03;
 

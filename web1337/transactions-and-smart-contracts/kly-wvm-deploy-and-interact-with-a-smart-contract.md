@@ -21,7 +21,11 @@ let web1337 = new Web1337({
 
 let contractBytecode = fs.readFileSync('./path/to/your/contract.wasm').toString('hex');
 
+const shardID = "shard_0"
+
 let payload = {
+
+    shard:shardID,
 
     bytecode:contractBytecode,
 
@@ -47,9 +51,6 @@ let keypair = {
     prv:"MC4CAQAwBQYDK2VwBCIEILdhTMVYFz2GP8+uKUA+1FnZTEdN8eHFzbb8400cpEU9",
 
 }
-
-
-const shardID = "shard_0"
 
 const fee = 0.03
 

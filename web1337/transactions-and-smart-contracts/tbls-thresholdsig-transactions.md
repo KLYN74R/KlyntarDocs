@@ -882,7 +882,9 @@ const payload = {
 
     to: recipient,
     
-    amount: amountInKLY
+    amount: amountInKLY,
+    
+    shard:shardID
 
 };
 
@@ -950,7 +952,8 @@ Output:
   fee: 1,
   payload: {
     to: '6S4yLHorBUjSRjFpwxqPUXzwouZwR716CZ5uLmiy9Sze',
-    amount: 13.37
+    amount: 13.37,
+    shard:"shard_0"
   },
   sig: 'bd602b821a12789cab6e191da09a813b6236fe3eb780a14c88d2a4d192b2221b'
 }
@@ -977,6 +980,7 @@ Tx structure should be like this:
   payload: {
     to: '0x8f079049121d5e2ae885bdc6581df9fb68eab94a7aa3ae54bfe1d1ac35aceefbb202f656b0c1b56d64583630612a9970',
     amount: 13.37,
+    shard:"shard_0",
     rev_t: 2
   },
   sig: '3a985ce737b26c9217ca9e516c89cd83c0bb8be827cecf95449fee1f6d366081'
