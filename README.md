@@ -4,7 +4,7 @@ description: >-
   ecosystem😊
 ---
 
-# KLYNTAR Docs
+# ⭐ Getting started
 
 ## Intro
 

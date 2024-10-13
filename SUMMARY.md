@@ -1,6 +1,6 @@
 # Table of contents
 
-* [KLYNTAR Docs](README.md)
+* [⭐ Getting started](README.md)
 * [📚 Glossary](glossary/README.md)
   * [Architecture](glossary/architecture.md)
   * [Types of transactions](glossary/types-of-transactions.md)
