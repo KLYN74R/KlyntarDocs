@@ -10,19 +10,85 @@ Signature by some quorum member (validator) that told:
 
 > I agree to vote for block <mark style="color:red;">**B**</mark> with index <mark style="color:green;">**I**</mark> and hash <mark style="color:purple;">**H**</mark> created by shard leader <mark style="color:orange;">**L**</mark>. The previous block hash was <mark style="color:blue;">**P**</mark>
 
+On a more technical level - the validator that is part of the current quorum when receiving a block proposal from the shard leader generates a signature:
+
+```javascript
+import {crypto} from 'web1337';
+
+let prevBlockHash = "b5d6a3736a146fe921e40be95b8e41a0f953a20aedb740769440be4b53795ff7";
+
+let blockID = "0:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:1618";
+
+let blockHash = "36514c7acfd77950b23baced61f70bd7126f5dac4bc7f2eb110f364123901c42";
+
+// Epoch Full ID = epoch.hash+"#"+epoch.index
+// Just concat hash + # + index
+let epochFullID = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#0";
+
+let dataThatShouldBeSigned = prevBlockHash+blockID+blockHash+epochFullID;
+
+
+// Imagine that validator holds it locally
+let quorumValidatorPrivateKey = "MC4CAQAwBQYDK2VwBCIEILdhTMVYFz2GP8+uKUA+1FnZTEdN8eHFzbb8400cpEU9";
+
+
+let finalizationProof = await crypto.ed25519.signEd25519(dataThatShouldBeSigned,quorumValidatorPrivateKey);
+```
+
+After quorum member generate this signature - it can be handled(by someone - since it proof is public) and aggregated to get the **AFP - aggregated finalization proof**
+
 ## AFP - Aggregated Finalization Proof
 
 Aggregation of 2/3N of FPs gives us AFP. This is how it looks like:
 
 ```json
 {
-    "prevBlockHash": "3ba7df6b3c7e49907f6b88482a5748dfc15450be72e9734c072371ca24f94339",
-    "blockID": "3:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:2839",
-    "blockHash": "fec91901a5b2da9cf6e142c04304aae3aba2667c324c61e5820208386eacf8a5",
+    "prevBlockHash": "b5d6a3736a146fe921e40be95b8e41a0f953a20aedb740769440be4b53795ff7",
+    "blockID": "0:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:1618",
+    "blockHash": "36514c7acfd77950b23baced61f70bd7126f5dac4bc7f2eb110f364123901c42",
     "proofs": {
-        "9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK": "CnhbmXriLZqcw7zb6qabESNdlMLwrIPEt9pXH1okah2oSJCekTCV0AvA3NeOjmeOA2sYksOCV6z3y5fHxj1BAQ=="
+        "9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK": "0pOSDm2Zr615gDociLowbGD3IU3eXZKqXOpGchHx8pQEBFThgKzRE2Qt+jTw4ikKJruVCMlDHjwaFOJuufJSAA==",
+        "6XvZpuCDjdvSuot3eLr24C1wqzcf2w4QqeDh9BnDKsNE": "msSzIiJ9R7x+U+aLUYWyJVF2ylB8qQmel0U7XHPSRXlRZtc+AJVGctXiDZ89K54xpWL+E9TqDmj9H2Cqvz+MAg=="
     }
 }
+```
+
+In our explorer you can check the AFP on the block page - look at the link next to the status
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+Clicking on the link will show you the raw version of AFP:
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+
+Probably the most interesting field here is `proofs` - these are just the FP's from the validators that are part of the quorum of the epoch when the block was generated.
+
+You can verify it yourself using this code:
+
+```javascript
+import {crypto} from 'web1337';
+
+let prevBlockHash = "b5d6a3736a146fe921e40be95b8e41a0f953a20aedb740769440be4b53795ff7";
+
+let blockID = "0:9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK:1618";
+
+let blockHash = "36514c7acfd77950b23baced61f70bd7126f5dac4bc7f2eb110f364123901c42";
+
+// Epoch Full ID = epoch.hash+"#"+epoch.index
+// Just concat hash + # + index
+let epochFullID = "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef#0";
+
+let dataThatShouldBeSigned = prevBlockHash+blockID+blockHash+epochFullID;
+
+// Let verify FP for quorum member 9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK
+
+let quorumMember = "9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK";
+let fpProof = "0pOSDm2Zr615gDociLowbGD3IU3eXZKqXOpGchHx8pQEBFThgKzRE2Qt+jTw4ikKJruVCMlDHjwaFOJuufJSAA==";
+
+
+let isFinalizationProofOk = await crypto.ed25519.verifyEd25519(dataThatShouldBeSigned,fpProof, quorumMember);
+
+// In case 2/3N+1 of quorum created valid FPs - then this AFP is valid
 ```
 
 ## LRP - Leader Rotation Proof

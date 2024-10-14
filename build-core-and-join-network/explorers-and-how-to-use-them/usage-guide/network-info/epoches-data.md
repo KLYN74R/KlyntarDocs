@@ -2,7 +2,7 @@
 
 Go to page `Epoches data` page
 
-<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Here you can get more details about current epoch. Using arrow buttons it's possible to track the history of epoches.
 

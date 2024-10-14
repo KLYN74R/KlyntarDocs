@@ -65,7 +65,7 @@ So, set `KLYNTAR_NODE_URL` manually in Linux/Windows/Mac or just run your node o
 
 Go to [http://localhost:3000](http://localhost:3000) and check the main page of explorer
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 There are 3 main areas you should pay attention to here:
 
