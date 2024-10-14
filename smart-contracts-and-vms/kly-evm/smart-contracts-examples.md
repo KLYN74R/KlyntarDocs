@@ -1,3 +1,7 @@
+---
+icon: eye
+---
+
 # Smart contracts examples
 
 ## Intro

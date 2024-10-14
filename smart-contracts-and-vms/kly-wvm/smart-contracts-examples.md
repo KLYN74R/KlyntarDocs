@@ -1,3 +1,7 @@
+---
+icon: eye
+---
+
 # Smart contracts examples
 
 ## ERC-20 on AssemblyScript example
