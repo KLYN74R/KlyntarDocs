@@ -1,6 +1,6 @@
-# 📃 KLY-WVM - deploy the smart-contract to WASM vm
+# 📃 KLY-WVM - deploy and interact with the smart-contract to WASM vm
 
-<figure><img src="../../.gitbook/assets/Meme_Kly_Wvm.jpg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Meme_Kly_Wvm.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Intro
 
@@ -95,24 +95,24 @@ Sent
 
 Go to explorer and paste the txid to searchbar. You can also go directly to the page of newly created contract because it's possible to calculate the contractID locally (example above):
 
-<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
 You'll see
 
-<figure><img src="../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 It's possible to immediately visit the page of newly created contract by clicking here:
 
-<figure><img src="../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
 
 The page of new contract:
 
-<figure><img src="../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
 
 And indeed - this contract has only one transaction - deployment:
 
-<figure><img src="../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
 
 ## In case your deployment failed
 
-See[#check-the-reason-of-failed-transaction](useful-advices-and-faq.md#check-the-reason-of-failed-transaction "mention")
+See[#check-the-reason-of-failed-transaction](../useful-advices-and-faq.md#check-the-reason-of-failed-transaction "mention")
