@@ -91,7 +91,7 @@ Example output:
 
 If you are transferring coins from the EVM environment to the native one, you need to:
 
-1. Initiate a transaction to the address `0x07`
+1. Initiate a transaction to the address `0xdead`
 2. In the data field, you need to encode a JSON object with the `to` field
 
 In this case, the coins will go to the native environment to the `to` address and on the same shard.
@@ -142,7 +142,7 @@ let txObject = {
     
     nonce:web3.utils.toHex(nonce),
 
-    to:'0x0000000000000000000000000000000000000007',
+    to:'0x000000000000000000000000000000000000dead',
     
     value: web3.utils.toHex(web3.utils.toWei('1.337','ether')),
     
@@ -172,7 +172,7 @@ Tx hash is =>  0x55e69ecc9a268b704fbc5025616d73db2a38864d2ad5631dc260b0ced762bf9
   nonce: '0x1',
   gasPrice: '0x2540be400',
   gasLimit: '0x59d8',
-  to: '0x0000000000000000000000000000000000000007',
+  to: '0x000000000000000000000000000000000000dead',
   value: '0x128dfa6a90b28000',
   data: '0x7b22746f223a22475562594c4e354e716d526f634d4248715331383372324651526f556a68783170356e4b79795542706e7451227d',
   v: '0x3969',
