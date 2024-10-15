@@ -1,7 +1,3 @@
----
-coverY: 0
----
-
 # 📃 KLY-EVM - deploy and interact with the smart-contract to EVM
 
 
