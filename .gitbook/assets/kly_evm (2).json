@@ -1,0 +1,19 @@
+{
+    "KLY_EVM":{
+
+        "name":"KLYNTAR",
+        "networkId":"0x1ca3",
+        "chainId":"0x1ca3",
+        "coinbase":"0x0000000000000000000000000000000000000000",
+        "connectorAddress":"0x000000000000000000000000000000000000dead",
+        "hardfork":"merge",
+        "gasLimitForBlock":30000000,
+        
+        "clientVersion":"KLY-EVM/dev_tachyon/v0.13.37/Node.js",
+        "protocolVersionInHex":"0x1",
+        "gasPriceInWeiAndHex":"0x49ad39126",
+        "maxAllowedGasAmountForSandboxExecution":1000000,
+        "bindContext":"shard_0"
+    
+    }
+}
