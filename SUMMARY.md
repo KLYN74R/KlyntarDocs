@@ -102,7 +102,7 @@
 * [🕸️ Networks](build-core-and-join-network/networks/README.md)
   * [Your own private testnet](build-core-and-join-network/networks/your-own-private-testnet/README.md)
     * [Run your private testnet with single validator](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-single-validator.md)
-    * [Run your private testnet with 4 nodes](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-4-nodes.md)
+    * [Run your private testnet with 5 nodes and 3 shards](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-4-nodes.md)
     * [Run your private testnet with 21 nodes](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-21-nodes.md)
   * [Public testnets](build-core-and-join-network/networks/public-testnets.md)
 * [⚙️ Customizations](build-core-and-join-network/customizations/README.md)

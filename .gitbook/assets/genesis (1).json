@@ -4,7 +4,7 @@
 
     "CORE_MAJOR_VERSION":0,
 
-    "FIRST_EPOCH_START_TIMESTAMP":1727183668092,
+    "FIRST_EPOCH_START_TIMESTAMP":1726525054337,
 
     "NETWORK_CREATORS_CONTACT":{
         "telegram":"@chain_creator",
@@ -205,7 +205,7 @@
     
             },
     
-            "0x1000000000000000000000000000000000000007":{
+            "0x0000000000000000000000000000000000000007":{
                 
                 "isContract":true,
                 "nonce": 0,
