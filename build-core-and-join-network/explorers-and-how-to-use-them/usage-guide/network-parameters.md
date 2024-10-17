@@ -2,7 +2,7 @@
 
 This is the simplest section that will tell you about the current network parameters
 
-<figure><img src="../../../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (10) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 These parameters are specified in the genesis and they regulate the operation of the network. Here you will find information about the network ID, the bet size for the validator, the duration of the epoch, and so on.
 

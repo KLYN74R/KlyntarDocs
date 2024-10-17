@@ -1,6 +1,6 @@
 # ⚡ Interact with node via websockets
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Generate TLS certificate
 
@@ -60,7 +60,7 @@ root@cb4d8e656db5:~/CERTS#
 
 Add the certificate and key to **KLY\_Plugins/certificates**
 
-<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (4) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now, change the **KLY\_Plugins/dev\_websocket\_api/configs.json**
 
@@ -100,6 +100,6 @@ On client side you just need to add the path to certificate to mark it as reliab
 
 
 
-<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (5) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Usage

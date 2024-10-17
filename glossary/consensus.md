@@ -55,11 +55,11 @@ Aggregation of 2/3N of FPs gives us AFP. This is how it looks like:
 
 In our explorer you can check the AFP on the block page - look at the link next to the status
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
 
 Clicking on the link will show you the raw version of AFP:
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Probably the most interesting field here is `proofs` - these are just the FP's from the validators that are part of the quorum of the epoch when the block was generated.
 
