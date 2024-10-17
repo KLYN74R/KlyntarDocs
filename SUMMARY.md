@@ -44,6 +44,7 @@
     * [💾 Storage Abstraction](web1337/advance-web1337-usage/abstraction/storage-abstraction/README.md)
       * [🔃 Manual deployment of the storage for your contract](web1337/advance-web1337-usage/abstraction/storage-abstraction/manual-deployment-of-the-storage-for-your-contract.md)
       * [☄️ Dump EVM & WASM contract storage](web1337/advance-web1337-usage/abstraction/storage-abstraction/dump-evm-and-wasm-contract-storage.md)
+      * [Pay for storage rent](web1337/advance-web1337-usage/abstraction/storage-abstraction/pay-for-storage-rent.md)
   * [🌩️ Thundercloud](web1337/advance-web1337-usage/thundercloud/README.md)
     * [🏷️ Using KLY Aliases in transactions](web1337/advance-web1337-usage/thundercloud/using-kly-aliases-in-transactions.md)
     * [🦾 Deploy KIP](web1337/advance-web1337-usage/thundercloud/deploy-kip.md)
