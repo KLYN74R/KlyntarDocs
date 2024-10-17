@@ -45,4 +45,8 @@ And this transaction is not parallel - it was executed in a sync way
 
 ## Parallel execution for native transactions and WASM vm
 
+See  [#transfer-coins-from-native-kly-environment-to-evm](../transactions-and-smart-contracts/transfer-coins-between-evm-and-native-environment.md#transfer-coins-from-native-kly-environment-to-evm "mention")
+
 ## Parallel execution for EVM
+
+See [#transfer-coins-from-evm-to-native-kly-environment](../transactions-and-smart-contracts/transfer-coins-between-evm-and-native-environment.md#transfer-coins-from-evm-to-native-kly-environment "mention")
