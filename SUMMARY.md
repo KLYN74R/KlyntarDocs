@@ -104,6 +104,7 @@
     * [Unstaking](build-core-and-join-network/become-kly-validator/default-staking/unstaking.md)
   * [Multistaking](build-core-and-join-network/become-kly-validator/multistaking/README.md)
     * [Supported networks and tokens](build-core-and-join-network/become-kly-validator/multistaking/supported-networks-and-tokens.md)
+    * [Full list of supported assets](build-core-and-join-network/become-kly-validator/multistaking/full-list-of-supported-assets.md)
     * [Work with native coins](build-core-and-join-network/become-kly-validator/multistaking/work-with-native-coins.md)
     * [Work with ERC-20 tokens](build-core-and-join-network/become-kly-validator/multistaking/work-with-erc-20-tokens.md)
     * [Work with ERC-721 tokens](build-core-and-join-network/become-kly-validator/multistaking/work-with-erc-721-tokens.md)
