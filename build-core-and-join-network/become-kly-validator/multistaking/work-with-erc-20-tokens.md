@@ -38,4 +38,5 @@ icon: circle-dollar-to-slot
 
 ## Video tutorial
 
-{% file src="../../../.gitbook/assets/ERC_20_Multistaking_Demo.mp4" %}
+{% embed url="https://youtu.be/SSYF5wgQQ9U" %}
+
