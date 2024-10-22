@@ -88,5 +88,25 @@ Congratulations, you have now completed the staking process. Let's see what we h
 
 ## Unstaking these liquidity tokens to get back your real ETHes, BSCs, AVAXes, etc.
 
-<figure><img src="../../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+So you have 0.01 KETH and you want to get your original ETH back.
+
+<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+
+Let's assume you want to withdraw back 0.001 ETH.
+
+Go to contract page and visit **Contract >** **Write Contract** to find `unstake()` function. Specify the pool from which you want to unstake. You can choose any pool that has enough coins. Not necessarily the one you staked on.
+
+<figure><img src="../../../.gitbook/assets/image_2024-10-16_23-17-54.png" alt=""><figcaption></figcaption></figure>
+
+The example of transaction below:
+
+<figure><img src="../../../.gitbook/assets/image_2024-10-16_23-18-30.png" alt=""><figcaption></figcaption></figure>
+
+Now the contract ETH balance is 0.009 ETH instead of 0.01 ETH as before:
+
+<figure><img src="../../../.gitbook/assets/image_2024-10-16_23-19-17.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="success" %}
+At this stage, you signal that you want to get your original tokens back. The unstaking process in real conditions will take about 3 days (to prevent contract abuse). To do this, you will need to additionally call the withdraw() function on the contract
+{% endhint %}
 
