@@ -1,3 +1,7 @@
+---
+icon: circle-info
+---
+
 # Web1337 intro
 
 ## What is Web1337?

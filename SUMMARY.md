@@ -8,10 +8,49 @@
   * [Consensus](glossary/consensus.md)
   * [RWX codeless smart contracts](glossary/rwx-codeless-smart-contracts.md)
 
+## Other resources & links
+
+* [Official links](other-resources-and-links/official-links.md)
+* [Brand assets](other-resources-and-links/brand-assets.md)
+
 ## Wallets usage
 
 * [Wallets to work with WVM and native environment](wallets-usage/wallets-to-work-with-wvm-and-native-environment.md)
 * [EVM compatible wallets](wallets-usage/evm-compatible-wallets.md)
+
+## build core and join network
+
+* [☁️ Build the core](build-core-and-join-network/run-kly-node.md)
+* [🕵️ Become KLY validator](build-core-and-join-network/become-kly-validator/README.md)
+  * [Default staking](build-core-and-join-network/become-kly-validator/default-staking/README.md)
+    * [Staking](build-core-and-join-network/become-kly-validator/default-staking/staking.md)
+    * [Unstaking](build-core-and-join-network/become-kly-validator/default-staking/unstaking.md)
+  * [Multistaking](build-core-and-join-network/become-kly-validator/multistaking/README.md)
+    * [Supported networks and tokens](build-core-and-join-network/become-kly-validator/multistaking/supported-networks-and-tokens.md)
+    * [Full list of supported assets](build-core-and-join-network/become-kly-validator/multistaking/full-list-of-supported-assets.md)
+    * [Work with native coins](build-core-and-join-network/become-kly-validator/multistaking/work-with-native-coins.md)
+    * [Work with ERC-20 tokens](build-core-and-join-network/become-kly-validator/multistaking/work-with-erc-20-tokens.md)
+    * [Work with ERC-721 tokens](build-core-and-join-network/become-kly-validator/multistaking/work-with-erc-721-tokens.md)
+* [🕸️ Networks](build-core-and-join-network/networks/README.md)
+  * [Your own private testnet](build-core-and-join-network/networks/your-own-private-testnet/README.md)
+    * [Run your private testnet with single validator](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-single-validator.md)
+    * [Run your private testnet with 5 nodes and 3 shards](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-4-nodes.md)
+    * [Run your private testnet with 21 nodes](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-21-nodes.md)
+  * [Public testnets](build-core-and-join-network/networks/public-testnets.md)
+* [⚙️ Customizations](build-core-and-join-network/customizations/README.md)
+  * [Create own mutation](build-core-and-join-network/customizations/create-own-mutation.md)
+  * [Create own plugin](build-core-and-join-network/customizations/create-own-plugin.md)
+  * [Run your node over TOR](build-core-and-join-network/customizations/run-your-node-over-tor.md)
+  * [Plugins usage](build-core-and-join-network/customizations/plugins-usage.md)
+* [Explorers and how to use them](build-core-and-join-network/explorers-and-how-to-use-them/README.md)
+  * [Public Explorer](build-core-and-join-network/explorers-and-how-to-use-them/public-explorer.md)
+  * [Your own custom explorer](build-core-and-join-network/explorers-and-how-to-use-them/your-own-custom-explorer.md)
+  * [Usage guide](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/README.md)
+    * [Network Parameters](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-parameters.md)
+    * [Searchbar](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/searchbar.md)
+    * [Network Info](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/README.md)
+      * [Epoches data](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/epoches-data.md)
+      * [Hostchain checkpoints](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/hostchain-checkpoints.md)
 
 ## Web1337
 
@@ -95,40 +134,6 @@
 * [🤝 Create RWX contract and deploy with Web1337](rwx-contracts/create-rwx-contract-and-deploy-with-web1337.md)
 * [🕵️‍♂️ Become verifier](rwx-contracts/become-verifier.md)
 
-## build core and join network
-
-* [☁️ Run KLY node](build-core-and-join-network/run-kly-node.md)
-* [🕵️ Become KLY validator](build-core-and-join-network/become-kly-validator/README.md)
-  * [Default staking](build-core-and-join-network/become-kly-validator/default-staking/README.md)
-    * [Staking](build-core-and-join-network/become-kly-validator/default-staking/staking.md)
-    * [Unstaking](build-core-and-join-network/become-kly-validator/default-staking/unstaking.md)
-  * [Multistaking](build-core-and-join-network/become-kly-validator/multistaking/README.md)
-    * [Supported networks and tokens](build-core-and-join-network/become-kly-validator/multistaking/supported-networks-and-tokens.md)
-    * [Full list of supported assets](build-core-and-join-network/become-kly-validator/multistaking/full-list-of-supported-assets.md)
-    * [Work with native coins](build-core-and-join-network/become-kly-validator/multistaking/work-with-native-coins.md)
-    * [Work with ERC-20 tokens](build-core-and-join-network/become-kly-validator/multistaking/work-with-erc-20-tokens.md)
-    * [Work with ERC-721 tokens](build-core-and-join-network/become-kly-validator/multistaking/work-with-erc-721-tokens.md)
-* [🕸️ Networks](build-core-and-join-network/networks/README.md)
-  * [Your own private testnet](build-core-and-join-network/networks/your-own-private-testnet/README.md)
-    * [Run your private testnet with single validator](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-single-validator.md)
-    * [Run your private testnet with 5 nodes and 3 shards](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-4-nodes.md)
-    * [Run your private testnet with 21 nodes](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-21-nodes.md)
-  * [Public testnets](build-core-and-join-network/networks/public-testnets.md)
-* [⚙️ Customizations](build-core-and-join-network/customizations/README.md)
-  * [Create own mutation](build-core-and-join-network/customizations/create-own-mutation.md)
-  * [Create own plugin](build-core-and-join-network/customizations/create-own-plugin.md)
-  * [Run your node over TOR](build-core-and-join-network/customizations/run-your-node-over-tor.md)
-  * [Plugins usage](build-core-and-join-network/customizations/plugins-usage.md)
-* [Explorers and how to use them](build-core-and-join-network/explorers-and-how-to-use-them/README.md)
-  * [Public Explorer](build-core-and-join-network/explorers-and-how-to-use-them/public-explorer.md)
-  * [Your own custom explorer](build-core-and-join-network/explorers-and-how-to-use-them/your-own-custom-explorer.md)
-  * [Usage guide](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/README.md)
-    * [Network Parameters](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-parameters.md)
-    * [Searchbar](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/searchbar.md)
-    * [Network Info](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/README.md)
-      * [Epoches data](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/epoches-data.md)
-      * [Hostchain checkpoints](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/hostchain-checkpoints.md)
-
 ## 👀 Interesting features you must know
 
 * [😦 Return of lost funds](interesting-features-you-must-know/return-of-lost-funds.md)
@@ -143,8 +148,3 @@
 ## Bots
 
 * [🤖 Intro](bots/intro.md)
-
-## Other resources
-
-* [Mastering Klyntar](https://mastering.klyntar.org)
-* [KLY Services](https://services.klyntar.org)
