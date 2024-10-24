@@ -12,6 +12,7 @@
 
 * [Official links](other-resources-and-links/official-links.md)
 * [Brand assets](other-resources-and-links/brand-assets.md)
+* [Partnerships](other-resources-and-links/partnerships.md)
 
 ## Wallets usage
 
