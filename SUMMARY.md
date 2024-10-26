@@ -7,6 +7,7 @@
   * [Virtual machines](glossary/virtual-machines.md)
   * [Consensus](glossary/consensus.md)
   * [RWX codeless smart contracts](glossary/rwx-codeless-smart-contracts.md)
+  * [Accounts types taxonomy](glossary/accounts-types-taxonomy.md)
 
 ## Other resources & links
 
