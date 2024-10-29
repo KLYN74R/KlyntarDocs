@@ -39,17 +39,17 @@ Go to CONFIGS directory and add the following files (configs for 2 virtual machi
 cd CONFIGS
 ```
 
-{% file src="../../../.gitbook/assets/kly_evm (2).json" %}
+{% file src="../../../../.gitbook/assets/kly_evm (2).json" %}
 
-{% file src="../../../.gitbook/assets/kly_wvm (2).json" %}
+{% file src="../../../../.gitbook/assets/kly_wvm (2).json" %}
 
-{% file src="../../../.gitbook/assets/config.json" %}
+{% file src="../../../../.gitbook/assets/config.json" %}
 
 ## Set genesis
 
 Now, go to GENESIS directory and add the appropriate genesis file there
 
-{% file src="../../../.gitbook/assets/genesis (1).json" %}
+{% file src="../../../../.gitbook/assets/genesis (1).json" %}
 
 ## Finally
 
@@ -121,7 +121,7 @@ klyntar
 
 And you have to see the following:
 
-<figure><img src="../../../.gitbook/assets/image (9) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/image (9) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Keep it work
 
