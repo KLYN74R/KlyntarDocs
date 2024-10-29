@@ -1,8 +1,8 @@
 {
     "NODE_LEVEL":{
     
-        "PUBLIC_KEY":"6XvZpuCDjdvSuot3eLr24C1wqzcf2w4QqeDh9BnDKsNE",
-        "PRIVATE_KEY":"MC4CAQAwBQYDK2VwBCIEIJT7NA/u+Df874H2DFRbyg43LpJwlhcRsS3Bv8/FUIZN",
+        "PUBLIC_KEY":"GUbYLN5NqmRocMBHqS183r2FQRoUjhx1p5nKyyUBpntQ",
+        "PRIVATE_KEY":"e4a1935e868c44c8b45eccfc4098b6e51a0eee35640bfe25c933d9035c153105fa8095b782c2a27c3fefd6c82494eeedf16c19b7fd0ccebaba14c7e84ba846ce6144189d1ccd730b2424a6b997699ef2",
     
         "MY_KLY_INFRASTRUCTURE":{
             
@@ -114,10 +114,10 @@
         "PLUGINS":[],
     
         "INTERFACE":"::",
-        "PORT":7333,
+        "PORT":7334,
     
         "WEBSOCKET_INTERFACE":"::",
-        "WEBSOCKET_PORT":9998,
+        "WEBSOCKET_PORT":9997,
     
         "PAYLOAD_SIZE":1000,
         "MAX_PAYLOAD_SIZE":10000000,

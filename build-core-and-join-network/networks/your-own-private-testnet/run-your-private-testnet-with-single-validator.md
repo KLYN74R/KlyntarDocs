@@ -33,7 +33,7 @@ mkdir CONFIGS GENESIS
 
 ## Set configuration files
 
-Go to CONFIGS directory and add the following files there
+Go to CONFIGS directory and add the following files (configs for 2 virtual machines + own node configuration) there
 
 ```sh
 cd CONFIGS
@@ -43,13 +43,13 @@ cd CONFIGS
 
 {% file src="../../../.gitbook/assets/kly_wvm (2).json" %}
 
-{% file src="../../../.gitbook/assets/workflow (2).json" %}
+{% file src="../../../.gitbook/assets/config.json" %}
 
 ## Set genesis
 
 Now, go to GENESIS directory and add the appropriate genesis file there
 
-{% file src="../../../.gitbook/assets/genesis (1) (1).json" %}
+{% file src="../../../.gitbook/assets/genesis (1).json" %}
 
 ## Finally
 
@@ -60,7 +60,7 @@ Now, the hierarchy should looks like this
 ├───CONFIGS
 │   ├───kly_wvm.json
 │   ├───kly_evm.json
-│   ├───workflow.json
+│   ├───config.json
 └───GENESIS
     ├───genesis.json
 ```
@@ -79,7 +79,7 @@ Once you run your node, the structure will be
 ├───CONFIGS
 │   ├───kly_wvm.json
 │   ├───kly_evm.json
-│   ├───workflow.json
+│   ├───config.json
 └───GENESIS
     ├───genesis.json
 ```
@@ -122,14 +122,6 @@ klyntar
 And you have to see the following:
 
 <figure><img src="../../../.gitbook/assets/image (9) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
-
-{% hint style="success" %}
-The password to decrypt your private key(stored in workflow.json, encrypted by AES-256) is `qwerty`
-{% endhint %}
-
-{% hint style="danger" %}
-**DO NOT USE THIS PASSWORD FOR PRODUCTION TO PREVENT BRUTEFORCING / DICTIONARY ATTACKS**
-{% endhint %}
 
 ## Keep it work
 

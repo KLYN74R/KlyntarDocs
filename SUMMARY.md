@@ -35,6 +35,7 @@
     * [Work with ERC-721 tokens](build-core-and-join-network/become-kly-validator/multistaking/work-with-erc-721-tokens.md)
 * [🕸️ Networks](build-core-and-join-network/networks/README.md)
   * [Your own private testnet](build-core-and-join-network/networks/your-own-private-testnet/README.md)
+    * [Netrunner](build-core-and-join-network/networks/your-own-private-testnet/netrunner.md)
     * [Run your private testnet with single validator](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-single-validator.md)
     * [Run your private testnet with 5 nodes and 3 shards](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-4-nodes.md)
     * [Run your private testnet with 21 nodes](build-core-and-join-network/networks/your-own-private-testnet/run-your-private-testnet-with-21-nodes.md)
