@@ -16,8 +16,6 @@ Please, follow the link to test it on your own and check the useful example for 
 
 ## Multilanguage support
 
-<figure><img src="../../.gitbook/assets/Web1337Cover.svg" alt=""><figcaption></figcaption></figure>
-
 Web1337 SDK has implementations for various languages ​​such as JS(Node.js), Golang, Python and others!
 
 In the initial stages, this documentation will provide an example of an API call for the JS SDK, but in other languages ​​the methods and their names have a similar meaning.
