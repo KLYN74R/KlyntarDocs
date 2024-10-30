@@ -12,9 +12,10 @@ In general, Web1337 is a library for interacting with the KLY ecosystem, ranging
 
 In addition, KLY offers various interesting features such as RWX codeless smart contracts, post-quantum cryptography, creation of custom blockchains, instant implementation of improvement proposals, etc. All of this can be interacted and created using Web1337.
 
-In conclusion, we can add that Web1337 is Web3++, since KLY offers more features than typical blockchain projects. You will learn more about this later.
+In conclusion, we can add that Web1337 is Web3++, since KLY offers more features than typical blockchain projects. You will learn more about this later.\
 
-<figure><img src="../.gitbook/assets/Web1337Cover.svg" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../.gitbook/assets/Web1337_Cover.png" alt=""><figcaption></figcaption></figure>
 
 {% embed url="https://github.com/KLYN74R/Web1337" %}
 
