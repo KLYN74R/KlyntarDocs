@@ -24,6 +24,7 @@
 
 * [☁️ Build the core](build-core-and-join-network/run-kly-node.md)
 * [🕵️ Become KLY validator](build-core-and-join-network/become-kly-validator/README.md)
+  * [Create validator(staking pool)](build-core-and-join-network/become-kly-validator/create-validator-staking-pool.md)
   * [Default staking](build-core-and-join-network/become-kly-validator/default-staking/README.md)
     * [Staking](build-core-and-join-network/become-kly-validator/default-staking/staking.md)
     * [Unstaking](build-core-and-join-network/become-kly-validator/default-staking/unstaking.md)
