@@ -1,2 +1,0 @@
-# 💫 System sync operation
-
