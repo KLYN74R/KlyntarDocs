@@ -2,7 +2,9 @@
 
 ## Intro
 
+## Method 1 - via user interface
 
+## Method 2 - programmatic way using SDK
 
 {% stepper %}
 {% step %}
@@ -24,7 +26,7 @@
 {% endstep %}
 
 {% step %}
-### Check that you're in a staking list
+### Make sure you're in a staking list
 
 
 {% endstep %}

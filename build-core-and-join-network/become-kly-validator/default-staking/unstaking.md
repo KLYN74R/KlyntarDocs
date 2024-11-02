@@ -4,7 +4,9 @@
 
 TODO
 
-## Step by step unstaking process
+## Method 1 - via user interface
+
+## Method 2 - programmatic way using SDK
 
 
 
