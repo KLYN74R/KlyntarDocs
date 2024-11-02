@@ -4,8 +4,28 @@
 
 
 
-## 1. Burn the amount of coins to stake
+{% stepper %}
+{% step %}
+### Create the transaction to call staking system smart contract
 
-## 2. Get the staking ticket
 
-## 3. Call system smart contract to stake
+{% endstep %}
+
+{% step %}
+### Check the staking status
+
+
+{% endstep %}
+
+{% step %}
+### Wait untill the next epoches
+
+
+{% endstep %}
+
+{% step %}
+### Check that you're in a staking list
+
+
+{% endstep %}
+{% endstepper %}
