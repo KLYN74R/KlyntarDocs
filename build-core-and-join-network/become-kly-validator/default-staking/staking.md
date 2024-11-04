@@ -2,7 +2,13 @@
 
 ## Intro
 
-TODO
+The staking process in crypto projects is very important because it allows you to attract more independent parties to maintain the decentralization of the network.
+
+Obviously, not everyone is able to put a large amount to launch a validator, and not everyone has the necessary technical skills to maintain a validator (it is still a server) - update it, work with the cloud, and so on.
+
+Staking gives you the opportunity to put your coins on those who can maintain a server, and in return - the validator will share with you part of the profit from the network.
+
+Below we will demonstrate the staking process.
 
 ## Find validator(staking pool) to stake on
 
@@ -155,36 +161,39 @@ The structure of transaction that will be sent to node should be like this:
 }
 ```
 
+And in console you should see something like this:
 
+```code-runner-output
+Sent =>  { status: 'Ok, tx redirected to current shard leader' }
+TX ID is =>  685db080d685f73b79daa72676da2d6e8003e4eebc4d0e19410cb4e0f92a66c3
+```
 
-
-
-
-
-
-
-{% stepper %}
-{% step %}
-
-
-
-{% endstep %}
-
-{% step %}
 ### Check the staking status
 
+Once you have the transaction ID, go to the explorer and look at the transaction status:
 
-{% endstep %}
+<figure><img src="../../../.gitbook/assets/image (46).png" alt=""><figcaption></figcaption></figure>
 
-{% step %}
 ### Wait untill the next epoches
 
+Due to the network features (such as multi-level sharding, parallel virtual machines, etc.) - you need to wait some time until the rate comes into effect.
 
-{% endstep %}
+On the transaction status page, you will see a field that indicates which block the transaction was in.
 
-{% step %}
+<figure><img src="../../../.gitbook/assets/image (47).png" alt=""><figcaption></figcaption></figure>
+
+The first part of the identifier (44) indicates the epoch index when the block was created. This block was created in epoch 44.
+
+{% hint style="info" %}
+Well, that's it - only after 2 days your bet will come into effect. So, in this case, the bet will become active in the epoch 46
+{% endhint %}
+
 ### Make sure you're in a staking list
 
+Now if you visit the validator page, you will see yourself in the list of stakers.
 
-{% endstep %}
-{% endstepper %}
+<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
+
+As you can see, the stake here is actually 100 coins.
