@@ -6,7 +6,7 @@ description: Use proxy to interact with KLY network
 
 ## TOR Proxy
 
-<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (3) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Probably the most known hidden network is TOR. We already have a simple and lightweight docker image for you to set up your own local proxy:
 

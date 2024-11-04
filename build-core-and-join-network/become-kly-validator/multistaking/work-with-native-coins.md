@@ -28,7 +28,7 @@ Now we will show the whole process using an example:
 
 This is the contract page:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
 
 Go to to **Contract > Read Contract** and check - initially balance will be 0
 
@@ -64,11 +64,11 @@ In this example we staked 0.01 ETH to pool 0x069bdf66961ce2D38eBe48DD2E095f2c801
 
 Now, notice please that your balance decreased. Before transaction:&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After:
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you try to check `balanceOf` - you will see that you received 0.01 KETH (KlyntarETH) tokens back
 

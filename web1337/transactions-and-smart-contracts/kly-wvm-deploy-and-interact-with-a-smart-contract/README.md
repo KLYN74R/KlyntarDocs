@@ -95,11 +95,11 @@ Sent
 
 Go to explorer and paste the txid to searchbar. You can also go directly to the page of newly created contract because it's possible to calculate the contractID locally (example above):
 
-<figure><img src="../../../.gitbook/assets/image (4) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (4) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 You'll see
 
-<figure><img src="../../../.gitbook/assets/image (5) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 It's possible to immediately visit the page of newly created contract by clicking here:
 
