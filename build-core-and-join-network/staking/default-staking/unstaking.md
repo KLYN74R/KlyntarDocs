@@ -57,8 +57,7 @@ let payload = {
     params:{
 
         poolPubKey:'9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK',
-        amount: 30,
-        units:'kly'
+        amount: 30
 
     },
 
@@ -102,8 +101,7 @@ Output:
     gasLimit: 0,
     params: {
       poolPubKey: '9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK',
-      amount: 30,
-      units: 'kly'
+      amount: 30
     },
     imports: []
   },

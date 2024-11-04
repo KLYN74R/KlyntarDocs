@@ -106,8 +106,7 @@ let payload = {
     params:{
 
         poolPubKey:poolToStakeOn,
-        amount: amountToStake,
-        units:'kly'
+        amount: amountToStake
 
     },
 
@@ -151,8 +150,7 @@ The structure of transaction that will be sent to node should be like this:
     gasLimit: 0,
     params: {
       poolPubKey: '9GQ46rqY238rk2neSwgidap9ww5zbAN4dyqyC7j5ZnBK',
-      amount: 100,
-      units: 'kly'
+      amount: 100
     },
     imports: []
   },
