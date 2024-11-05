@@ -22,11 +22,11 @@ In this tutorial, we will show you how to take your reward after you have been a
 
 On the page with info about validator you can find the list of stakers below
 
-<figure><img src="../../.gitbook/assets/image (61).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (63).png" alt=""><figcaption></figcaption></figure>
 
 Now if you paste your address into the searchbar, you will see your address and the total number of coins you received during the staking
 
-<figure><img src="../../.gitbook/assets/image (60).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (62).png" alt=""><figcaption></figcaption></figure>
 
 ### Method 1 - via user interface <a href="#method-1-via-user-interface" id="method-1-via-user-interface"></a>
 
