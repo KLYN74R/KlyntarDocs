@@ -64,7 +64,7 @@ In this example we staked 0.01 ETH to pool 0x069bdf66961ce2D38eBe48DD2E095f2c801
 
 Now, notice please that your balance decreased. Before transaction:&#x20;
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After:
 

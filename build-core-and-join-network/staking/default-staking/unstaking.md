@@ -2,9 +2,55 @@
 
 ## Intro
 
-TODO
+When unstaking, you withdraw your coins from the staking balance of the validator you previously staked on.
 
 ## Method 1 - via user interface
+
+Again, the easiest way to do this is through the interface on our website. As you remember:
+
+1. We staked 27 coins
+2. On the pool `6XvZpuCDjdvSuot3eLr24C1wqzcf2w4QqeDh9BnDKsNE`
+3. From our account `0x9f8E68B1974069B854eE481deC0819697B901f1D`
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-25-36.png" alt=""><figcaption></figcaption></figure>
+
+Our account is still on the list of stakers and receives rewards:
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-26-03.png" alt=""><figcaption></figcaption></figure>
+
+On site - choose the mode **`Unstake`** . Input the amount and your pool
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-26-39.png" alt=""><figcaption></figcaption></figure>
+
+Confirm the transaction
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-26-55.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-27-27.png" alt=""><figcaption></figcaption></figure>
+
+### Check the transaction status via explorer
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-28-30 (1).png" alt=""><figcaption></figcaption></figure>
+
+Unstaking also require some time. So, now we know that unstaking transaction was in block in epoch 12:
+
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+So, let's wait for epoch 12 + 3 = **15**
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-30-41.png" alt=""><figcaption></figcaption></figure>
+
+After this - you should receive your stake back
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-31-05.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-31-25.png" alt=""><figcaption></figcaption></figure>
+
+As you can see, your account has been removed from the list of stakers in this pool. From this moment on, you will no longer receive rewards.
 
 ## Method 2 - programmatic way using SDK
 
