@@ -1,5 +1,7 @@
 # Staking
 
+
+
 ## Intro
 
 The staking process in crypto projects is very important because it allows you to attract more independent parties to maintain the decentralization of the network.
@@ -38,6 +40,80 @@ Below is a list of stakers of this pool. For example, for this pool, only the ow
 However, using this pool as an example, we will demonstrate the staking process below.
 
 ## Method 1 - via user interface
+
+The easiest way is to go to our website, connect your wallet and start the staking process in a special form
+
+<figure><img src="../../../.gitbook/assets/image (64).png" alt=""><figcaption></figcaption></figure>
+
+Click **`Select Wallet`** and choose your provider (Metamask, Coinbase Wallet, OKX Wallet, etc.)
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-02-21.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-02-32.png" alt=""><figcaption></figcaption></figure>
+
+Metamask shows us that we have 200 coins on balance
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-04-50.png" alt=""><figcaption></figcaption></figure>
+
+After connecting the wallet, select the desired account from the list
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-09-45.png" alt=""><figcaption></figcaption></figure>
+
+Select the number of coins you want to stake and select the pool
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-10-16.png" alt=""><figcaption></figcaption></figure>
+
+If we visit the page of pool before the transaction, we'll see that currently pool has only one staker - it's pool owner itself
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-11-41.png" alt=""><figcaption></figcaption></figure>
+
+Initiate the transaction
+
+<figure><img src="../../../.gitbook/assets/image (65).png" alt=""><figcaption></figcaption></figure>
+
+After this, you should see the decreased balance
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-13-21.png" alt=""><figcaption></figcaption></figure>
+
+### When your stake will be activated ?
+
+If we open the transaction details - it's possible to copy the transaction ID
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-13-45.png" alt=""><figcaption></figcaption></figure>
+
+Let's visit the explorer and try to find our transaction
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-14-04.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-14-25.png" alt=""><figcaption></figcaption></figure>
+
+### When your stake will be activated ?
+
+Please note that the stake will not be activated immediately, but only after **3 epochs**
+
+{% hint style="info" %}
+Check the duration of epoch on the main page of explorer
+{% endhint %}
+
+<figure><img src="../../../.gitbook/assets/image (68).png" alt=""><figcaption></figcaption></figure>
+
+Look at the block ID in which your staking transaction was located. The first part of the ID stands for the epoch ID. In this case, it is **3**.
+
+<figure><img src="../../../.gitbook/assets/image (66).png" alt=""><figcaption></figcaption></figure>
+
+Therefore, your stake will be activated in epoch:
+
+$$
+ActivationEpoch = 3+3 = 6
+$$
+
+After waiting for epoch **6** - let's go to the page of the validator we stake on:
+
+<figure><img src="../../../.gitbook/assets/image_2024-11-09_21-17-13 (1).png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
+
+Now your account will be in the list of stakers and you will be able to see the reward for this epoch
 
 ## Method 2 - programmatic way using SDK
 
