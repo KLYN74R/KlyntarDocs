@@ -35,8 +35,7 @@ let web1337 = new Web1337({
     chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     workflowVersion:0,
     nodeURL:'http://localhost:7332'
-    proxyURL:'http://localhost:8888' // optional - for example 'http(s)://login:password@127.0.0.1:8080' or 'socks5h://Vlad:Cher@127.0.0.1:9150'
-    
+    // proxyURL:'http://localhost:8888' // optional - for example 'http(s)://login:password@127.0.0.1:8080' or 'socks5h://Vlad:Cher@127.0.0.1:9150'
 });
 ```
 
