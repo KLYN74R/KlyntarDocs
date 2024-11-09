@@ -75,8 +75,6 @@ After this, you should see the decreased balance
 
 <figure><img src="../../../.gitbook/assets/image_2024-11-09_21-13-21.png" alt=""><figcaption></figcaption></figure>
 
-### When your stake will be activated ?
-
 If we open the transaction details - it's possible to copy the transaction ID
 
 <figure><img src="../../../.gitbook/assets/image_2024-11-09_21-13-45.png" alt=""><figcaption></figcaption></figure>
