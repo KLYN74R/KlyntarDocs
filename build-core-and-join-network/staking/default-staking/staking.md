@@ -1,7 +1,5 @@
 # Staking
 
-
-
 ## Intro
 
 The staking process in crypto projects is very important because it allows you to attract more independent parties to maintain the decentralization of the network.
@@ -23,15 +21,15 @@ You have several ways to do this:
 
 Visit the main page of explorer and choose `Epoch data`
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Now below you should see the list of leaders on shards for current epoch:
 
-<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
 
 By clicking on a specific validator you will be redirected to a page with information about it.
 
-<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 Below is a list of stakers of this pool. For example, for this pool, only the owner himself is a staker. The total strength of the pool is 55,000 KLY, while the owner has staked all 55,000 KLY
 
@@ -109,6 +107,8 @@ After waiting for epoch **6** - let's go to the page of the validator we stake o
 
 <figure><img src="../../../.gitbook/assets/image_2024-11-09_21-17-13 (1).png" alt=""><figcaption></figcaption></figure>
 
+<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
 <figure><img src="../../../.gitbook/assets/image (69).png" alt=""><figcaption></figcaption></figure>
 
 Now your account will be in the list of stakers and you will be able to see the reward for this epoch
@@ -131,7 +131,7 @@ let keypair = {
 
 For example, this account have `20M` KLY
 
-<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### 2. Create the transaction to call staking system smart contract
 
@@ -257,14 +257,14 @@ On the transaction status page, you will see a field that indicates which block 
 The first part of the identifier (44) indicates the epoch index when the block was created. This block was created in epoch 44.
 
 {% hint style="info" %}
-Well, that's it - only after 2 days your bet will come into effect. So, in this case, the bet will become active in the epoch 46
+Well, that's it - only after 3 epoches your stake will come into effect. So, in this case, the stake will be activated on the epoch 47
 {% endhint %}
 
 ### Make sure you're in a staking list
 
-Now if you visit the validator page, you will see yourself in the list of stakers.
+Now if you visit the validator page, you will see yourself in the list of stakers:
 
-<figure><img src="../../../.gitbook/assets/image (48).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image (49).png" alt=""><figcaption></figcaption></figure>
 

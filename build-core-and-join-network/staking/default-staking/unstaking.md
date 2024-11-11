@@ -34,7 +34,7 @@ Confirm the transaction
 
 Unstaking also require some time. So, now we know that unstaking transaction was in block in epoch 12:
 
-<figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 So, let's wait for epoch 12 + 3 = **15**
@@ -46,7 +46,11 @@ After this - you should receive your stake back
 
 <figure><img src="../../../.gitbook/assets/image_2024-11-09_21-31-05.png" alt=""><figcaption></figcaption></figure>
 
+And if you visit the page of pool info:
 
+<figure><img src="../../../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+You will see that your account is not in the stakers list
 
 <figure><img src="../../../.gitbook/assets/image_2024-11-09_21-31-25.png" alt=""><figcaption></figcaption></figure>
 
@@ -174,13 +178,11 @@ There is also a delay for the unstaking procedure. Since the transaction was in 
 
 <figure><img src="../../../.gitbook/assets/image (52).png" alt=""><figcaption></figcaption></figure>
 
-Then you will receive the coins in epoch **63**
+Then you will receive the coins in epoch **61+3=64**
 
 ### 4. Check that you have less coins in pool and receive your coins back
 
-We waited for some time and now the epoch is **64** (even more than 63).
-
-Let's try to go to the pool page and see the list of stakers now:
+We waited for a while and now the epoch is **64.** Let's try to go to the pool page and see the list of stakers now:
 
 <figure><img src="../../../.gitbook/assets/image (54).png" alt=""><figcaption></figcaption></figure>
 
