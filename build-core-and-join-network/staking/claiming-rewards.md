@@ -1,5 +1,5 @@
 ---
-icon: coins
+icon: coin-vertical
 ---
 
 # Claiming rewards

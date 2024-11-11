@@ -1,5 +1,5 @@
 ---
-icon: coins
+icon: coin
 ---
 
 # Supported networks and tokens

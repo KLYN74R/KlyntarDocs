@@ -1,0 +1,6 @@
+---
+icon: coins
+---
+
+# Tokenomics
+

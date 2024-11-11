@@ -14,6 +14,7 @@
 * [Official links](other-resources-and-links/official-links.md)
 * [Brand assets](other-resources-and-links/brand-assets.md)
 * [Partnerships](other-resources-and-links/partnerships.md)
+* [Tokenomics](other-resources-and-links/tokenomics.md)
 
 ## Wallets usage
 
