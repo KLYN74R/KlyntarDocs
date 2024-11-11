@@ -10,6 +10,6 @@ If you want to cooperate with us - please contact us by email&#x20;
 
 Or via Telegram bot
 
-[**`@klyntar_support_bot`**](https://t.me/@klyntar\_support\_bot)
+[**`@klyntar_support_bot`**](https://t.me/klyntar\_support\_bot)
 
 We will be glad to receive your letters :relaxed:
