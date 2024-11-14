@@ -1,8 +1,4 @@
----
-icon: user-check
----
-
-# Create validator(staking pool)
+# 🕵️ Become a validator
 
 ## Intro
 
@@ -17,11 +13,11 @@ Let's imagine that you have a pair of ed25519 keys that you will use to control 
 Let's say a key pair looks like this:
 
 ```javascript
-let keypair = {
+const keypair = {
 
-    pub:"GUbYLN5NqmRocMBHqS183r2FQRoUjhx1p5nKyyUBpntQ",
+    pub:"3JAeBnsMedzxjCMNWQYcAXtwGVE9A5DBQyXgWBujtL9R",
 
-    prv:"MC4CAQAwBQYDK2VwBCIEILjvmDeOmyg1/VG2VKQTzsv6lkIizQpjmRsdfEEIHHU8"
+    prv:"MC4CAQAwBQYDK2VwBCIEIDteWfNev7NOlNmwP8Irwg5miWKoErYGV+UU5VrFgYev"
 
 }
 ```
@@ -34,7 +30,7 @@ Use the Web1337 SDK to create a call to system smart contract
 import Web1337 from 'web1337';
 
 
-let web1337 = new Web1337({
+const web1337 = new Web1337({
 
     chainID:'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
     workflowVersion:0,
@@ -43,16 +39,22 @@ let web1337 = new Web1337({
 });
 
 
-let keypair = {
+const keypair = {
 
-    pub:"GUbYLN5NqmRocMBHqS183r2FQRoUjhx1p5nKyyUBpntQ",
+    pub:"3JAeBnsMedzxjCMNWQYcAXtwGVE9A5DBQyXgWBujtL9R",
 
-    prv:"MC4CAQAwBQYDK2VwBCIEILjvmDeOmyg1/VG2VKQTzsv6lkIizQpjmRsdfEEIHHU8"
+    prv:"MC4CAQAwBQYDK2VwBCIEIDteWfNev7NOlNmwP8Irwg5miWKoErYGV+UU5VrFgYev"
 
 };
 
+const shardID = "shard_0";
+
+const fee = 2;
+
 
 let payload = {
+
+    shard:'shard_0',
 
     contractID:'system/staking',
 
@@ -62,13 +64,7 @@ let payload = {
 
     params:{
         
-        shard:'shard_0',
-        
-        ed25519PubKey:keypair.pub,
-        
         percentage:0.3,
-        
-        overStake:10000,
         
         poolURL:'http://localhost:7335', // set your own domain/ip
         
@@ -80,18 +76,13 @@ let payload = {
 
 };
 
-
-const shardID = "shard_0";
-
-const fee = 2;
-
 const nonce = await web1337.getAccount(shardID,keypair.pub).then(account=>account.nonce+1);
 
 const txType = "WVM_CALL";
 
 let tx = web1337.createEd25519Transaction(shardID,txType,keypair.pub,keypair.prv,nonce,fee,payload);
 
-console.log(tx)
+console.log(tx);
 
 // web1337.sendTransaction(tx).then(()=>{
 
