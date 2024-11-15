@@ -24,7 +24,7 @@ v21.4.0
 
 Use official guides to install Node.js for your platform (Windows/Linux/Mac)
 
-{% embed url="https://nodejs.org/en/download" %}
+{% embed url="https://nodejs.org/en/download/package-manager" %}
 
 ## Go installation
 
