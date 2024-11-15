@@ -146,7 +146,10 @@ Great, as you can see the pool was indeed added to the state
 
 <figure><img src="../.gitbook/assets/image (74).png" alt=""><figcaption></figcaption></figure>
 
-At the moment this pool is empty - it has no staked native coins or staking points(see [multistaking](staking/multistaking/ "mention")).
+At the moment this pool is empty - it has:
+
+1. No staked native coins(so see [default-staking](staking/default-staking/ "mention"))
+2. Staking points called UNO(unobtanium)(so see [multistaking](staking/multistaking/ "mention"))
 
 <figure><img src="../.gitbook/assets/image (76).png" alt=""><figcaption></figcaption></figure>
 
@@ -158,7 +161,21 @@ Also, when creating a pool, the address of the pool owner is automatically added
 Now everything is ready to move on to the most interesting part - staking
 {% endhint %}
 
-## 4. Start staking
+## 4. How much do you need to launch a validator
+
+Just visit the main page of explorer and check the section **Network Parameters > Validator Stake Size**
+
+<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+This amount of coins is required to make your validator eligible to be elected to a quorum and/or to generate blocks
+{% endhint %}
+
+Also, on the validator page you can see how many coins are already staked on it
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
+
+## 5. Start staking
 
 Go to the next sections to learn more about staking and multistaking. How to do it via user interface or via SDK - details are in the next sections :relaxed:
 
@@ -169,3 +186,32 @@ Go to the next sections to learn more about staking and multistaking. How to do 
 {% content-ref url="staking/multistaking/" %}
 [multistaking](staking/multistaking/)
 {% endcontent-ref %}
+
+## Short FAQ
+
+<details>
+
+<summary>Does <mark style="color:blue;">pool</mark> and <mark style="color:red;">validator</mark> are the same ?</summary>
+
+Yes [✅](https://emojipedia.org/check-mark-button)
+
+</details>
+
+<details>
+
+<summary>What is the minimum / maximum stake ?</summary>
+
+There is no maximum stake, but there's a minumum. You can see this value on the main page of explorer in **Network Parameters** section
+
+![](<../.gitbook/assets/image (6).png>)
+
+</details>
+
+<details>
+
+<summary>Is it possible to reduce the await time for creating a validator ?</summary>
+
+Because of network architecture - <mark style="color:red;">**no**</mark>
+
+</details>
+
