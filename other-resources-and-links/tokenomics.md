@@ -10,7 +10,7 @@ Tokenomics is an important document for any crypto project as it helps to unders
 
 Below we present you a detailed description of our tokenomics. **Research and remember** - <mark style="color:red;">**D Y O R**</mark> (<mark style="color:red;">**D**</mark>o <mark style="color:red;">**Y**</mark>our <mark style="color:red;">**O**</mark>wn <mark style="color:red;">**R**</mark>esearch).
 
-It is also worth clarifying - below are only general graphs (in the form of pictures), so we strongly recommend studying tokenomics by simply visiting the Google spreadsheet:
+It is also worth clarifying - below are only general charts (in the form of pictures), so we strongly recommend studying tokenomics by simply visiting the Google spreadsheet:
 
 {% hint style="info" %}
 [https://docs.google.com/spreadsheets/d/1LBnIlYddr4F9U4Gi1z8ZJ-4szjEbUf8DK9RyES\_mv7c/edit?usp=sharing](https://docs.google.com/spreadsheets/d/1LBnIlYddr4F9U4Gi1z8ZJ-4szjEbUf8DK9RyES\_mv7c/edit?usp=sharing)
