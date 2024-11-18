@@ -4,7 +4,7 @@ icon: ethereum
 
 # Work with native coins
 
-Intro
+## Intro
 
 By placing your native network coins on a multistaking contract, you receive similar liquidity tokens in a 1:1 ratio.
 
@@ -118,7 +118,7 @@ After that you will finally get your original coins back
 
 <summary>How to unstake from multiple pools immediately</summary>
 
-
+TODO
 
 </details>
 
