@@ -16,7 +16,7 @@ You can repeat the multistaking process through the interface on our website:
 
 {% embed url="https://klyntar.org/multistaking" %}
 
-## Stake native chain coins to get liquidity tokens back and earn staking points
+## 1. Stake native chain coins to get liquidity tokens back and earn staking points
 
 Visit the page
 
@@ -78,7 +78,7 @@ After a while, you can go to the page of the pool you staked on and find yoursel
 
 <figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
-## Unstaking these liquidity tokens to get back your real ETHes, BSCs, AVAXes, etc.
+## 2. Unstaking these liquidity tokens to get back your real ETHes, BSCs, AVAXes, etc.
 
 So you have 0.01 KETH and you want to get your original SepoliaETH back.
 
@@ -102,7 +102,7 @@ The unstaking time also takes **3 epochs**, so initially your stake gets into **
 
 <figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
 
-## The last step - withdraw your stake
+## 3. The last step - withdraw your stake
 
 Choose **Withdraw** section and press a button to initiate a transaction
 

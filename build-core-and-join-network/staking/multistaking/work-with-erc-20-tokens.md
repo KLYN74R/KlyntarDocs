@@ -22,7 +22,7 @@ Or via the form on our site:
 
 {% embed url="https://klyntar.org/multistaking" %}
 
-## Stake ERC-20 token to get liquidity tokens back and earn staking points
+## 1. Stake ERC-20 token to get liquidity tokens back and earn staking points
 
 Visit the page
 
@@ -69,7 +69,7 @@ After 3 epochs your address will appear in the list of stakers for the selected 
 From now you have successfully finish the staking process. You will now receive rewards from the pool you staked on.
 {% endhint %}
 
-## Unstaking ERC-20 to burn our liquidity token and get back you original tokens
+## 2. Unstaking ERC-20 to burn our liquidity token and get back you original tokens
 
 To unstake - choose the token, input amount and finally the pool
 
@@ -79,7 +79,7 @@ To unstake - choose the token, input amount and finally the pool
 As before - the unstaking process takes 3 epochs and initially the stake will be placed in the withdrawal requests
 {% endhint %}
 
-## Final step - withdrawal
+## 3. Final step - withdrawal
 
 It's time to get your original tokens back. Select **Withdraw** and press a button to initiate the transaction
 
