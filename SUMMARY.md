@@ -7,6 +7,7 @@
 * [About project](project-litepaper-and-main-features/about-project.md)
 * [Multilevel sharding](project-litepaper-and-main-features/multilevel-sharding.md)
 * [Multistaking - nextgen liquid restaking](project-litepaper-and-main-features/multistaking-nextgen-liquid-restaking.md)
+* [Checkpoints mechanism](project-litepaper-and-main-features/checkpoints-mechanism.md)
 * [Advanced cryptography - zk, mpc, fhe, post-quantum and much more!](project-litepaper-and-main-features/advanced-cryptography-zk-mpc-fhe-post-quantum-and-much-more.md)
 * [Shared security model for DApps & chains in ecosystem](project-litepaper-and-main-features/shared-security-model-for-dapps-and-chains-in-ecosystem.md)
 * [Virtual machines - EVM, WASM and much more!](project-litepaper-and-main-features/virtual-machines-evm-wasm-and-much-more.md)
