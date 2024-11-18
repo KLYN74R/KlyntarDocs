@@ -4,109 +4,121 @@ icon: ethereum
 
 # Work with native coins
 
-## Intro
+Intro
 
 By placing your native network coins on a multistaking contract, you receive similar liquidity tokens in a 1:1 ratio.
 
 This way, you can earn rewards on Klyntar (helping to decentralize the network) and at the same time continue to use the tokens in DeFi applications, lending protocols, etc.
 
-In this tutorial we will use the Etherscan interface because many EVM chains support it, so we are sure that you will be very familiar with the working mechanisms shown below.
+In this tutorial we will show how to restake the native coins on EVM chains - ETH, AVAX, BNB, TRON etc.
 
-You can also repeat the multistaking process through our own interface on our website:
+You can repeat the multistaking process through the interface on our website:
 
 {% embed url="https://klyntar.org/multistaking" %}
 
-## Example - stake native chain coins to get liquidity tokens back and earn staking points
+## Stake native chain coins to get liquidity tokens back and earn staking points
 
-Now we will show the whole process using an example:
+Visit the page
 
-1. Smart contract **0xa2f1537720d243e042376127b0007551db239368**
-2. User address **0x959b0d4e13d2c7b76230de60a7d0e64a115f1520**
-3. The address of the validator to which we will stake our coins - **0x069bdf66961ce2D38eBe48DD2E095f2c8015ac82**
+<figure><img src="../../../.gitbook/assets/image (77).png" alt=""><figcaption></figcaption></figure>
 
-{% embed url="https://sepolia.etherscan.io/token/0xa2f1537720d243e042376127b0007551db239368" %}
+You will see the following interface
 
-This is the contract page:
+<figure><img src="../../../.gitbook/assets/image (78).png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
-
-Go to to **Contract > Read Contract** and check - initially balance will be 0
+Now select the chain and wallet to connect
 
 {% hint style="info" %}
-For your own account, before any interaction - your balance will be 0
+In this tutorial we'll work with Sepolia network (Ethereum testnet)
 {% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_22-46-00.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (79).png" alt=""><figcaption></figcaption></figure>
 
-Also, the staking power of our pool is zero
+Right after connection you will see how much you already restaked on appropriate contract in dollar equivalent
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_22-46-29 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (80).png" alt=""><figcaption></figcaption></figure>
 
-Since tokens are issued in a 1:1 ratio, the initial totalSupply will also be 0.
+Choose the appropraite operation **Deposit** and token to stake - in this case native coin of network
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_22-46-49 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (81).png" alt=""><figcaption></figcaption></figure>
 
-## Start staking
+The next steps:
 
-Go to **Write Contract** and find `stake()` function. Set the wished amount of coins to stake - it might be ETH, BSC, AVAX, TRON, etc. (depending on network). Also, set the address of pool to stake to.
+1. Input amount - let's say you want to restake 0.01 Sepolia ETH
+2. Choose the pool from list
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_22-47-48.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (82).png" alt=""><figcaption></figcaption></figure>
 
-After that, execute transaction and check details.
+Finally - just press **Deposit** and confirm the transaction from your wallet extension
 
-{% hint style="info" %}
-In this example we staked 0.01 ETH to pool 0x069bdf66961ce2D38eBe48DD2E095f2c8015ac82
-{% endhint %}
+<figure><img src="../../../.gitbook/assets/image (83).png" alt=""><figcaption></figcaption></figure>
 
+### What is under the hood :thinking:
 
+Let's check the explorer to see what transactions are actually called and what happens in detail. As you can see, we transferred 0.01 SepoliaETH and received 0.01 KETH(KlyntarETH) back.
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_22-49-39.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (84).png" alt=""><figcaption></figcaption></figure>
 
-Now, notice please that your balance decreased. Before transaction:&#x20;
+### So, what you have
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+At this stage you have:
 
-After:
+1. 0.01 KETH already on your balance - it's ERC-20 token which is 1:1 to native network coin. This avoids freezing liquidity. You can continue to use your KETH in DeFi applications or simply continue to HODL
+2. At the same time, the pool you staked on will share some of its rewards with you. With your staking points, you increase the pool's chance of being elected to a quorum and/or generating blocks.
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+### Wait 3 epoches to make your stake active
 
-If you try to check `balanceOf` - you will see that you received 0.01 KETH (KlyntarETH) tokens back
+Your stake will not become active immediately - the activation time currently takes 3 epochs - which is equivalent to 3 days.
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_22-52-57.png" alt=""><figcaption></figcaption></figure>
+### Check the stakers list
 
-And your pool received appropriate amount of staking power
+After a while, you can go to the page of the pool you staked on and find yourself in the list of stakers
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_22-54-36.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (85).png" alt=""><figcaption></figcaption></figure>
 
-{% hint style="success" %}
-Congratulations, you have now completed the staking process. Let's see what we have as a result
-{% endhint %}
-
-1. 0.01 KETH (KlyntarETH) has your account 0x959b0d4e13d2c7b76230de60a7d0e64a115f1520
-2. Your pool(where you staked) has staking power equal to 0.01 ETH
-3. Now you can continue use you KlyntarETH in DeFi apps while also receiving rewards from Klyntar - no locked liquidity
+<figure><img src="../../../.gitbook/assets/image (87).png" alt=""><figcaption></figcaption></figure>
 
 ## Unstaking these liquidity tokens to get back your real ETHes, BSCs, AVAXes, etc.
 
-So you have 0.01 KETH and you want to get your original ETH back.
+So you have 0.01 KETH and you want to get your original SepoliaETH back.
 
-<figure><img src="../../../.gitbook/assets/image (44).png" alt=""><figcaption></figcaption></figure>
+Choose **Unstake** and input all the required data
 
-Let's assume you want to withdraw back 0.001 ETH.
+<figure><img src="../../../.gitbook/assets/image (89).png" alt=""><figcaption></figcaption></figure>
 
-Go to contract page and visit **Contract >** **Write Contract** to find `unstake()` function. Specify the pool from which you want to unstake. You can choose any pool that has enough coins. Not necessarily the one you staked on.
+{% hint style="info" %}
+The field with amount will show you have much you can unstake
+{% endhint %}
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_23-17-54.png" alt=""><figcaption></figcaption></figure>
+### Unstaking details
 
-The example of transaction below:
+During the unstaking process, you burn the wrapped KETH token and release your real SepoliaETH tokens
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_23-18-30.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (91).png" alt=""><figcaption></figcaption></figure>
 
-Now the contract ETH balance is 0.009 ETH instead of 0.01 ETH as before:
+### Wait for a while to release your stake
 
-<figure><img src="../../../.gitbook/assets/image_2024-10-16_23-19-17.png" alt=""><figcaption></figcaption></figure>
+The unstaking time also takes **3 epochs**, so initially your stake gets into **withdrawal requests**
+
+<figure><img src="../../../.gitbook/assets/image (92).png" alt=""><figcaption></figcaption></figure>
+
+## The last step - withdraw your stake
+
+Choose **Withdraw** section and press a button to initiate a transaction
+
+<figure><img src="../../../.gitbook/assets/image (93).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
-At this stage, you signal that you want to get your original tokens back. The unstaking process in real conditions will take about 3 days (to prevent contract abuse). To do this, you will need to additionally call the withdraw() function on the contract
+After that you will finally get your original coins back
 {% endhint %}
+
+## FAQ
+
+<details>
+
+<summary>How to unstake from multiple pools immediately</summary>
+
+
+
+</details>
 

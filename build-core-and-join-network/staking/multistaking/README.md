@@ -7,3 +7,7 @@ icon: star-shooting
 <figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+## Contracts source code
+
+{% embed url="https://github.com/KLYN74R/MultistakingContracts" %}
