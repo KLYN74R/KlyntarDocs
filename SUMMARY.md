@@ -1,13 +1,18 @@
 # Table of contents
 
 * [⭐ Getting started](README.md)
-* [📚 Glossary & Taxonomy](glossary/README.md)
-  * [Architecture](glossary/architecture.md)
-  * [Types of transactions](glossary/types-of-transactions.md)
-  * [Types of accounts](glossary/types-of-accounts.md)
-  * [Virtual machines](glossary/virtual-machines.md)
-  * [Consensus](glossary/consensus.md)
-  * [RWX codeless smart contracts](glossary/rwx-codeless-smart-contracts.md)
+
+## Project litepaper and main features
+
+* [About project](project-litepaper-and-main-features/about-project.md)
+* [Multilevel sharding](project-litepaper-and-main-features/multilevel-sharding.md)
+* [Multistaking - nextgen liquid restaking](project-litepaper-and-main-features/multistaking-nextgen-liquid-restaking.md)
+* [Advanced cryptography - zk, mpc, fhe, post-quantum and much more!](project-litepaper-and-main-features/advanced-cryptography-zk-mpc-fhe-post-quantum-and-much-more.md)
+* [Shared security model for DApps & chains in ecosystem](project-litepaper-and-main-features/shared-security-model-for-dapps-and-chains-in-ecosystem.md)
+* [Virtual machines - EVM, WASM and much more!](project-litepaper-and-main-features/virtual-machines-evm-wasm-and-much-more.md)
+* [RWX - codeless smart contracts for real world usage](project-litepaper-and-main-features/rwx-codeless-smart-contracts-for-real-world-usage.md)
+* [AI layer](project-litepaper-and-main-features/ai-layer.md)
+* [Quantum currency](project-litepaper-and-main-features/quantum-currency.md)
 
 ## Other resources & links
 
@@ -15,6 +20,13 @@
 * [Brand assets](other-resources-and-links/brand-assets.md)
 * [Partnerships](other-resources-and-links/partnerships.md)
 * [Tokenomics](other-resources-and-links/tokenomics.md)
+* [📚 Glossary & Taxonomy](other-resources-and-links/glossary/README.md)
+  * [Architecture](other-resources-and-links/glossary/architecture.md)
+  * [Types of transactions](other-resources-and-links/glossary/types-of-transactions.md)
+  * [Types of accounts](other-resources-and-links/glossary/types-of-accounts.md)
+  * [Virtual machines](other-resources-and-links/glossary/virtual-machines.md)
+  * [Consensus](other-resources-and-links/glossary/consensus.md)
+  * [RWX codeless smart contracts](other-resources-and-links/glossary/rwx-codeless-smart-contracts.md)
 
 ## Wallets usage
 
