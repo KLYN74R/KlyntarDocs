@@ -4,7 +4,7 @@ icon: circle-dollar-to-slot
 
 # Work with ERC-20 tokens
 
-Intro
+## Intro
 
 By placing your ERC-20 tokens on a multistaking contract, you receive similar liquidity tokens in a 1:1 ratio.
 
