@@ -48,6 +48,8 @@
     * [Work with native coins](build-core-and-join-network/staking/multistaking/work-with-native-coins.md)
     * [Work with ERC-20 tokens](build-core-and-join-network/staking/multistaking/work-with-erc-20-tokens.md)
     * [Work with ERC-721 tokens](build-core-and-join-network/staking/multistaking/work-with-erc-721-tokens.md)
+    * [Other](build-core-and-join-network/staking/multistaking/other/README.md)
+      * [Work with TRON network](build-core-and-join-network/staking/multistaking/other/work-with-tron-network.md)
   * [Claiming rewards](build-core-and-join-network/staking/claiming-rewards.md)
 * [🕸️ Networks](build-core-and-join-network/networks/README.md)
   * [Testnet](build-core-and-join-network/networks/testnet/README.md)
