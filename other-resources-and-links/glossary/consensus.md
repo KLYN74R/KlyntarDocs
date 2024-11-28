@@ -91,6 +91,14 @@ let isFinalizationProofOk = await crypto.ed25519.verifyEd25519(dataThatShouldBeS
 // In case 2/3N+1 of quorum created valid FPs - then this AFP is valid
 ```
 
+Sometimes, another case is also possible:
+
+<figure><img src="../../.gitbook/assets/image (94).png" alt=""><figcaption></figcaption></figure>
+
+{% hint style="info" %}
+If you see something like this in the explorer, it means that the network has finished the epoch on this block. This block is also valid and was included in the state, but indirectly - via the process of voting for ending of epoch. Such AFP is impossible to verify and it used just as a stub for user interface of explorer
+{% endhint %}
+
 ## LRP - Leader Rotation Proof
 
 Signature by some quorum member (validator) that told:
