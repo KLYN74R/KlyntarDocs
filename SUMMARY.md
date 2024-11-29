@@ -74,6 +74,7 @@
     * [Network Info](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/README.md)
       * [Epoches data](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/epoches-data.md)
       * [Hostchain checkpoints](build-core-and-join-network/explorers-and-how-to-use-them/usage-guide/network-info/hostchain-checkpoints.md)
+* [Testnet faucets](build-core-and-join-network/testnet-faucets.md)
 
 ## Web1337
 
