@@ -22,6 +22,7 @@
 * [Partnerships](other-resources-and-links/partnerships.md)
 * [Tokenomics](other-resources-and-links/tokenomics.md)
 * [📚 Glossary & Taxonomy](other-resources-and-links/glossary/README.md)
+  * [Our repositories and codebase](other-resources-and-links/glossary/our-repositories-and-codebase.md)
   * [Architecture](other-resources-and-links/glossary/architecture.md)
   * [Types of transactions](other-resources-and-links/glossary/types-of-transactions.md)
   * [Types of accounts](other-resources-and-links/glossary/types-of-accounts.md)
