@@ -13,15 +13,14 @@ icon: link-simple
 5. Privacy policy - [https://klyntar.org/privacy-policy](https://klyntar.org/privacy-policy)
 6. Telegram bot for RWX - codeless smart contracts (dispute resolution) - [https://t.me/klyn74rbot](https://t.me/klyn74rbot)
 
-
-
 ## Social media
 
-1. X(formerly Twitter) - [https://x.com/KLYN74R](https://x.com/KLYN74R)
+1. X(formerly Twitter) - [https://x.com/KlyntarNetwork](https://x.com/KlyntarNetwork)
 2. Discord - [https://discord.com/invite/f7e7fCp97r](https://discord.com/invite/f7e7fCp97r)
-3. Github - [https://github.com/KLYN74R](https://github.com/KLYN74R)
-4. Telegram - [https://t.me/KLYN74R](https://t.me/klyn74r)
-5. Medium - [https://klyntar.medium.com](https://klyntar.medium.com/)
-6. Reddit - [https://www.reddit.com/r/KLYN74R](https://www.reddit.com/r/KLYN74R)
-7. Instagram - [https://www.instagram.com/klyn74r](https://www.instagram.com/klyn74r/)
+3. Github - [https://github.com/KlyntarNetwork](https://github.com/KlyntarNetwork)
+4. Telegram Channel - [https://t.me/KlyntarNetwork](https://t.me/KlyntarNetworkChat)
+5. Telegram Community Chat - [https://t.me/KlyntarNetworkChat](https://t.me/KlyntarNetworkChat)&#x20;
+6. Medium - [https://klyntar.medium.com](https://klyntar.medium.com/)
+7. Reddit - [https://www.reddit.com/r/KlyntarNetwork](https://www.reddit.com/r/KlyntarNetwork)
+8. Instagram - [https://www.instagram.com/klyntarnetwork](https://www.instagram.com/klyntarnetwork)
 
