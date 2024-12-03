@@ -10,4 +10,4 @@ icon: star-shooting
 
 ## Contracts source code
 
-{% embed url="https://github.com/KLYN74R/MultistakingContracts" %}
+{% embed url="https://github.com/KlyntarNetwork/MultistakingContracts" %}

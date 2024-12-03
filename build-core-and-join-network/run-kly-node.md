@@ -55,7 +55,7 @@ npm install -g pnpm
 Now, clone the core repository
 
 ```sh
-git clone https://github.com/KLYN74R/KlyntarCore.git
+git clone https://github.com/KlyntarNetwork/KlyntarCore.git
 
 cd KlyntarCore
 ```
