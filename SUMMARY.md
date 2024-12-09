@@ -55,6 +55,7 @@
       * [Telegram](build-core-and-join-network/staking/multistaking/social-media-multistaking/telegram.md)
       * [Github](build-core-and-join-network/staking/multistaking/social-media-multistaking/github.md)
       * [Instagram](build-core-and-join-network/staking/multistaking/social-media-multistaking/instagram.md)
+      * [Facebook (Meta)](build-core-and-join-network/staking/multistaking/social-media-multistaking/facebook-meta.md)
       * [YouTube](build-core-and-join-network/staking/multistaking/social-media-multistaking/youtube.md)
       * [LinkedIn](build-core-and-join-network/staking/multistaking/social-media-multistaking/linkedin.md)
       * [Twitter](build-core-and-join-network/staking/multistaking/social-media-multistaking/twitter.md)
