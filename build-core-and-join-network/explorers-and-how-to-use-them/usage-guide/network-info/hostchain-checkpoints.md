@@ -14,7 +14,9 @@ If, say, block 1337th was generated and confirmed by the network more than 3 yea
 
 ## <mark style="color:green;">Solution</mark>
 
-### In order for you to be able to check the relevance of your copy of the blockchain, the current quorum (current validators who have frozen their stake and who can be trusted because they have something to risk) makes "checkpoints" to other blockchains once per epoch (or with other frequency)
+{% hint style="info" %}
+In order for you to be able to check the relevance of your copy of the blockchain, the current quorum (current validators who have frozen their stake and who can be trusted because they have something to risk) makes "checkpoints" to other blockchains once per epoch (or with other frequency)
+{% endhint %}
 
 A checkpoint is a fact that looks like this, for example:
 
@@ -30,7 +32,9 @@ A checkpoint is a fact that looks like this, for example:
 
 If such a message is saved on many blockchains, then even after many years it can be trusted, because in order to potentially change it, attackers would need to compromise most of the blockchains.
 
-### <mark style="color:red;">TLDR</mark> - having found such a message in 2/3 of the blockchains that we will use to maintain checkpoints, you can be confident about the validity of your own copy of the state + the network blockchain.
+{% hint style="success" %}
+<mark style="color:red;">**TLDR**</mark> - having found such a message in 2/3 of the blockchains that we will use to maintain checkpoints, you can be confident about the validity of your own copy of the state and blockchain.
+{% endhint %}
 
 So, on this page you will find this
 
