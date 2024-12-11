@@ -14,7 +14,7 @@ Here we propose the example of simple transaction from default account(ed25519) 
 
 ## Keypair creation process
 
-<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## Generate keypair
 
@@ -90,7 +90,7 @@ Output:
 For the first pair in future chain of accounts we don't set the mnemonic and BIP-44 path. Mnemonic will be randomly generated and path will be `m/44'/7331'/0'/0'`. The last parameter is the password that will be used to get the seed from your mnemonic.
 
 {% hint style="danger" %}
-**That's why - choose the password with the high entropy, ommiting typical passwords from well known wordlists to make brute force impossible. Also, **<mark style="color:red;">**DON'T SHARE YOUR MNEMONIC PHRASE - YOU WILL LOST CONTROL OF YOUR ACCOUNT**</mark>**.**
+**That's why - choose the password with the high entropy, ommiting typical passwords from well known wordlists to make brute force impossible. Also,&#x20;**<mark style="color:red;">**DON'T SHARE YOUR MNEMONIC PHRASE - YOU WILL LOST CONTROL OF YOUR ACCOUNT**</mark>**.**
 {% endhint %}
 
 Now, to build the chain, use this snippet:
