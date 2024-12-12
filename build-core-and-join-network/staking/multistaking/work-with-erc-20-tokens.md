@@ -50,7 +50,7 @@ Choose the appropraite operation **Deposit** and token to stake - in this case E
 
 Input amount of tokens and choose the pool to stake on
 
-<figure><img src="../../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Transaction details
 
@@ -59,11 +59,11 @@ Two subactions occured during transaction:
 1. You transfer 10 LINK tokens to multistaking contract
 2. You receive 10 KLINK (Klyntar LINK) tokens back to avoid liquidity freeze
 
-<figure><img src="../../../.gitbook/assets/image (2) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After 3 epochs your address will appear in the list of stakers for the selected pool
 
-<figure><img src="../../../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 From now you have successfully finish the staking process. You will now receive rewards from the pool you staked on.
@@ -73,7 +73,7 @@ From now you have successfully finish the staking process. You will now receive 
 
 To unstake - choose the token, input amount and finally the pool
 
-<figure><img src="../../../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 As before - the unstaking process takes 3 epochs and initially the stake will be placed in the withdrawal requests
@@ -83,11 +83,11 @@ As before - the unstaking process takes 3 epochs and initially the stake will be
 
 It's time to get your original tokens back. Select **Withdraw** and press a button to initiate the transaction
 
-<figure><img src="../../../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 
 If you check via explorer, you will notice that within this transaction, the multistaking contract returned 10 original Chainlink tokens back to your address.
 
-<figure><img src="../../../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 ## FAQ
 

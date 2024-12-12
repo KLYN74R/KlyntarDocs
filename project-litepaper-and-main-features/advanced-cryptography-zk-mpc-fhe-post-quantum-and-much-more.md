@@ -1,2 +1,142 @@
 # Advanced cryptography - zk, mpc, fhe, post-quantum and much more!
 
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+## Intro
+
+Any **crypto**currency contains the word **`crypto`**, which means that cryptography plays an important role in its basis.
+
+In our project, we have collected the most popular and powerful hashing algorithms, signatures and others to use onchain and offchain.
+
+## Hashing
+
+Mainly 2 algorithms are used:
+
+1. SHA3 - inside the EVM. SHA3 has proven itself as a reliable and widely used algorithm
+2. BLAKE3 - for our needs. Amazingly fast and one of the newest hashing algorithms that even outperforms SHA3 in some metrics. BLAKE3 was chosen as the main candidate to be used as the lead hash function for getting block headers' hashes, hashes of workflows, services archives and so on. Superfast, supports **PRF**, **MAC**, **KDF**, and **XOF** modes, highly parallelizable and so on.
+
+<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption><p>Read more <a href="https://github.com/BLAKE3-team/BLAKE3">https://github.com/BLAKE3-team/BLAKE3</a></p></figcaption></figure>
+
+Since BLAKE3 supports **XOF** mode i.e. output length of a hash might be variable(like in SHAKE hashing scheme). This is important in case of using them as a quantum secure alternative to 128 or 256 bits schemes which can be abused by Grover or BHT algorithms.
+
+## Default signatures - Ed25519
+
+Ed25519 was introduced in OpenSSH version 6.5. This is an implementation of EdDSA using the [<mark style="color:purple;">Twisted Edwards curve</mark>](https://en.wikipedia.org/wiki/Twisted_Edwards_curve). It uses elliptic curve cryptography which provides better security and higher performance compared to DSA or ECDSA.
+
+{% hint style="info" %}
+For any type of interaction with KLYNTAR, you must have a pair of keys. You use the private key to sign the data, while the public key is used to verify the signature. In general, the principle is familiar to everyone.
+{% endhint %}
+
+Get details here:
+
+{% content-ref url="../web1337/transactions-and-smart-contracts/default-ed25519-transactions.md" %}
+[default-ed25519-transactions.md](../web1337/transactions-and-smart-contracts/default-ed25519-transactions.md)
+{% endcontent-ref %}
+
+## Multisig and threshold-sig algorithms
+
+To let the group of people to control one wallet and/or perform transactions with smart contracts, multi-signature functionality is required.
+
+{% hint style="info" %}
+We use BLS and TBLS algorithms based on the BLS12-381 curve
+{% endhint %}
+
+#### BLS
+
+Multi-signatures are versatile and can be useful in many places. For example, their advantage is that it is easy to achieve efficiency in generating _<mark style="color:red;">**N of N**</mark>_ signatures - for this you need _<mark style="color:red;">**N**</mark>_ members to sign the message _**M**_ with their private keys, and then aggregate public keys and signatures and get the master key of the group _<mark style="color:purple;">**PubN**</mark>_ and signature _<mark style="color:purple;">**SigN**</mark>_.
+
+Thanks to the properties of aggregation, it will not be necessary to store N signatures and N public keys in the blockchain (as happens in naive multi-signature implementations), and instead of N signatures, it will be enough to check only 1 aggregated one, which gives us super efficiency.
+
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption><p><a href="https://asecuritysite.com/signatures/js_bls">https://asecuritysite.com/signatures/js_bls</a></p></figcaption></figure>
+
+With BLS you can initiate:
+
+1. N of N transactions
+2. T of N transactions (T\<N)
+3. You can use it for default transactions and within smart-contracts for EVM & WASM virtual machines
+
+Get the details about BLS usage here:
+
+{% content-ref url="../web1337/transactions-and-smart-contracts/bls-multisig-transactions.md" %}
+[bls-multisig-transactions.md](../web1337/transactions-and-smart-contracts/bls-multisig-transactions.md)
+{% endcontent-ref %}
+
+#### TBLS
+
+The problem arises when not all signers may agree with the signature decision, but it is enough just to reach a certain threshold T (that is, at least _<mark style="color:red;">**T of N**</mark>_ participants agree to sign the transaction). In this case, when using multi-signature, we need to create some additional execution rules, and the size of the proof also grows.
+
+Let me give you an example - let's say we have 10 people who decided to generate a signature using BLS multi-signature (for a transaction, staking, fixing an unobtanium or something else). Let 6 of them agree, and 4 others - against. At the same time, you set a threshold on your public aggregated key at 6/10 in advance.
+
+It's no problem for 6 people to sign something and then aggregate their 6 public keys into a single public BLS. With a signature, it's the same - everything comes down to one thing.
+
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+
+However, to prove to the network that the 6/10 threshold is met, you must provide 4 separate 48-byte addresses of those who disagree. This is because there is no other way for the network to find out how many of the keys are included in MasterPub1-6. This leads us to difficulties because there may be not 10, but 200 signers.
+
+It would be nice if all the "magic" was performed outside the blockchain - the nodes will not know about any thresholds, they will not disclose the public keys of dissenters, and so on. All the blockchain needs to know is the fact that the required threshold has been reached and that we have a valid signature.
+
+Get the details about TBLS here:
+
+{% content-ref url="../web1337/transactions-and-smart-contracts/tbls-thresholdsig-transactions.md" %}
+[tbls-thresholdsig-transactions.md](../web1337/transactions-and-smart-contracts/tbls-thresholdsig-transactions.md)
+{% endcontent-ref %}
+
+## Post-quantum cryptography
+
+Generally speaking, the most popular and used algorithms can be counted on the fingers literally in every category:
+
+* Hashes - SHA families, old MD, BLAKE hashes
+* Signatures - RSA, ECDSA, EdDSA, Ed25519
+* Symmetric encryption - AES, CAST, ChaCha20
+* Key exchange - ECDH, DH, X25519
+
+They have worked well for a long time, are open source (consistency with the [_**Kerckhoffs principle**_](https://www.techtarget.com/whatis/definition/Kerckhoffs-principle)), and have been subjected to research and attacks for many years. However, nothing lasts forever and gradually the security of these algorithms will fall due to the advent of quantum computers.
+
+As mentioned earlier, quantum computers are not some magical black box that "calculates something quickly". These are very specific mathematical algorithms, but their difference from the standard mathematical hacking paths is that they use another fundamental science - physics.
+
+In mathematics, it can't happen that zero suddenly becomes one if you don't like the answer. In quantum mechanics, it is possible.
+
+If earlier, within the framework of classical attacks on algorithms, a mathematical approach was used (not taking into account attacks through third-party channels such as signal interception, van Eyck interception, etc.), now physics and the nature of fundamental particles of the Standard Model come into play.
+
+{% hint style="info" %}
+Therefore, we have a very specific need for the use of post-quantum security mechanisms at KLYNTAR. We need to secure everything from signatures to architectural concepts due to the fact that we rely on the security of other chains, so if they are vulnerable, then this could threaten us (it could, because it does not threaten now).
+{% endhint %}
+
+At the initial stages, we decided to use Dilithium and BLISS signatures. Among other algorithms, their ratio of security and sizes of public keys + signatures seemed to be optimal. They show good speed and can take part in various events on KLYNTAR. We recommend using them as an advanced security address. For example, you can store large amounts on them and use them infrequently or even through a cold wallet.
+
+_**Dilithium**_
+
+![](<../.gitbook/assets/image (4).png>)
+
+This algorithm is a NIST candidate and provides the ability to generate key pairs and signatures. Widely popular, studied at the highest levels. It is included in the post-quantum implementation of _<mark style="color:red;">**OpenSSL**</mark>_, is being studied by CloudFlare, and is included in their CIRCL repository.
+
+![](<../.gitbook/assets/image (5).png>)
+
+{% embed url="https://github.com/cloudflare/circl" %}
+
+We just use this implementation from CloudFlare by providing a standard set of functions like generate, sign and verify. There are several implementations depending on the NIST security levels. Here are their characteristics:
+
+![](<../.gitbook/assets/image (6).png>)
+
+The creators themselves recommend using the Dilithium3 parameter set, but we use Dilithium5 due to greater security. However, to change the security level, it is enough to simply change one line so that such changes can be made if necessary. Here is a comparison table of security levels according to NIST
+
+<table><thead><tr><th width="302.71790284058636" align="center">NIST security level</th><th width="267.9124899508415" align="center">Hack is so difficult as...</th></tr></thead><tbody><tr><td align="center">1</td><td align="center">Bruteforcing AES-128 key</td></tr><tr><td align="center">2</td><td align="center">Find a collision for SHA-256</td></tr><tr><td align="center">3</td><td align="center">Bruteforcing AES-192 key</td></tr><tr><td align="center">4</td><td align="center">Find a collision for SHA-384</td></tr><tr><td align="center">5</td><td align="center">Bruteforcing AES-256 key</td></tr></tbody></table>
+
+_**BLISS**_
+
+The second and priority post-quantum signature algorithm will be BLISS. It is also based on lattice cryptography, more specifically RLWE (Ring Learning With Errors). Although it creates a small signature and has good security, it has not been listed as a candidate for standardization by NIST. It uses the Fiat-Shamir trellis signature scheme and its improved sample selection method for parameters. It also uses Huffman encoding to compress the signature.
+
+{% embed url="https://bliss.di.ens.fr/" %}
+
+{% embed url="https://asecuritysite.com/signatures/go_bliss" %}
+
+Get the details about post-quantum accounts here:
+
+{% content-ref url="../web1337/transactions-and-smart-contracts/post-quantum-transactions.md" %}
+[post-quantum-transactions.md](../web1337/transactions-and-smart-contracts/post-quantum-transactions.md)
+{% endcontent-ref %}
+
+{% content-ref url="../smart-contracts-and-vms/advanced-vms-usage/cryptography/post-quantum-cryptography.md" %}
+[post-quantum-cryptography.md](../smart-contracts-and-vms/advanced-vms-usage/cryptography/post-quantum-cryptography.md)
+{% endcontent-ref %}
+
