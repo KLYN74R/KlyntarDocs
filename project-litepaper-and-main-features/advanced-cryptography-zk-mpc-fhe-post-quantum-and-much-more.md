@@ -140,3 +140,59 @@ Get the details about post-quantum accounts here:
 [post-quantum-cryptography.md](../smart-contracts-and-vms/advanced-vms-usage/cryptography/post-quantum-cryptography.md)
 {% endcontent-ref %}
 
+## Zero Knowledge Proofs
+
+### zkSNARK
+
+We understand the importance of using zero-knowledge cryptography in various areas and strive for full integration with existing and new solutions.
+
+Since KLYNTAR has a support of both WASM and EVM compatible virtual machines (and others in the future), you can use existing solutions to write your contracts and services using zkSNARK technologies.
+
+Check out the libraries and repositories below that you will need to get started. All of them have good documentation, a rating on GitHub, a community of developers and are used in other projects. We recommend that you follow the guidelines and recommendations.
+
+**Circom**
+
+<figure><img src="../.gitbook/assets/image (95).png" alt=""><figcaption><p><a href="https://github.com/iden3/circom"><strong>https://github.com/iden3/circom</strong></a></p></figcaption></figure>
+
+Circom is a special language that can be used to write logic that will then be used to build R1CS, verification keys and more. The new version of the compiler is written in Rust. The documentation has a sufficient number of examples and step-by-step explanations of what needs to be done to create zero-knowledge logic.
+
+**SnarkJS**
+
+SnarkJS can be used to perform a trusted configuration ceremony, generate a verifier Solidity contract, and much more.
+
+<figure><img src="../.gitbook/assets/image (96).png" alt=""><figcaption></figcaption></figure>
+
+More information can be found on the official websites. Below you will see links to repositories that will help you create your own zero-knowledge project.
+
+<figure><img src="../.gitbook/assets/image (97).png" alt=""><figcaption></figcaption></figure>
+
+* [https://github.com/iden3/circom](https://github.com/iden3/circom)
+* [https://docs.circom.io/](https://docs.circom.io/)
+* [https://github.com/iden3/snarkjs](https://github.com/iden3/snarkjs)
+
+### zkSTARK
+
+Coming soon
+
+## VRF - verifiable random
+
+A verifiable random function (VRF) is a cryptographic primitive that uses a pair of keys and, based on some input data, can generate pseudo-random values ​​while also creating proof that it was calculated correctly.
+
+This "testable randomness" can be extremely important for special use cases within services.
+
+Only the owner of the private key can calculate the hash and proof, but anyone with the public key can verify the hash is correct and the proof is valid.
+
+Let's imagine that a group of people (2 people) are playing a game in which everyone receives the input string <mark style="color:purple;">**THIS IS A GAME**</mark> and generates 32 byte hashes using VRF. This continues 3 times and each time the input will be the hash obtained in the previous step. After that, they sum up the hash values. Whoever has the most amount wins. Each of them has a pair of keys and each knows the public key of the other. You can visualize it like this
+
+<figure><img src="../.gitbook/assets/image (98).png" alt=""><figcaption></figcaption></figure>
+
+At the same time, both Alice and Bob will be sure of the impossibility of obtaining other data and the fairness of this game.
+
+### Where can it be useful and where is it applied?
+
+Here we explained the VRF mechanism in a simplified way, but Algorand consensus works similarly.
+
+{% embed url="https://medium.com/algorand/algorand-releases-first-open-source-code-of-verifiable-random-function-93c2960abd61" %}
+
+We assume the use of VRF in smart contracts and services on KLYNTAR. Also, it's a great method for MEV-resistance or other stuff in workflows which require randomness.
+

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-<figure><img src="../.gitbook/assets/Cover (1).svg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/Cover (2).svg" alt=""><figcaption></figcaption></figure>
 
 The first widely known cryptocurrency Bitcoin changed the rules of the game in its time. It was a real financial endgame that led to the creation of a multi-trillion crypto industry (as of 2024)
 
@@ -25,6 +25,8 @@ With the goal of
 ### Interesting architecture: Multilevel sharding
 
 ### Advanced cryptography
+
+<figure><img src="../.gitbook/assets/image (99).png" alt=""><figcaption></figcaption></figure>
 
 ### 2 most used virtual machines on the board - EVM and WASM
 
