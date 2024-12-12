@@ -2,7 +2,7 @@
 
 ## Introduction
 
-
+<figure><img src="../.gitbook/assets/Cover (1).svg" alt=""><figcaption></figcaption></figure>
 
 The first widely known cryptocurrency Bitcoin changed the rules of the game in its time. It was a real financial endgame that led to the creation of a multi-trillion crypto industry (as of 2024)
 
@@ -10,7 +10,7 @@ The first widely known cryptocurrency Bitcoin changed the rules of the game in i
 
 Being true fans and geeks who are inspired by cryptocurrency and the technologies/principles that underlie it, we also want to offer the world our project.
 
-**The idea was to create not another clone/fork, but a truly useful and long-lasting product. To do this, we have collected the best practices in the crypto industry, collected the most powerful and popular technologies and cryptography and are going to create a powerful foundation for the future decentralized ecosystem of services**
+> **The idea was to create not another clone/fork, but a truly useful and long-lasting product. To do this, we have collected the best practices in the crypto industry, collected the most powerful and popular technologies and cryptography and are going to create a powerful foundation for the future decentralized ecosystem of services**
 
 ## What you can find here ?
 
