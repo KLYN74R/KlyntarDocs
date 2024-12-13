@@ -50,7 +50,7 @@ Choose the appropraite operation **Deposit** and token to stake - in this case E
 
 Input amount of tokens and choose the pool to stake on
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Transaction details
 
@@ -59,11 +59,11 @@ Two subactions occured during transaction:
 1. You transfer 10 LINK tokens to multistaking contract
 2. You receive 10 KLINK (Klyntar LINK) tokens back to avoid liquidity freeze
 
-<figure><img src="../../../.gitbook/assets/image (2) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 After 3 epochs your address will appear in the list of stakers for the selected pool
 
-<figure><img src="../../../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (3) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="success" %}
 From now you have successfully finish the staking process. You will now receive rewards from the pool you staked on.

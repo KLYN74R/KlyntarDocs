@@ -173,7 +173,7 @@ This amount of coins is required to make your validator eligible to be elected t
 
 Also, on the validator page you can see how many coins are already staked on it
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 As you can see here validator has 55 000 staked coins while required minimum is 50 000. So this validator is eligible to generate blocks and take part in approvement.
 
