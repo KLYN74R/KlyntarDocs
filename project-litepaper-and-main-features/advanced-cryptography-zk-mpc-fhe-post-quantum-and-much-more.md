@@ -15,7 +15,7 @@ Mainly 2 algorithms are used:
 1. SHA3 - inside the EVM. SHA3 has proven itself as a reliable and widely used algorithm
 2. BLAKE3 - for our needs. Amazingly fast and one of the newest hashing algorithms that even outperforms SHA3 in some metrics. BLAKE3 was chosen as the main candidate to be used as the lead hash function for getting block headers' hashes, hashes of workflows, services archives and so on. Superfast, supports **PRF**, **MAC**, **KDF**, and **XOF** modes, highly parallelizable and so on.
 
-<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption><p>Read more <a href="https://github.com/BLAKE3-team/BLAKE3">https://github.com/BLAKE3-team/BLAKE3</a></p></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption><p>Read more <a href="https://github.com/BLAKE3-team/BLAKE3">https://github.com/BLAKE3-team/BLAKE3</a></p></figcaption></figure>
 
 Since BLAKE3 supports **XOF** mode i.e. output length of a hash might be variable(like in SHAKE hashing scheme). This is important in case of using them as a quantum secure alternative to 128 or 256 bits schemes which can be abused by Grover or BHT algorithms.
 
@@ -195,4 +195,37 @@ Here we explained the VRF mechanism in a simplified way, but Algorand consensus 
 {% embed url="https://medium.com/algorand/algorand-releases-first-open-source-code-of-verifiable-random-function-93c2960abd61" %}
 
 We assume the use of VRF in smart contracts and services on KLYNTAR. Also, it's a great method for MEV-resistance or other stuff in workflows which require randomness.
+
+## FHE - fully homomorphic encryption
+
+<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+
+**Fully Homomorphic Encryption (FHE)** is an advanced cryptographic technique that allows computations to be performed on encrypted data without ever decrypting it. This means sensitive data can remain secure throughout the computation process, even in untrusted environments. The result of the computation is also encrypted and can be decrypted only by the data owner.
+
+### Key Idea
+
+FHE enables operations such as addition and multiplication on ciphertexts, preserving the structure of the original data. For example:
+
+Let `E(x)` denote the encryption of a value `x`. In an FHE system:
+
+* **Addition**: `E(a + b) = E(a) + E(b)`
+* **Multiplication**: `E(a * b) = E(a) * E(b)`
+
+This property makes FHE particularly useful for scenarios where privacy is critical, such as:
+
+* **Secure Data Analysis**: Performing analytics on encrypted datasets without exposing sensitive information.
+* **Cloud Computing**: Allowing cloud providers to compute on encrypted data without learning anything about the data itself.
+* **Healthcare**: Enabling secure processing of medical records to preserve patient confidentiality.
+
+By keeping data encrypted throughout the computation, FHE provides a powerful way to enhance privacy and security in the digital age.
+
+### Where we'll use it ?
+
+We plan to implement FHE functionality into EVM and WASM virtual machines to allow you to use them from smart contracts.
+
+### Which implementation we'll use ?
+
+We will use the state-of-the-art open-source solution from Zama, which created a popular repository for working with FHE. This implementation is reliable and is already used in a various of projects.
+
+{% embed url="https://crates.io/crates/tfhe" %}
 

@@ -50,7 +50,7 @@ Choose the appropraite operation **Deposit** and token to stake - in this case E
 
 Input amount of tokens and choose the pool to stake on
 
-<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Transaction details
 

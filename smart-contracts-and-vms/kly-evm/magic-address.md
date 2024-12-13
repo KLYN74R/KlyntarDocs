@@ -287,7 +287,7 @@ After all, we would be interested in knowing how to write the result of a functi
 
 We're in and ready for stepping
 
-<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 Line 178: Try to read raw returned data. As you see, we get the 32 bytes buffer filled with nulls and 124 as the last value.
 

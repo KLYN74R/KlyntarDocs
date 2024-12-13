@@ -56,7 +56,7 @@ In many cases, it is recommended to trust the validity of the epoch data where 2
 
 Long story short you can trust this
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 And this:
 
