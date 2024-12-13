@@ -229,3 +229,10 @@ We will use the state-of-the-art open-source solution from Zama, which created a
 
 {% embed url="https://crates.io/crates/tfhe" %}
 
+## And one more thing
+
+We are interested in qualitative improvement of the crypto industry, therefore more and more new cryptographic algorithms will be constantly added for their native use on the project.
+
+Join the open-source development!
+
+{% embed url="https://github.com/KlyntarNetwork" %}
